@@ -1,9 +1,8 @@
 import "~/styles/globals.css";
 
 export const metadata = {
-  // TODO: Add metadata
-  title: "AKC",
-  description: "AKC",
+  title: "Athletic Kids Cup",
+  description: "Athletic Kids Cup",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
