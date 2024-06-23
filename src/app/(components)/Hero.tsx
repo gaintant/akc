@@ -48,7 +48,7 @@ const Hero = () => {
           <p className="mt-4 max-w-lg font-semibold text-black sm:text-3xl/relaxed">
             Running - Jumping - Throwing
           </p>
-          <p className="sm:text-xl/relaxed/text-center mt-4 max-w-lg font-semibold text-black">
+          <p className="mt-4 max-w-lg  text-center font-semibold text-black sm:text-xl/relaxed">
             The three basic movements forms that are required in almost every
             sport are specifically practised and perfected in atheltics
           </p>
