@@ -137,7 +137,7 @@ import React from "react";
 const Header = () => {
   return (
     <header className="fixed left-0 top-0 z-50 w-full bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto flex items-center justify-between p-2">
         <div className="hidden flex-col items-center md:flex">
           <span className="mb-2 text-sm">An Initiative by</span>
           {/* <img src={"/relax-in-pool.png"} alt="Left Icon" className="h-8 w-8" /> */}
@@ -148,13 +148,12 @@ const Header = () => {
             height={32}
           />
         </div>
-        <div className="mx-auto flex flex-col items-center">
-          <span className="mb-2 text-sm">Middle Icon</span>
+        <div className="mx-auto">
           <Image
-            src={"/icons/relax-in-pool.png"}
-            alt="Left Icon"
-            width={32}
-            height={32}
+            src={"/images/AKCLogo.png"}
+            alt="AKC Logo"
+            width={140}
+            height={80}
           />
         </div>
         <div className=" hidden flex-col items-center md:flex">
