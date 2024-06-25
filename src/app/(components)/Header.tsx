@@ -136,7 +136,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full bg-white shadow-md">
+    <header className="sticky left-0 top-0 z-50 w-full bg-white shadow-md">
       <div className="container mx-auto flex items-center justify-between p-2">
         <div className="hidden flex-col items-center md:flex">
           <span className="mb-2 text-sm">An Initiative by</span>
