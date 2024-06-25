@@ -1,5 +1,6 @@
 import InputField from "../(components)/InputFields/PlainTextInput"
 import EmailInput from "../(components)/InputFields/EmailInput"
+import InputWithDropDown from "../(components)/InputFields/InputWithDropDown"
 
 export default function Page() {
     return (
@@ -30,6 +31,8 @@ export default function Page() {
             <InputField labelName="Daylight Telephone number" isRequired={true} />
             <EmailInput isRequired={true} />
         </div>
+        {/* Example usage of dropdown */}
+        {/* <InputWithDropDown label="Choose your city" listOfDropdown={["a", "b", "c"]} isRequired={true} /> */}
 
         <div> * mandatory field </div>
         {/* create a button component also with text prop */}
