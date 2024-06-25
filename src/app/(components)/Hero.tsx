@@ -15,7 +15,7 @@ const Hero = () => {
       <section className="relative bg-[url()] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-white/35"></div>
         {/* Lighter opacity */}
-        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-start lg:px-8">
+        <div className="relative mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:flex lg:h-screen lg:items-start lg:px-8">
           <div className="max-w-xl  ltr:sm:text-left rtl:sm:text-right">
             <h1 className="text-3xl font-extrabold text-black sm:text-5xl">
               #wemovethekids

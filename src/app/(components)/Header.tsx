@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import Menu from "./Menu";
+import Link from "next/link";
 
 // const Header = () => {
 //   return (
@@ -149,12 +151,14 @@ const Header = () => {
           />
         </div>
         <div className="mx-auto">
+          <Link href={"/"}>
           <Image
             src={"/images/AKCLogo.png"}
             alt="AKC Logo"
             width={140}
             height={80}
           />
+          </Link>
         </div>
         <div className=" hidden flex-col items-center md:flex">
           <span className="mb-2 text-sm">Enabled by</span>
@@ -165,6 +169,7 @@ const Header = () => {
             height={32}
           />
         </div>
+        <Menu />
       </div>
     </header>
   );
