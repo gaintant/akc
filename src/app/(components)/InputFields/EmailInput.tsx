@@ -1,7 +1,7 @@
 export default function EmailInput (props: any) {
 
     return (
-        <div className="self-center">
+        <div className="self-center m-5">
             <label className="block text-base leading-6 text-gray-900 mb-1">
                 Email Address
                 {props.isRequired &&
