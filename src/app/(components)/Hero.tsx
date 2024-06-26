@@ -34,7 +34,7 @@ const Hero = () => {
             <div className="mt-8 flex flex-col items-start gap-4 text-center">
               <p>Pre-register your school now!</p>
               <a
-                href="/pre-registration"
+                href="/register"
                 className="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
               >
                 School pre-registration
