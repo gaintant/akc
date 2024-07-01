@@ -8,7 +8,7 @@ interface IInputField {
 
 const InputField: React.FC<IInputField> = (props) =>  {
     // console.log(props)
-    var inputFieldName:string = props.labelName.length > 0 ? props.labelName : 'inputField'
+    let inputFieldName:string = props.labelName.length > 0 ? props.labelName : 'inputField'
     inputFieldName = inputFieldName.replace(/\s+/g, '')
     // console.log(inputFieldName)
     return (

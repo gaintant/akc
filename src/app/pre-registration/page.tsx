@@ -1,6 +1,5 @@
 import InputField from "../(components)/InputFields/PlainTextInput"
 import EmailInput from "../(components)/InputFields/EmailInput"
-import InputWithDropDown from "../(components)/InputFields/InputWithDropDown"
 import { createRegistrationData } from "../lib/actions"
 
 export default function Page() {
