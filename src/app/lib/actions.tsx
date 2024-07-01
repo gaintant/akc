@@ -13,6 +13,8 @@ const FormSchema = z.object({
     FirstName: z.string(),
     Surname: z.string(),
     DaylightTelephonenumber: z.coerce.number(),
+    email: z.string(),
+    // drop: z.string(),
     date: z.string(),
 })
 

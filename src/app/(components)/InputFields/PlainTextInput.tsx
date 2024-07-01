@@ -1,8 +1,16 @@
-export default function InputField (props: any) {
-    console.log(props)
-    var inputFieldName:string = props.labelName
+import React from "react";
+
+interface IInputField {
+  labelName: string;
+  isRequired: boolean;
+}
+
+
+const InputField: React.FC<IInputField> = (props) =>  {
+    // console.log(props)
+    var inputFieldName:string = props.labelName.length > 0 ? props.labelName : 'inputField'
     inputFieldName = inputFieldName.replace(/\s+/g, '')
-    console.log(inputFieldName)
+    // console.log(inputFieldName)
     return (
         <div className="self-center m-5">
             <label className="block text-base leading-6 text-gray-900 mb-1">
@@ -19,3 +27,5 @@ export default function InputField (props: any) {
     )
 
 }
+
+export default InputField

@@ -34,7 +34,7 @@ export default function Page() {
                     <EmailInput isRequired={true} />
                 </div>
                 {/* Example usage of dropdown */}
-                {/* <InputWithDropDown label="Choose your city" listOfDropdown={["a", "b", "c"]} isRequired={true} /> */}
+                {/* <InputWithDropDown labelName="Choose your city" listOfDropdown={["a", "b", "c"]} isRequired={true} /> */}
 
                 <div> * mandatory field </div>
                 {/* create a button component also with text prop */}

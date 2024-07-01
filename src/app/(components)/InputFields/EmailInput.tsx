@@ -1,4 +1,9 @@
-export default function EmailInput (props: any) {
+import React from "react";
+
+interface IEmailInput {
+  isRequired: boolean;
+}
+const EmailInput: React.FC<IEmailInput> = (props: IEmailInput) => {
 
     return (
         <div className="self-center m-5">
@@ -9,10 +14,12 @@ export default function EmailInput (props: any) {
                 }
             </label>
 
-            <input type="email" placeholder="text" className="border-gray-200 border-4 h-10 rounded-md
+            <input name="email" type="email" placeholder="text" className="border-gray-200 border-4 h-10 rounded-md
              placeholder-gray-400 p-2">
             </input>
         </div>
     )
 
 }
+
+export default EmailInput
