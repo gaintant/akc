@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 import Header from "./(components)/Header";
 import { GeistSans } from "geist/font/sans";
+import Footer from "./(components)/Footer";
 
 export const metadata = {
   title: "Athletic Kids Cup",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
