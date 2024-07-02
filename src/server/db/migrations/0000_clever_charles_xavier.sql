@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS "akc_user" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" varchar(256),
 	"email" varchar(256) NOT NULL,
-	"role" varchar(256) NOT NULL,
+	"role" varchar(256) DEFAULT 'user' NOT NULL,
 	"password" varchar(256),
 	"reset_token" varchar(256),
 	"reset_token_expiry" timestamp,
