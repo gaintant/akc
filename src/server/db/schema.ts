@@ -157,7 +157,10 @@ export const users = createTable("user", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 256 }),
   email: varchar("email", { length: 256 }).notNull().unique(),
-  role: varchar("role", { length: 256 }).notNull().$type<"admin" | "school">(),
+  role: varchar("role", { length: 256 })
+    .notNull()
+    .$type<"admin" | "user">()
+    .default("user"),
   password: varchar("password", { length: 256 }),
   resetToken: varchar("reset_token", { length: 256 }),
   resetTokenExpiry: timestamp("reset_token_expiry"),
