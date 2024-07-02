@@ -11,6 +11,7 @@ import {
   decimal,
   text,
   unique,
+  uuid,
   foreignKey,
   primaryKey
 } from "drizzle-orm/pg-core";
@@ -44,9 +45,8 @@ export const schools = createTable(
     schoolAddress: text("school_address"),
     schoolPincode: varchar("school_pincode", { length: 10 }),
     contactEmail: varchar("contact_email", { length: 255 }),
-    passwordHash: varchar("password_hash", { length: 255 }).notNull(),
-    additional_field_1: varchar("additional_field_1", { length: 255 }),
-    additional_field_2: varchar("additional_field_2", { length: 255 })
+    passwordHash: varchar("password_hash", { length: 255 }).notNull()
+  
   },
   (table) => ({
     schoolNameUnique: unique("school_name").on(table.schoolName)
@@ -69,10 +69,8 @@ export const students = createTable(
     weight: decimal("weight", { precision: 5, scale: 2 }),
     guardianName: varchar("guardian_name", { length: 255 }),
     guardianContact: varchar("guardian_contact", { length: 20 }),
-    guardianAlternateContact: varchar("guardian_alternate_contact", { length: 20 }),
-    additional_field_1: varchar("additional_field_1", { length: 255 }),
-    additional_field_2: varchar("additional_field_2", { length: 255 })
-  },
+    guardianAlternateContact: varchar("guardian_alternate_contact", { length: 20 })
+     },
   (table) => ({
     studentUnique: unique("student_school_unique").on(table.schoolId, table.studentName)
   })
@@ -86,9 +84,8 @@ export const events = createTable(
     location: varchar("location", { length: 255 }).notNull(),
     eventDate: date("event_date").notNull(),
     eventCoordinatorName: varchar("event_coordinator_name", { length: 255 }),
-    eventCoordinatorEmail: varchar("event_coordinator_email", { length: 255 }),
-    additional_field_1: varchar("additional_field_1", { length: 255 }),
-    additional_field_2: varchar("additional_field_2", { length: 255 })
+    eventCoordinatorEmail: varchar("event_coordinator_email", { length: 255 })
+    
   }
 );
 
@@ -132,8 +129,30 @@ export const results = createTable(
     jumpingScore2: decimal("jumping_score_2", { precision: 10, scale: 2 }),
     jumpingScore3: decimal("jumping_score_3", { precision: 10, scale: 2 }),
     bestJumpingScore: decimal("best_jumping_score", { precision: 10, scale: 2 }),
-    akcScore: decimal("akc_score", { precision: 10, scale: 2 }),
-    additional_field_1: varchar("additional_field_1", { length: 255 }),
-    additional_field_2: varchar("additional_field_2", { length: 255 })
+    akcScore: decimal("akc_score", { precision: 10, scale: 2 })
+   
   }
+  
 );
+export const refreshTokens = createTable("refresh_token", {
+  uuid: uuid("uuid").primaryKey()
+});
+
+export const users = createTable("user", {
+  id: serial("id").primaryKey(),
+  name: varchar("name", { length: 256 }),
+  email: varchar("email", { length: 256 }).notNull().unique(),
+  password: varchar("password", { length: 256 }).notNull(),
+  resetToken: varchar("reset_token", { length: 256 }),
+  resetTokenExpiry: timestamp("reset_token_expiry"),
+  emailVerified: boolean("email_verified").default(false),
+  verificationToken: varchar("verification_token", { length: 256 }),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+})
+
+export const todos = createTable("todo", {
+  id: serial("id").primaryKey(),
+  user_id: varchar("user_id"),
+  title: varchar("title", { length: 256 }),
+});
