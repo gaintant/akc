@@ -142,7 +142,7 @@ export const users = createTable("user", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 256 }),
   email: varchar("email", { length: 256 }).notNull().unique(),
-  password: varchar("password", { length: 256 }).notNull(),
+  password: varchar("password", { length: 256 }),
   resetToken: varchar("reset_token", { length: 256 }),
   resetTokenExpiry: timestamp("reset_token_expiry"),
   emailVerified: boolean("email_verified").default(false),
