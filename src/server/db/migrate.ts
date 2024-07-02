@@ -14,4 +14,4 @@ async function main() {
   await migrationClient.end();
 }
 
-main();
+void main();
