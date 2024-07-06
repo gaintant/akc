@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <>
       {/* <section className="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat"> */}
-      <section className="relative bg-[url()] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-white/35"></div>
         {/* Lighter opacity */}
         <div className="relative mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:flex lg:h-screen lg:items-start lg:px-8">

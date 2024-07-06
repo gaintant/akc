@@ -1,7 +1,6 @@
 import "~/styles/globals.css";
-import Header from "./(components)/Header";
 import { GeistSans } from "geist/font/sans";
-import Footer from "./(components)/Footer";
+import FloatingNavbar from "./(components)/FloatingNavbar";
 
 export const metadata = {
   title: "Athletic Kids Cup",
@@ -16,10 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+      </head>
       <body>
-        <Header />
+        {/* Add bottom padding to prevent content from being hidden behind the navbar */}
         {children}
-        <Footer />
+        <FloatingNavbar />
       </body>
     </html>
   );
