@@ -5,32 +5,26 @@ interface IInputWithDropDown {
   listOfDropdown: Array<string>;
   isRequired: boolean;
 }
- 
 
-const InputWithDropDown: React.FC<IInputWithDropDown> = (props) =>  {
-    const listOfDropdown: Array<string> = props.listOfDropdown
-    console.log(props)
-    return (
-        <div className="dropdown">
-            <label>{props.labelName}
-                {props.isRequired &&
-                    <div className="inline-block"> * </div>
-                }
-            </label>
-            <br></br>
-            <select name="drop" className="border-gray-200 border-4 h-10 rounded-md
-             placeholder-gray-400 p-2">
-                <option value="" disabled hidden>
-                    Select an item
-                </option>
-                {listOfDropdown.map(item => (
-                    <option key={item} value={item}>
-                        {item}
-                    </option>
-                ))}
-            </select>
-        </div>
-    )
-}
+const InputWithDropDown: React.FC<IInputWithDropDown> = ({ labelName, listOfDropdown, isRequired }) => {
+  return (
+    <div className="m-5">
+      <label className="block text-base leading-6 text-gray-900 mb-1">
+        {labelName}
+        {isRequired && <span className="text-red-600"> *</span>}
+      </label>
+      <select name="drop" className="border-gray-200 border-4 h-11 rounded-md placeholder-gray-400 p-2 " required={isRequired}>
+        <option value="--Select--" hidden>
+          --Select--
+        </option>
+        {listOfDropdown.map((item) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
 
-export default InputWithDropDown
+export default InputWithDropDown;
