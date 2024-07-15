@@ -18,9 +18,9 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         <div className="flex w-screen justify-center">
-          <div className="max-w-[1440px] flex-1">
+          <div className="container flex-1 flex justify-center">
             {children}
             <FloatingNavbar />
           </div>
