@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sans: ["Plus Jakarta Sans", ...fontFamily.sans],
         caveat: ['Caveat', 'cursive']
       },
       colors: { primary: "#E82C2A", cyanAKC: "#36BBFC", lightFont: "#6B7280", defaultFontColor: "#1F2937", cyanBtnTextColor: '#374151', greyBg: '#E5E7EB' },
