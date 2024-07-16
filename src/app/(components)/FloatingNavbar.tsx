@@ -1,53 +1,72 @@
-// components/FloatingNavbar.tsx
+"use client";
+
 import Link from "next/link";
+import React from "react";
+
+type NavItem = {
+  name: string;
+  url: string;
+};
+
+const navItems: Array<NavItem> = [
+  {
+    name: "Home",
+    url: "#home",
+  },
+  {
+    name: "How it works",
+    url: "#how-it-works",
+  },
+  {
+    name: "The Competition",
+    url: "#the-competition",
+  },
+  {
+    name: "Pre-registration",
+    url: "#pre-registration",
+  },
+  {
+    name: "Contact Us",
+    url: "#contact-us",
+  },
+];
+
+const NavTab: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
+  children,
+  href,
+  ...props
+}) => {
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const targetId = (href ?? "").replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <Link
+      href={href ?? "#"}
+      className="text-altTextColor hover:bg-primary rounded-full font-bold transition-colors hover:text-white px-4 py-2"
+      onClick={smoothScroll}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+};
 
 const FloatingNavbar = () => {
   return (
-    <nav className="fixed bottom-4 left-1/2 w-10/12 max-w-2xl -translate-x-1/2 transform rounded-full bg-white px-4 py-2 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06),0_8px_24px_-4px_rgba(0,0,0,0.1)]">
-      <div className="flex items-center justify-center">
-        <ul className="flex w-full max-w-xl items-center justify-between text-xs sm:text-sm md:text-base">
-          <li>
-            <Link
-              href="/"
-              className="px-2 py-1 transition-colors hover:text-blue-500"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/how-it-works"
-              className="px-2 py-1 transition-colors hover:text-blue-500"
-            >
-              How it works
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/competition"
-              className="px-2 py-1 transition-colors hover:text-blue-500"
-            >
-              The Competition
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/pre-registration"
-              className="px-2 py-1 transition-colors hover:text-blue-500"
-            >
-              Pre-registration
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contact"
-              className="px-2 py-1 transition-colors hover:text-blue-500"
-            >
-              Contact Us
-            </Link>
-          </li>
+    <nav className="fixed bottom-4 left-1/2 flex -translate-x-1/2 transform rounded-full border-2 border-gray-700 bg-[#F4F6F8] px-2 py-[10px] shadow-[2.16px_4.32px_0_#12141d]">
+        <ul className="flex w-full flex-1 items-center justify-between text-xs sm:text-sm md:text-base">
+          {navItems.map(({ name, url }) => (
+            <li className="" key={name}>
+              <NavTab href={url}>{name}</NavTab>
+            </li>
+          ))}
         </ul>
-      </div>
     </nav>
   );
 };

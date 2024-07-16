@@ -9,7 +9,7 @@ const caveat = Caveat({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-white">
-      <main className="w-full px-2">
+      <main id="home" className="w-full px-2">
         <div className="top-0 mb-2 flex flex-wrap gap-8 md:flex-nowrap">
           <div className="flex w-full flex-1 flex-col justify-center gap-12 md:w-1/2">
             <span className="flex h-[32px] w-[180px] items-center justify-center rounded-full bg-greyBg px-[12px] py-[6px] text-sm tracking-[2px]">
@@ -75,7 +75,7 @@ export default function Home() {
         <div className="design-bar absolute left-0 right-0 h-16"></div>
       </div>
 
-      <section>
+      <section id="how-it-works">
         <div className="mt-16 flex items-center flex-col gap-[0.125rem]">
           <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
             How it works
