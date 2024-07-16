@@ -1,44 +1,56 @@
 import React from "react";
-import Link from "next/link";
+import Image from "next/image";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-200 py-4">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center">
-          {/* Instagram Icon */}
-          <Link
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              className="mb-4 h-6 w-6"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </Link>
+    <footer className="border-t border-gray-200 bg-white py-4">
+      <div className="container mx-auto mb-8 flex max-w-6xl flex-wrap items-start justify-between">
+        <div className="mb-4 flex flex-col items-start">
+          <span className="mb-2 text-sm font-bold">An initiative by</span>
+          <Image
+            src="/images/dcpowerparts-logo.png"
+            alt="DCPOWERPARTS"
+            width={150}
+            height={36}
+          />
+        </div>
 
-          {/* Logos */}
-          <div className="mb-4 flex w-full justify-between">
-            <div className="text-sm text-gray-600">
-              An initiative by
-              <div className="rounded bg-gray-300 px-4 py-2">DS Logo</div>
-            </div>
-            <div className="rounded bg-gray-300 px-4 py-2">AKC Logo</div>
-            <div className="text-right text-sm text-gray-600">
-              Enabled by
-              <div className="rounded bg-gray-300 px-4 py-2">LBS Logo</div>
-            </div>
-          </div>
+        <div className="mb-4 flex flex-col items-center">
+          <Image
+            src="/images/AKCLogo_ALt.png"
+            alt="Athletics Kids Cup"
+            width={180}
+            height={48}
+            className="mb-4"
+          />
+        </div>
 
-          {/* Copyright */}
-          <div className="text-sm text-gray-600">
-            © 2024. All Rights Reserved by Dspowerparts
+        <div className="mb-4 flex flex-col items-center">
+          <span className="mb-2 text-sm font-bold">Follow us on Social</span>
+          <div className="flex space-x-4">
+            <Image
+              src="/images/linkedin-icon.png"
+              alt="LinkedIn"
+              width={30}
+              height={30}
+            />
+            <Image
+              src="/images/instagram-icon.png"
+              alt="Instagram"
+              width={30}
+              height={30}
+            />
           </div>
         </div>
+
+        <div className="mb-4 flex flex-col items-end">
+          <span className="mb-2 text-sm font-bold">Enabled by</span>
+          <Image src="/images/ubs-logo.png" alt="UBS" width={72} height={36} />
+        </div>
+      </div>
+      <div className="flex items-center justify-between bg-gray-800 px-4 py-4 text-xs text-white">
+        <div>© 2024 DCpowerparts</div>
+        <div>All Rights Reserved by DCpowerparts</div>
       </div>
     </footer>
   );

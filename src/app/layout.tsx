@@ -7,6 +7,7 @@ import '@fontsource/plus-jakarta-sans/400.css';
 import '@fontsource/plus-jakarta-sans/500.css';
 import '@fontsource/plus-jakarta-sans/700.css';
 import Header from './(components)/LandingPageHeader';
+import Footer from './(components)/Footer';
 
 export const metadata = {
   title: "Athletic Kids Cup",
@@ -38,6 +39,7 @@ export default function RootLayout({
             <FloatingNavbar />
           </div>
         </div>
+        <Footer/>
       </body>
     </html>
   );
