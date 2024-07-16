@@ -3,5 +3,12 @@
 @tailwind utilities;
 
 html {
-    @apply text-defaultFontColor;
+  @apply text-defaultFontColor;
+}
+
+.design-bar {
+  background-image: url('/images/design-bar.png');
+  background-size: auto 100%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }

@@ -18,14 +18,14 @@ export default function Home() {
             </span>
             <div className="flex w-max flex-col">
               <div className="flex gap-4">
-                <span className="text-5xl font-semibold">Running</span>
+                <h1 className="text-5xl font-semibold">Running</h1>
                 <Image
                   src="/images/svgs/rjt-orange.svg"
                   width={35.4}
                   height={33.52}
                   alt="orange icon"
                 />
-                <span className="text-5xl font-semibold">Jumping</span>
+                <h1 className="text-5xl font-semibold">Jumping</h1>
               </div>
               <div className="flex justify-center gap-4">
                 <Image
@@ -34,7 +34,7 @@ export default function Home() {
                   height={28.71}
                   alt="black icon"
                 />
-                <span className="text-5xl font-semibold">Throwing</span>
+                <h1 className="text-5xl font-semibold">Throwing</h1>
                 <Image
                   src="/images/svgs/rjt-right.svg"
                   width={29.45}
@@ -43,13 +43,16 @@ export default function Home() {
                 />
               </div>
             </div>
-            <p className="max-w-[479px] text-base font-medium tracking-[-0.01em] leading-7">
+            <p className="max-w-[486px] text-base font-medium leading-7 tracking-[-0.01em]">
               The Athletics Kids Cup moves the kids! The three basic movement
               forms that are required in almost every sport are the basis of
               this unique sports initiative in India. Let&apos;s move the
               children together and encourage their personal development.
             </p>
-            <Button variant={ButtonVariant.RED} className="flex gap-3 items-center">
+            <Button
+              variant={ButtonVariant.RED}
+              className="flex items-center gap-3"
+            >
               <span>Pre-register your school</span>
               <Arrow className="w-5 -rotate-45" fill="white" />
             </Button>
@@ -67,13 +70,24 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div
-        className="w-full h-16"
-        style={{
-          backgroundImage: "url('/images/design-bar.png')",
-          backgroundSize: "auto 100%",
-        }}
-      ></div>
+
+      <div className="relative h-16 w-full">
+        <div className="design-bar absolute left-0 right-0 h-16"></div>
+      </div>
+
+      <section>
+        <div className="mt-16 flex items-center flex-col gap-[0.125rem]">
+          <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
+            How it works
+          </h2>
+          <Image
+            src="/images/svgs/green-squiggle.svg"
+            width={114.86}
+            height={16}
+            alt="black icon"
+          />
+        </div>
+      </section>
     </div>
   );
 }
