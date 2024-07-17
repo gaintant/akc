@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 html {
-    @apply text-defaultFontColor;
+  @apply text-defaultFontColor;
+}
+
+.oval-image {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 4px solid black;
+  overflow: hidden;
 }
