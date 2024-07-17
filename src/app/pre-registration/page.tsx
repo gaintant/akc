@@ -61,7 +61,7 @@ const fields = [
         id:10,
         name: "Daylight Telephone Number",
         isRequired: true,
-        inputType: "number"
+        inputType: "tel"
     },
     {
         id:11,
@@ -76,7 +76,7 @@ const Page: React.FC = () => {
     return (
         <div className="m-6 p-5 md:w-3/4 lg:w-3/4 xl:w-2/3 h-7/8 mx-auto bg-white shadow-xl rounded-lg">
             <div className="font-bold .text-gray-800 text-xl text-center mb-6 border-b-2 pb-2">Pre Registration</div>
-            <form action={createRegistrationData} method="POST" >
+            <form action={createRegistrationData} method="POST">
 
                 {/* School Details Section */}
                 <div className="border-b-2 pb-6">

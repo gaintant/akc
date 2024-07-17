@@ -13,7 +13,7 @@ const FormSchema = z.object({
     SchoolWebsite: z.string(),
     FirstName: z.string(),
     Surname: z.string(),
-    DaylightTelephoneNumber: z.coerce.number(),
+    DaylightTelephoneNumber: z.string().min(10).max(10).refine(validator.isMobilePhone),
     email: z.string(),
     // drop: z.string(),
     date: z.string(),
