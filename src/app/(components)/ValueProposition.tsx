@@ -35,7 +35,7 @@ const ValueCard: React.FC<ValueCardData> = ({ icon, title, description }) => {
   return (
     <div className="flex max-w-sm flex-col items-center text-center">
       <div className="relative mb-4 h-20 w-20">
-        <Image src={icon} alt={title} layout="fill" objectFit="contain" />
+        <Image src={icon} alt={title} fill={true} />
       </div>
       <h3 className="text-xl font-semibold">{title.split(" ")[0]}</h3>
       <p className={`${caveat.className} mb-1 text-3xl font-medium italic`}>

@@ -1,11 +1,8 @@
-import { Caveat } from "next/font/google";
 import Image from "next/image";
 import Button, { ButtonVariant } from "../(components)/Button";
 import Arrow from "../(components)/Icons/Arrow";
 import ValueProposition from "../(components)/ValueProposition";
-
-// TODO: to use caveat for cursive fonts
-const caveat = Caveat({ subsets: ["latin"] });
+import VideoPlayer from "../(components)/VideoPlayer";
 
 export default function Home() {
   return (
@@ -63,7 +60,7 @@ export default function Home() {
               <Image
                 src="/images/three-kids-hero.png"
                 alt="Athletic Kids Images"
-                layout="fill"
+                fill={true}
                 objectFit="contain"
                 quality={100}
               />
@@ -94,7 +91,15 @@ export default function Home() {
       </section>
 
       <section id="value-proposition" className="mt-8">
-        <ValueProposition/>
+        <ValueProposition />
+      </section>
+
+      <section id="akc-video" className="my-12">
+        <VideoPlayer
+          thumbnailSrc="/images/Athletics_Kids_Cup_Mumbai.png"
+          videoSrc="/videos/sample_vid.webm"
+          playIconSrc="/images/svgs/vid-play-button.svg"
+        />
       </section>
     </div>
   );

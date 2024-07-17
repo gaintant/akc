@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
 
         <div className="mb-4 flex flex-col items-end">
           <span className="mb-2 text-sm font-bold">Enabled by</span>
-          <Image src="/images/ubs-logo.png" alt="UBS" width={72} height={36} />
+          <Image src="/images/ubs-logo.png" priority alt="UBS" width={72} height={36} />
         </div>
       </div>
       <div className="flex items-center justify-between bg-gray-800 px-4 py-4 text-xs text-white">
