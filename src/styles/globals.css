@@ -12,3 +12,8 @@ html {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
+
+.how-it-works-bg {
+  background-image: url('/images/green-bg.png');
+  background-repeat: no-repeat;
+}

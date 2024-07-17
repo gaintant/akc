@@ -76,7 +76,7 @@ export default function Home() {
         <div className="design-bar absolute left-0 right-0 h-16"></div>
       </div>
 
-      <section id="how-it-works">
+      <section id="how-it-works" className="gap-8 flex flex-col">
         <div className="mt-16 flex items-center flex-col gap-[0.125rem]">
           <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
             How it works
@@ -87,6 +87,9 @@ export default function Home() {
             height={16}
             alt="black icon"
           />
+        </div>
+        <div className="how-it-works-bg h-[900px]">
+          { /* TODO: How It Works Content */ }
         </div>
       </section>
 
