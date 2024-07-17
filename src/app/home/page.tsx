@@ -2,6 +2,7 @@ import { Caveat } from "next/font/google";
 import Image from "next/image";
 import Button, { ButtonVariant } from "../(components)/Button";
 import Arrow from "../(components)/Icons/Arrow";
+import ValueProposition from "../(components)/ValueProposition";
 
 // TODO: to use caveat for cursive fonts
 const caveat = Caveat({ subsets: ["latin"] });
@@ -87,6 +88,10 @@ export default function Home() {
             alt="black icon"
           />
         </div>
+      </section>
+
+      <section id="value-proposition" className="mt-8">
+        <ValueProposition/>
       </section>
     </div>
   );
