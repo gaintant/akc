@@ -12,7 +12,7 @@ const InputField: React.FC<IInputField> = (props) =>  {
     inputFieldName = inputFieldName.replace(/\s+/g, '')
     // console.log(inputFieldName)
     return (
-        <div className="self-center m-5">
+        <div >
             <label className="block text-xs leading-5 .text-gray-700 mb-1">
                 {props.labelName}
                 

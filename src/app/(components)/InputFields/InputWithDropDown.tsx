@@ -7,14 +7,16 @@ interface IInputWithDropDown {
 }
 
 const InputWithDropDown: React.FC<IInputWithDropDown> = ({ labelName, listOfDropdown, isRequired }) => {
+  let inputFieldName:string = labelName.length > 0 ? labelName : 'inputField'
+  inputFieldName = inputFieldName.replace(/\s+/g, '')
   return (
-    <div className="m-5">
+    <div>
       <label className="block text-xs leading-5 .text-gray-700 mb-1">
         {labelName}
         {isRequired && <span className="text-red-600"> *</span>}
       </label>
-      <select name="drop" 
-        className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4 w-72" 
+      <select name={inputFieldName}
+        className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4" 
         required={isRequired}>
         <option value="--Select--" hidden className="text-xs">
         </option>

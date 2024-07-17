@@ -1,5 +1,6 @@
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import FloatingNavbar from "./(components)/FloatingNavbar";
+import InputFieldParent from './(components)/InputFields/InputFieldParent';
 
 import "~/styles/globals.css";
 import '@fontsource/plus-jakarta-sans/300.css';
@@ -36,6 +37,7 @@ export default function RootLayout({
           <div className="container flex-1 flex flex-col">
             <Header />
             {children}
+            <InputFieldParent inputType="phone" labelName="ph" isRequired={false} />
             <FloatingNavbar />
             <Footer/>
           </div>
