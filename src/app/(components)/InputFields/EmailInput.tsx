@@ -6,7 +6,7 @@ interface IEmailInput {
 const EmailInput: React.FC<IEmailInput> = ({ isRequired }) => {
   return (
     <div className="m-5">
-      <label className="block text-base leading-6 text-gray-900 mb-1">
+      <label className="block text-xs leading-5 .text-gray-700 mb-1">
         Email Address
         {isRequired && <span className="text-red-600"> *</span>}
       </label>
@@ -14,7 +14,7 @@ const EmailInput: React.FC<IEmailInput> = ({ isRequired }) => {
         name="email"
         type="email"
         placeholder="Email"
-        className="border-gray-200 border-4 h-10 rounded-md placeholder-gray-400 p-2"
+        className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4 w-72"
         required={isRequired}
       />
     </div>
