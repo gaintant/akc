@@ -100,11 +100,14 @@ export default function Home() {
       <section>{/* TODO: The Tables */}</section>
 
       <section id="pre-registration">
-        <div className="flex relative h-[370px]">
-          <div className="ribbon-down absolute top-0 w-full h-full"></div>
-          <div className="ribbon-up absolute top-[100px] w-full h-full"></div>
-          <div className="flex flex-1 justify-center mt-[59.51px]">
-          <DiamondButton />
+        <div className="relative flex h-[370px]">
+          <div className="ribbon-down absolute top-0 h-full w-full"></div>
+          <div className="ribbon-up absolute top-[100px] h-full w-full"></div>
+          <div className="mt-[59.51px] flex flex-1 justify-center">
+            <DiamondButton variant={ButtonVariant.RED}>
+              <span>Pre-register your school</span>
+              <Arrow className="w-5 -rotate-45" fill="white" />
+            </DiamondButton>
           </div>
         </div>
       </section>
@@ -119,6 +122,12 @@ export default function Home() {
           videoSrc="/videos/sample_vid.webm"
           playIconSrc="/images/svgs/vid-play-button.svg"
         />
+      </section>
+
+      <section id="contact-us">
+        <div className="contact-us-bg h-[306px]">
+          {/* TODO: Contact Us Content */}
+        </div>
       </section>
     </div>
   );

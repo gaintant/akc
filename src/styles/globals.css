@@ -27,6 +27,12 @@ html {
   background-size: contain;
 }
 
+.contact-us-bg {
+  background-image: url('/images/contact-us-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .ribbon-up {
   background-image: url('/images/ribbon-up.png');
   background-repeat: no-repeat;
