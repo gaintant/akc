@@ -21,7 +21,7 @@ const InputField: React.FC<IInputField> = (props) =>  {
                 }
             </label>
             <input name={inputFieldName} placeholder="text" 
-                className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4 w-72">
+                className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4">
             </input>
         </div>
     )
