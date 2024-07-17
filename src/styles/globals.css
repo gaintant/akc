@@ -11,9 +11,30 @@ html {
   background-size: auto 100%;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  background-size: contain;
 }
 
 .how-it-works-bg {
   background-image: url('/images/green-bg.png');
   background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.the-competition-bg {
+  background-image: url('/images/the-competition-bg.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.ribbon-up {
+  background-image: url('/images/ribbon-up.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ribbon-down {
+  background-image: url('/images/ribbon-down.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }

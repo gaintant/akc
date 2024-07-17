@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button, { ButtonVariant } from "../(components)/Button";
+import DiamondButton from "../(components)/DiamondButton";
 import Arrow from "../(components)/Icons/Arrow";
 import ValueProposition from "../(components)/ValueProposition";
 import VideoPlayer from "../(components)/VideoPlayer";
@@ -73,8 +74,8 @@ export default function Home() {
         <div className="design-bar absolute left-0 right-0 h-16"></div>
       </div>
 
-      <section id="how-it-works" className="gap-8 flex flex-col">
-        <div className="mt-16 flex items-center flex-col gap-[0.125rem]">
+      <section id="how-it-works" className="flex flex-col gap-8">
+        <div className="mt-16 flex flex-col items-center gap-[0.125rem]">
           <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
             How it works
           </h2>
@@ -86,7 +87,25 @@ export default function Home() {
           />
         </div>
         <div className="how-it-works-bg h-[900px]">
-          { /* TODO: How It Works Content */ }
+          {/* TODO: How It Works Content */}
+        </div>
+      </section>
+
+      <section id="the-competition" className="mt-20">
+        <div className="the-competition-bg h-[900px]">
+          {/* TODO: The Competition Content */}
+        </div>
+      </section>
+
+      <section>{/* TODO: The Tables */}</section>
+
+      <section id="pre-registration">
+        <div className="flex relative h-[370px]">
+          <div className="ribbon-down absolute top-0 w-full h-full"></div>
+          <div className="ribbon-up absolute top-[100px] w-full h-full"></div>
+          <div className="flex flex-1 justify-center mt-[59.51px]">
+          <DiamondButton />
+          </div>
         </div>
       </section>
 
