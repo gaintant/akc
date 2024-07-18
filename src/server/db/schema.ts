@@ -1,6 +1,4 @@
-import { sql } from "drizzle-orm";
 import {
-  index,
   pgTableCreator,
   serial,
   timestamp,
@@ -12,28 +10,25 @@ import {
   text,
   unique,
   uuid,
-  foreignKey,
   primaryKey,
 } from "drizzle-orm/pg-core";
 
 // Prefixing table names with 'akc_'
 const createTable = pgTableCreator((name) => `akc_${name}`);
 
-export const pre_registration_data = createTable (
-  "pre_registration", {
-    schoolId: serial("school_id").primaryKey(),
-    schoolName: varchar("school_name", { length: 255 }).notNull(),
-    schoolAddress: text("school_address"),
-    schoolCity: varchar("school_city", { length: 255 }),
-    schoolState: varchar("school_state", { length: 255 }),
-    schoolPincode: varchar("school_pincode", { length: 6 }),
-    schoolWebsite: varchar("school_website", { length: 255 }),
-    firstName: varchar("firstname", { length: 255 }),
-    surname: varchar("surname", { length: 255 }),
-    coordinatorMobileNo: varchar("coordinator_mobile_no", { length: 10 }),
-    contactEmail: varchar("contact_email", { length: 255 })
-  }
-)
+export const pre_registration_data = createTable("pre_registration", {
+  schoolId: serial("school_id").primaryKey(),
+  schoolName: varchar("school_name", { length: 255 }).notNull(),
+  schoolAddress: text("school_address"),
+  schoolCity: varchar("school_city", { length: 255 }),
+  schoolState: varchar("school_state", { length: 255 }),
+  schoolPincode: varchar("school_pincode", { length: 6 }),
+  schoolWebsite: varchar("school_website", { length: 255 }),
+  firstName: varchar("firstname", { length: 255 }),
+  surname: varchar("surname", { length: 255 }),
+  coordinatorMobileNo: varchar("coordinator_mobile_no", { length: 10 }),
+  contactEmail: varchar("contact_email", { length: 255 }).unique(),
+});
 
 // Schools table
 export const schools = createTable(
