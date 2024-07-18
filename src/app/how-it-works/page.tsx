@@ -49,11 +49,11 @@ const HowItWorks = () => {
 
   return (
     <div className="min-h-screen md:bg-white">
-      {/* <div className="p-6 text-center font-sans text-3xl font-bold underline underline-offset-2">
+      {/* <div className=".how-it-works-heading p-6 text-center text-2xl font-semibold">
         How it works
       </div> */}
       <div className="relative flex min-h-screen flex-col md:flex-row">
-        <div className="w-full bg-green-500 p-4 md:w-[80%] md:rounded-r-[30%]">
+        <div className="order-2 w-full bg-[#57D081] p-4 md:order-1 md:w-[80%] md:rounded-r-[30%]">
           <div className="flex flex-col items-start md:ml-8">
             {cards.map((card) => (
               <ExpandableCard
@@ -68,7 +68,7 @@ const HowItWorks = () => {
             ))}
           </div>
         </div>
-        <div className="relative flex w-full justify-center bg-white md:h-screen md:w-[30%] md:bg-transparent">
+        <div className="relative order-1 flex w-full justify-center bg-white md:order-2 md:h-screen md:w-[30%] md:bg-transparent">
           <img
             src="/images/how-it-works.jpeg"
             alt="Right Image"
