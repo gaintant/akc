@@ -34,10 +34,12 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
             </svg>
           )}
         </button>
-        <h2 className="ml-4 text-xl font-bold">{heading}</h2>
+        <h2 className=".how-it-works-heading ml-4 text-xl font-bold">
+          {heading}
+        </h2>
       </div>
       {isExpanded && heading == "Requirements of an Athelectics Kids Cup" ? (
-        <div className="ml-12 mt-4 font-semibold">
+        <div className=".how-it-works-content ml-12 mt-4 font-semibold">
           <ol className="list-inside list-decimal">
             <li>Registration of the school sports day on our website</li>
             <li>Wearing the starting numbers supplied free of charge</li>
@@ -51,7 +53,7 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
         </div>
       ) : isExpanded &&
         heading == "Advantages of organising an Atheletics Kids Cup" ? (
-        <div className="ml-12 mt-4 font-semibold">
+        <div className=".how-it-works-content ml-12 mt-4 font-semibold">
           {content}
           <br />
           <br />
@@ -77,7 +79,11 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
           </ul>
         </div>
       ) : (
-        isExpanded && <div className="ml-12 mt-4 font-semibold">{content}</div>
+        isExpanded && (
+          <div className=".how-it-works-content ml-12 mt-4 font-semibold">
+            {content}
+          </div>
+        )
       )}
     </div>
   );

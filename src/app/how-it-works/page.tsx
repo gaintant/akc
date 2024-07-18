@@ -53,7 +53,7 @@ const HowItWorks = () => {
         How it works
       </div>
       <div className="relative flex min-h-screen flex-col md:flex-row">
-        <div className="w-full bg-green-500 p-4 md:w-[80%] md:rounded-r-[30%]">
+        <div className="w-full bg-[#57D081] p-4 md:w-[80%] md:rounded-r-[30%]">
           <div className="flex flex-col items-start md:ml-8">
             {cards.map((card) => (
               <ExpandableCard
