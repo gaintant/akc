@@ -1,5 +1,6 @@
 'use server';
 import { z } from 'zod';
+import validator from 'validator';
 
 const FormSchema = z.object({
     id: z.string(),
@@ -12,7 +13,7 @@ const FormSchema = z.object({
     SchoolWebsite: z.string(),
     FirstName: z.string(),
     Surname: z.string(),
-    DaylightTelephonenumber: z.coerce.number(),
+    DaylightTelephoneNumber: z.string().min(10).max(10).refine(validator.isMobilePhone),
     email: z.string(),
     // drop: z.string(),
     date: z.string(),
@@ -22,5 +23,6 @@ export async function createRegistrationData(formData: FormData) {
     const CreateInvoice = FormSchema.omit({ id: true, date: true });
     const data = CreateInvoice.parse(Object.fromEntries(formData.entries()))
     console.log(data)
-    // console.log(typeof data.DaylightTelephonenumber)
+    console.log(typeof data.DaylightTelephoneNumber)
+    console.log(typeof data.Pincode)
 }
