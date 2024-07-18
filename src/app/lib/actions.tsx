@@ -34,9 +34,9 @@ export async function createRegistrationData(formData: FormData) {
     try{
         const data = CreateInvoice.parse(Object.fromEntries(formData.entries()))
         // console.log(data)
-        // console.log(formData.get("SchoolName"))
-        // console.log(formData.get("Email"))
-        await sendVerificationEmail('ravishawork@gmail.com', "abc")
+        // console.log(formData.get("email"))
+        // console.log(data.email)
+        await sendVerificationEmail(data.email as string, "abc")
         
         await db.insert(pre_registration_data).values({
             contactEmail: "ab",
@@ -75,7 +75,7 @@ const transporter = nodemailer.createTransport({
 
 export async function sendVerificationEmail(email: string, token: string) {
   const verificationLink = `${process.env.NEXT_PUBLIC_BASE_URL}/verify-email?token=${token}`;
-
+  console.log(verificationLink)
   await transporter.sendMail({
     from: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
     to: email,
