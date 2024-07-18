@@ -7,7 +7,7 @@ const fields = [
         id:1,
         name: "School ID",
         isRequired: true,
-        inputType: "text"
+        inputType: "number"
     },
     {
         id:2,
@@ -72,7 +72,7 @@ const fields = [
 
 ]
 
-const Page: React.FC = () => {
+const PreRegistration: React.FC = () => {
     return (
         <div className="m-6 p-5 md:w-7/8 lg:w-3/4 xl:w-2/3 h-7/8 mx-auto bg-white shadow-xl rounded-lg">
             <div className="font-bold .text-gray-800 text-xl text-center mb-6 border-b-2 pb-2">Pre Registration</div>
@@ -83,7 +83,6 @@ const Page: React.FC = () => {
                     <div className="flex flex-wrap">
                         {fields.map((item) => (
                         <div className="w-full md:w-1/3 h-20" key={item.id}>
-                            {/*add telephone number rendering*/}
                             <InputFieldParent inputType={item.inputType} 
                             labelName={item.name} isRequired={item.isRequired} />
                         </div>))}
@@ -106,4 +105,4 @@ const Page: React.FC = () => {
     );
 };
 
-export default Page;
+export default PreRegistration;

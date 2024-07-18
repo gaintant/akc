@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation';
 import nodemailer from "nodemailer";
 
 const FormSchema = z.object({
-    id: z.string(),
+    id: z.coerce.number(),
     SchoolID: z.string(),
     SchoolName: z.string(),
     StreetAddress: z.string(),
@@ -39,17 +39,17 @@ export async function createRegistrationData(formData: FormData) {
         await sendVerificationEmail(data.email as string, "abc")
         
         await db.insert(pre_registration_data).values({
-            contactEmail: "ab",
-            schoolName: "k",
-            coordinatorMobileNo: "k",
-            firstName: "k",
-            schoolAddress: "o",
-            schoolCity: "p",
-            schoolId: 1,
-            schoolPincode: "1234",
-            schoolState: "opp",
-            schoolWebsite: "pp",
-            surname: "pppp",
+            contactEmail: data.email,
+            schoolName: data.SchoolName,
+            coordinatorMobileNo: data.DaylightTelephoneNumber,
+            firstName: data.FirstName,
+            schoolAddress: data.StreetAddress,
+            schoolCity: data.City,
+            schoolId: parseInt(data.SchoolID),
+            schoolPincode: data.Pincode,
+            schoolState: data.State,
+            schoolWebsite: data.SchoolWebsite,
+            surname: data.SchoolWebsite,
         })
         // console.log("db line passed")
         revalidatePath('/lib')
