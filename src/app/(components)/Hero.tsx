@@ -1,3 +1,5 @@
+'use client'
+
 {
   /*
   Heads up! 👋
@@ -5,14 +7,23 @@
   This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
 */
 }
-import React from "react";
+
+import React, { useState } from "react";
 import IconContainer from "./IconContainer";
+import Button, { ButtonVariant } from "../(components)/Button";
+import Arrow from "../(components)/Icons/Arrow";
+import PreRegistration from "../pre-registration/page";
+
+
 
 const Hero = () => {
+  const [preRegisterFormVisible, setPreRegisterFormVisible] = useState(false)
   return (
     <>
       {/* <section className="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat"> */}
       <section className="relative bg-cover bg-center bg-no-repeat">
+        {preRegisterFormVisible && <PreRegistration />}
+        
         <div className="absolute inset-0 bg-white/35"></div>
         {/* Lighter opacity */}
         <div className="relative mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:flex lg:h-screen lg:items-start lg:px-8">
@@ -31,15 +42,17 @@ const Hero = () => {
               Athletics Kids Cup ambassador
             </p>
 
-            <div className="mt-8 flex flex-col items-start gap-4 text-center">
-              <p>Pre-register your school now!</p>
-              <a
-                href="/pre-registration"
-                className="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+
+            <a href="/pre-registration" onClick={() => setPreRegisterFormVisible(!preRegisterFormVisible)}>
+              <Button
+                variant={ButtonVariant.RED}
+                className="flex items-center gap-3"
               >
-                School pre-registration
-              </a>
-            </div>
+                <span>Pre-register your school</span>
+                <Arrow className="w-5 -rotate-45" fill="white" />
+              </Button>
+            </a>
+
           </div>
         </div>
       </section>
