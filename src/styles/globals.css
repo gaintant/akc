@@ -72,3 +72,14 @@ html {
   border: 4px solid black;
   overflow: hidden;
 }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -12,7 +12,7 @@ interface IButton extends React.ComponentProps<"button"> {
 const getBGColor = (variant: ButtonVariant) => {
   return variant === ButtonVariant.RED
     ? "bg-primary"
-    : "bg-cyanAKC text-altBtnTextColor";
+    : "bg-cyanAKC text-altTextColor";
 };
 
 const Button: React.FC<IButton> = ({

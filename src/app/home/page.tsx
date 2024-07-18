@@ -1,14 +1,15 @@
 import Image from "next/image";
-import Button, { ButtonVariant } from "../(components)/Button";
+import { ButtonVariant } from "../(components)/Button";
 import DiamondButton from "../(components)/DiamondButton";
 import Arrow from "../(components)/Icons/Arrow";
 import ValueProposition from "../(components)/ValueProposition";
 import VideoPlayer from "../(components)/VideoPlayer";
 import HowItWorks from "../how-it-works/page";
+import PreRegistrationButtonWithModal from "../(components)/PreRegistrationButtonWithModal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-white">
+    <div id="home-container" className="min-h-screen w-full bg-white">
       <main id="home" className="w-full px-2">
         <div className="top-0 mb-2 flex flex-wrap gap-8 md:flex-nowrap">
           <div className="flex w-full flex-1 flex-col justify-center gap-12 md:w-1/2">
@@ -49,13 +50,7 @@ export default function Home() {
               this unique sports initiative in India. Let&apos;s move the
               children together and encourage their personal development.
             </p>
-            <Button
-              variant={ButtonVariant.RED}
-              className="flex items-center gap-3"
-            >
-              <span>Pre-register your school</span>
-              <Arrow className="w-5 -rotate-45" fill="white" />
-            </Button>
+            <PreRegistrationButtonWithModal />
           </div>
           <div className="top-0 mb-2 mt-[-50px] flex w-full flex-1 flex-wrap items-center justify-center gap-4 md:w-1/2">
             <div className="relative mr-2 h-[700px] w-full">

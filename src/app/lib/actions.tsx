@@ -30,6 +30,7 @@ const client = postgres(connectionString);
 const db = drizzle(client);
 
 export async function createRegistrationData(formData: FormData) {
+  "use server";
   const CreateInvoice = FormSchema.omit({ id: true, date: true });
   try {
     const data = CreateInvoice.parse(Object.fromEntries(formData.entries()));
