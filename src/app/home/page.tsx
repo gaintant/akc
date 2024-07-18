@@ -4,6 +4,7 @@ import DiamondButton from "../(components)/DiamondButton";
 import Arrow from "../(components)/Icons/Arrow";
 import ValueProposition from "../(components)/ValueProposition";
 import VideoPlayer from "../(components)/VideoPlayer";
+import Competition from "../(components)/competition";
 
 export default function Home() {
   return (
@@ -93,7 +94,7 @@ export default function Home() {
 
       <section id="the-competition" className="mt-20">
         <div className="the-competition-bg h-[900px]">
-          {/* TODO: The Competition Content */}
+         <Competition/>
         </div>
       </section>
 

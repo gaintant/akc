@@ -2,7 +2,7 @@ import React from 'react';
 
 const Competition: React.FC = () => {
     return (
-        <div className="p-6 bg-white rounded-lg shadow-md max-w-full mx-auto">
+        <div className="p-6  rounded-lg shadow-md max-w-full mx-auto">
             <div className="flex justify-between lg:flex-row mb-4 px-8 lg:px-32">
                 <div className="w-full lg:w-1/3 flex flex-col justify-between items-start mb-4 lg:mb-0 lg:mr-4">
                     <div className="relative w-full h-64 mb-4">
