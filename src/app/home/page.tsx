@@ -4,6 +4,7 @@ import DiamondButton from "../(components)/DiamondButton";
 import Arrow from "../(components)/Icons/Arrow";
 import ValueProposition from "../(components)/ValueProposition";
 import VideoPlayer from "../(components)/VideoPlayer";
+import HowItWorks from "../how-it-works/page";
 
 export default function Home() {
   return (
@@ -87,7 +88,7 @@ export default function Home() {
           />
         </div>
         <div className="how-it-works-bg h-[900px]">
-          {/* TODO: How It Works Content */}
+          <HowItWorks />
         </div>
       </section>
 
