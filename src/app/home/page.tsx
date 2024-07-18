@@ -1,15 +1,15 @@
-import { Caveat } from "next/font/google";
 import Image from "next/image";
 import Button, { ButtonVariant } from "../(components)/Button";
+import DiamondButton from "../(components)/DiamondButton";
 import Arrow from "../(components)/Icons/Arrow";
-
-// TODO: to use caveat for cursive fonts
-const caveat = Caveat({ subsets: ["latin"] });
+import ValueProposition from "../(components)/ValueProposition";
+import VideoPlayer from "../(components)/VideoPlayer";
+import HowItWorks from "../how-it-works/page";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-white">
-      <main className="w-full px-2">
+      <main id="home" className="w-full px-2">
         <div className="top-0 mb-2 flex flex-wrap gap-8 md:flex-nowrap">
           <div className="flex w-full flex-1 flex-col justify-center gap-12 md:w-1/2">
             <span className="flex h-[32px] w-[180px] items-center justify-center rounded-full bg-greyBg px-[12px] py-[6px] text-sm tracking-[2px]">
@@ -18,14 +18,14 @@ export default function Home() {
             </span>
             <div className="flex w-max flex-col">
               <div className="flex gap-4">
-                <span className="text-5xl font-semibold">Running</span>
+                <h1 className="text-5xl font-semibold">Running</h1>
                 <Image
                   src="/images/svgs/rjt-orange.svg"
                   width={35.4}
                   height={33.52}
                   alt="orange icon"
                 />
-                <span className="text-5xl font-semibold">Jumping</span>
+                <h1 className="text-5xl font-semibold">Jumping</h1>
               </div>
               <div className="flex justify-center gap-4">
                 <Image
@@ -34,7 +34,7 @@ export default function Home() {
                   height={28.71}
                   alt="black icon"
                 />
-                <span className="text-5xl font-semibold">Throwing</span>
+                <h1 className="text-5xl font-semibold">Throwing</h1>
                 <Image
                   src="/images/svgs/rjt-right.svg"
                   width={29.45}
@@ -43,13 +43,16 @@ export default function Home() {
                 />
               </div>
             </div>
-            <p className="max-w-[479px] text-base font-medium tracking-[-0.01em] leading-7">
+            <p className="max-w-[486px] text-base font-medium leading-7 tracking-[-0.01em]">
               The Athletics Kids Cup moves the kids! The three basic movement
               forms that are required in almost every sport are the basis of
               this unique sports initiative in India. Let&apos;s move the
               children together and encourage their personal development.
             </p>
-            <Button variant={ButtonVariant.RED} className="flex gap-3 items-center">
+            <Button
+              variant={ButtonVariant.RED}
+              className="flex items-center gap-3"
+            >
               <span>Pre-register your school</span>
               <Arrow className="w-5 -rotate-45" fill="white" />
             </Button>
@@ -59,7 +62,7 @@ export default function Home() {
               <Image
                 src="/images/three-kids-hero.png"
                 alt="Athletic Kids Images"
-                layout="fill"
+                fill={true}
                 objectFit="contain"
                 quality={100}
               />
@@ -67,13 +70,66 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div
-        className="w-full h-16"
-        style={{
-          backgroundImage: "url('/images/design-bar.png')",
-          backgroundSize: "auto 100%",
-        }}
-      ></div>
+
+      <div className="relative h-16 w-full">
+        <div className="design-bar absolute left-0 right-0 h-16"></div>
+      </div>
+
+      <section id="how-it-works" className="flex flex-col gap-8">
+        <div className="mt-16 flex flex-col items-center gap-[0.125rem]">
+          <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
+            How it works
+          </h2>
+          <Image
+            src="/images/svgs/green-squiggle.svg"
+            width={114.86}
+            height={16}
+            alt="black icon"
+          />
+        </div>
+        <div className="how-it-works-bg h-[900px]">
+          <HowItWorks />
+        </div>
+      </section>
+
+      <section id="the-competition" className="mt-20">
+        <div className="the-competition-bg h-[900px]">
+          {/* TODO: The Competition Content */}
+        </div>
+      </section>
+
+      <section>{/* TODO: The Tables */}</section>
+
+      <section id="pre-registration">
+        <div className="relative flex h-[370px]">
+          <div className="ribbon-down absolute top-0 h-full w-full"></div>
+          <div className="ribbon-up absolute top-[100px] h-full w-full"></div>
+          <div className="mt-[59.51px] flex flex-1 justify-center">
+            <DiamondButton variant={ButtonVariant.RED}>
+              <span>Pre-register your school</span>
+              <Arrow className="w-5 -rotate-45" fill="white" />
+            </DiamondButton>
+          </div>
+        </div>
+      </section>
+
+      <section id="value-proposition" className="mt-8">
+        <ValueProposition />
+      </section>
+
+      <section id="akc-video" className="my-12">
+        <VideoPlayer
+          thumbnailSrc="/images/Athletics_Kids_Cup_Mumbai.png"
+          videoSrc="/videos/sample_vid.webm"
+          playIconSrc="/images/svgs/vid-play-button.svg"
+        />
+      </section>
+
+      <section id="contact-us">
+        <div className="contact-us-bg h-[306px]">
+          {/* TODO: Contact Us Content */}
+        </div>
+      </section>
     </div>
   );
 }

@@ -48,10 +48,10 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-green-100 md:bg-white">
-      <div className=".how-it-works-heading p-6 text-center text-2xl font-semibold">
+    <div className="min-h-screen md:bg-white">
+      {/* <div className=".how-it-works-heading p-6 text-center text-2xl font-semibold">
         How it works
-      </div>
+      </div> */}
       <div className="relative flex min-h-screen flex-col md:flex-row">
         <div className="order-2 w-full bg-[#57D081] p-4 md:order-1 md:w-[80%] md:rounded-r-[30%]">
           <div className="flex flex-col items-start md:ml-8">

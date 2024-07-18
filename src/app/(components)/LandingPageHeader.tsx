@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LandingPageHeader = () => {
   return (
-    <header className="top-0 flex items-center justify-between py-4">
+    <header className="top-0 flex items-center justify-between py-4 bg-white">
       <div className="flex items-center">
         <Image
           src="/images/AKCLogo_ALt.png"

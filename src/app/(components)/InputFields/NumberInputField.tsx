@@ -6,14 +6,18 @@ interface INumberInputField {
 }
 
 const NumberInputField: React.FC<INumberInputField> = ({ labelName, isRequired }) => {
+  let inputFieldName:string = labelName.length > 0 ? labelName : 'inputField'
+  inputFieldName = inputFieldName.replace(/\s+/g, '')
   return (
     <div>
-      <label>{labelName}
+      <label className="block text-xs leading-5 .text-gray-700 mb-1">{labelName}
         {isRequired && <span className="inline-block"> *</span>}
       </label>
       <input
+        name={inputFieldName}
         type="number"
-        className="border-gray-200 border-4 h-10 rounded-md placeholder-gray-400 p-2"
+        placeholder="-"
+        className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4"
         required={isRequired}
       />
     </div>
