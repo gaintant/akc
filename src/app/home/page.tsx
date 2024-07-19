@@ -7,6 +7,7 @@ import VideoPlayer from "../(components)/VideoPlayer";
 import HowItWorks from "../how-it-works/page";
 import PreRegistrationButtonWithModal from "../(components)/PreRegistrationButtonWithModal";
 import StaircaseCards from '../(components)/StaircaseCards';
+import Competition from "../(components)/competition";
 
 export default function Home() {
   return (
@@ -90,7 +91,7 @@ export default function Home() {
 
       <section id="the-competition" className="mt-20">
         <div className="the-competition-bg h-[900px]">
-          {/* TODO: The Competition Content */}
+         <Competition/>
         </div>
       </section>
       <section id="the-cards" className="mt-20">
