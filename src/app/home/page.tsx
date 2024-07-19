@@ -1,11 +1,9 @@
 import Image from "next/image";
-import { ButtonVariant } from "../(components)/Button";
-import DiamondButton from "../(components)/DiamondButton";
-import Arrow from "../(components)/Icons/Arrow";
 import ValueProposition from "../(components)/ValueProposition";
 import VideoPlayer from "../(components)/VideoPlayer";
 import HowItWorks from "../how-it-works/page";
 import PreRegistrationButtonWithModal from "../(components)/PreRegistrationButtonWithModal";
+import PreRegistrationDiamondButtonWithModal from "../(components)/PreRegistrationDiamondButtonWithModal";
 import StaircaseCards from "../(components)/StaircaseCards";
 import Competition from "../(components)/competition";
 
@@ -100,14 +98,11 @@ export default function Home() {
       </section>
 
       <section id="pre-registration">
-        <div className="relative flex h-[370px]">
+        <div className="relative flex h-[300px]">
           <div className="ribbon-down absolute top-0 h-full w-full"></div>
           <div className="ribbon-up absolute top-[100px] h-full w-full"></div>
           <div className="mt-[59.51px] flex flex-1 justify-center">
-            <DiamondButton variant={ButtonVariant.RED}>
-              <span>Pre-register your school</span>
-              <Arrow className="w-5 -rotate-45" fill="white" />
-            </DiamondButton>
+            <PreRegistrationDiamondButtonWithModal />
           </div>
         </div>
       </section>
