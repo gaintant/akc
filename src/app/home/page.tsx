@@ -6,7 +6,7 @@ import ValueProposition from "../(components)/ValueProposition";
 import VideoPlayer from "../(components)/VideoPlayer";
 import HowItWorks from "../how-it-works/page";
 import PreRegistrationButtonWithModal from "../(components)/PreRegistrationButtonWithModal";
-import StaircaseCards from '../(components)/StaircaseCards';
+import StaircaseCards from "../(components)/StaircaseCards";
 import Competition from "../(components)/competition";
 
 export default function Home() {
@@ -90,16 +90,14 @@ export default function Home() {
       </section>
 
       <section id="the-competition" className="mt-20">
-        <div className="the-competition-bg h-[900px]">
-         <Competition/>
+        <div className="the-competition-bg h-[759px]">
+          <Competition />
         </div>
       </section>
+
       <section id="the-cards" className="mt-20">
-      <div >
-      <StaircaseCards />
-    </div>
+        <StaircaseCards />
       </section>
-      <section>{/* TODO: The Tables */}</section>
 
       <section id="pre-registration">
         <div className="relative flex h-[370px]">

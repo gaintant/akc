@@ -1,9 +1,12 @@
 import React from 'react';
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({ subsets: ["latin"] });
 
 const Competition: React.FC = () => {
     return (
-        <div className="p-6  rounded-lg shadow-md max-w-full mx-auto">
-            <div className="flex justify-between lg:flex-row mb-4 px-8 lg:px-32">
+        <div className="p-6 rounded-lg max-w-full pt-16 mx-auto">
+            <div className="flex justify-between lg:flex-row mb-4">
                 <div className="w-full lg:w-1/3 flex flex-col justify-between items-start mb-4 lg:mb-0 lg:mr-4">
                     <div className="relative w-full h-64 mb-4">
                         <img
@@ -18,15 +21,15 @@ const Competition: React.FC = () => {
                         />
                     </div>
                     <div className="text-left">
-                        <h1 className="text-[1.5rem] font-normal leading-8 tracking-tight text-left bg-white text-gray-800 font-frutiger">Categories</h1>
-                        <h2 className="text-[4rem] font-caveat font-normal leading-[4.5rem] tracking-tight text-left bg-white text-[#1F2937]">Season 1</h2>
-                        <p className="mt-4 text-[1rem] font-normal leading-6 tracking-tight text-left bg-white text-gray-800 font-frutiger">
+                        <h1 className="text-[1.5rem] font-semibold leading-8 tracking-tight text-left bg-white text-gray-800 font-frutiger">Categories</h1>
+                        <h2 className={`${caveat.className} text-[4rem] font-caveat font-normal leading-[4.5rem] tracking-tight text-left bg-white text-[#1F2937]`}>Season 1</h2>
+                        <p className="mt-4 text-[1rem] font-medium leading-6 tracking-tight text-left bg-white text-gray-800 font-frutiger">
                             The Athletics Kids Cup is organised in age categories. There is one category per age group. There are rankings for girls and boys. The Athletics Kids Cup 2024/2025 is open to children who will be 15 years old or younger in 2024 (born in 2009 or later).
                         </p>
                     </div>
                 </div>
                 <div className="text-left">
-                    <table className="block w-full h-11/12 justify-end bg-white border-2 border-gray-800 rounded-3xl shadow-black shadow-lg overflow-hidden">
+                    <table className="block w-full h-11/12 justify-end bg-white border-2 border-gray-800 rounded-3xl shadow-[4px_6px_0_#12141d] overflow-hidden">
                         <thead>
                             <tr className="bg-gray-800 text-white text-left font-bold">
                                 <th className="w-[15.625rem] h-[3.625rem] py-3 px-6 border">Born in</th>
@@ -46,7 +49,7 @@ const Competition: React.FC = () => {
                                 { year: 2016, girls: 'G8', boys: 'B8' },
                                 { year: "2017 and younger", girls: 'G7*', boys: 'B7' },
                             ].map((row) => (
-                                <tr key={row.year} className="even:bg-gray-50">
+                                <tr key={row.year} className="even:bg-gray-50 h-[52px]">
                                     <td className="py-2 px-4 border font-bold text-gray-800">{row.year}</td>
                                     <td className="py-2 px-4 border font-bold text-gray-800">{row.girls}</td>
                                     <td className="py-2 px-4 border font-bold text-gray-800">{row.boys}</td>
@@ -54,7 +57,7 @@ const Competition: React.FC = () => {
                             ))}
                         </tbody>
                     </table>
-                    <p className="text-left mt-4 italic text-gray-600">
+                    <p className="text-left mt-4 text-gray-600 max-w-[335px]">
                         * In the categories G7 and B7 also younger children are allowed to start.
                     </p>
                 </div>
