@@ -34,7 +34,7 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden">
         <div className="flex w-screen justify-center">
-          <div className="container flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col items-center">
             <Header />
             {children}
             <InputFieldParent inputType="phone" labelName="ph" isRequired={false} />

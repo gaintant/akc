@@ -9,8 +9,8 @@ import Competition from "../(components)/competition";
 
 export default function Home() {
   return (
-    <div id="home-container" className="min-h-screen w-full bg-white">
-      <main id="home" className="w-full px-2">
+    <div id="home-container" className="page-container flex flex-col items-center min-h-screen bg-white">
+      <main id="home" className="content-container">
         <div className="top-0 mb-2 flex flex-wrap gap-8 md:flex-nowrap">
           <div className="flex w-full flex-1 flex-col justify-center gap-12 md:w-1/2">
             <span className="flex h-[32px] w-[180px] items-center justify-center rounded-full bg-greyBg px-[12px] py-[6px] text-sm tracking-[2px]">
@@ -66,8 +66,8 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="relative h-16 w-full">
-        <div className="design-bar absolute left-0 right-0 h-16"></div>
+      <div className="relative h-[80px] w-full">
+        <div className="design-bar absolute left-0 right-0 h-[80px]"></div>
       </div>
 
       <section id="how-it-works" className="flex flex-col gap-8">
@@ -82,7 +82,7 @@ export default function Home() {
             alt="black icon"
           />
         </div>
-        <div className="how-it-works-bg h-[900px]">
+        <div className="how-it-works-bg h-[900px] content-container flex items-center justify-center">
           <HowItWorks />
         </div>
       </section>
@@ -97,7 +97,7 @@ export default function Home() {
         <StaircaseCards />
       </section>
 
-      <section id="pre-registration">
+      <section id="pre-registration" className="w-full">
         <div className="relative flex h-[300px]">
           <div className="ribbon-down absolute top-0 h-full w-full"></div>
           <div className="ribbon-up absolute top-[100px] h-full w-full"></div>
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="value-proposition" className="mt-8">
+      <section id="value-proposition" className="mt-8 page-container">
         <ValueProposition />
       </section>
 
@@ -119,7 +119,7 @@ export default function Home() {
         />
       </section>
 
-      <section id="contact-us">
+      <section id="contact-us" className="w-full">
         <div className="contact-us-bg h-[306px]">
           {/* TODO: Contact Us Content */}
         </div>

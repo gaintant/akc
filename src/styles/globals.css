@@ -7,19 +7,28 @@ html {
   @apply text-defaultFontColor;
 }
 
-.design-bar {
-  background-image: url("/images/design-bar.png");
-  background-size: auto 100%;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  background-size: contain;
+.content-container {
+  @apply w-full;
+  @apply px-4;
+  @apply xl:px-36;
+  @apply max-w-[1440px];
 }
 
-/* .how-it-works-bg {
+.page-container {
+  @apply w-full;
+  @apply max-w-[1440px];
+}
+
+.design-bar {
+  background-image: url("/images/design-bar.png");
+  background-size: 100% 120px;
+}
+
+.how-it-works-bg {
   background-image: url('/images/green-bg.png');
   background-repeat: no-repeat;
   background-size: contain;
-} */
+}
 
 .the-competition-bg {
   background-image: url("/images/the-competition-bg.png");
@@ -47,7 +56,6 @@ html {
 }
 
 .how-it-works-heading {
-  font-family: "Frutiger";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -56,7 +64,6 @@ html {
 }
 
 .how-it-works-content {
-  font-family: "Frutiger";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -85,9 +92,5 @@ html {
 }
 
 .shrink-btn {
- scale: 1.4 1;
-}
-
-.txt-og {
-  /* scale: 0.5 2; */
+ scale: 1 1;
 }

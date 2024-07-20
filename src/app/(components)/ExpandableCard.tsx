@@ -22,15 +22,15 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
 
   return (
     <div
+      onClick={onClick}
       className={
         isExpanded
-          ? `relative mb-4 w-full rounded-lg border border-black bg-white p-4 shadow-[0_4px_6px_rgba(0,0,0,0.8),0_1px_3px_rgba(0,0,0,0.08)] md:max-w-[60%]`
-          : `relative mb-4 w-full rounded-lg border border-black p-4 md:max-w-[60%]`
+          ? `cursor-pointer relative mb-4 w-full rounded-lg border border-black bg-white p-4 shadow-[0_4px_6px_rgba(0,0,0,0.8),0_1px_3px_rgba(0,0,0,0.08)] md:max-w-[60%]`
+          : `cursor-pointer relative mb-4 w-full rounded-lg border border-black p-4 md:max-w-[60%]`
       }
     >
       <div className="flex items-center">
         <button
-          onClick={onClick}
           className="flex h-8 w-8 transform items-center justify-center rounded-full bg-blue-500 text-white transition-transform duration-200"
         >
           {isExpanded ? (
