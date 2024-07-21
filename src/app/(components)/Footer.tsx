@@ -4,7 +4,7 @@ import Image from "next/image";
 const Footer: React.FC = () => {
   return (
     <footer className="page-container border-t border-gray-200 bg-white py-4">
-      <div className="mx-auto mb-8 flex max-w-6xl px-6 flex-wrap items-center justify-between">
+      <div className="page-container w-full mb-8 flex max-w-6xl px-6 flex-wrap items-center justify-between">
         <div className="mb-4 flex flex-col items-start">
           <span className="mb-2 text-sm font-bold">An initiative by</span>
           <Image
