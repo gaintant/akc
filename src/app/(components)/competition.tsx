@@ -21,9 +21,9 @@ const Competition: React.FC = () => {
                         />
                     </div>
                     <div className="text-left">
-                        <h1 className="text-[1.5rem] font-semibold leading-8 tracking-tight text-left bg-white text-gray-800 font-frutiger">Categories</h1>
+                        <h1 className="text-[1.5rem] font-semibold leading-8 tracking-tight text-left bg-white text-gray-800">Categories</h1>
                         <h2 className={`${caveat.className} text-[4rem] font-caveat font-normal leading-[4.5rem] tracking-tight text-left bg-white text-[#1F2937]`}>Season 1</h2>
-                        <p className="mt-4 text-[1rem] font-medium leading-6 tracking-tight text-left bg-white text-gray-800 font-frutiger">
+                        <p className="mt-4 text-[1rem] font-medium leading-6 tracking-tight text-left bg-white text-gray-800">
                             The Athletics Kids Cup is organised in age categories. There is one category per age group. There are rankings for girls and boys. The Athletics Kids Cup 2024/2025 is open to children who will be 15 years old or younger in 2024 (born in 2009 or later).
                         </p>
                     </div>

@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-between bg-gray-800 px-4 py-4 text-xs text-white">
+      <div className="flex items-center justify-between bg-gray-800 px-6 py-4 text-xs text-white">
         <div>© 2024 DCpowerparts</div>
         <div>All Rights Reserved by DCpowerparts</div>
       </div>

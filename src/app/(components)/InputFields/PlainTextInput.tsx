@@ -20,7 +20,7 @@ const InputField: React.FC<IInputField> = (props) =>  {
                     <div className="inline-block"> * </div>
                 }
             </label>
-            <input name={inputFieldName} placeholder="text" 
+            <input name={inputFieldName} 
                 className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4">
             </input>
         </div>

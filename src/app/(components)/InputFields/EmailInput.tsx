@@ -13,7 +13,6 @@ const EmailInput: React.FC<IEmailInput> = ({ isRequired }) => {
       <input
         name="email"
         type="email"
-        placeholder="Email"
         className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4 "
         required={isRequired}
       />

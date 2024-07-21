@@ -6,10 +6,14 @@ import PreRegistrationButtonWithModal from "../(components)/PreRegistrationButto
 import PreRegistrationDiamondButtonWithModal from "../(components)/PreRegistrationDiamondButtonWithModal";
 import StaircaseCards from "../(components)/StaircaseCards";
 import Competition from "../(components)/competition";
+import ContactUs from "../(components)/ContactUs";
 
 export default function Home() {
   return (
-    <div id="home-container" className="flex flex-col items-center min-h-screen bg-white">
+    <div
+      id="home-container"
+      className="flex min-h-screen flex-col items-center bg-white"
+    >
       <main id="home" className="content-container">
         <div className="top-0 mb-2 flex flex-wrap gap-8 md:flex-nowrap">
           <div className="flex w-full flex-1 flex-col justify-center gap-12 md:w-1/2">
@@ -70,7 +74,7 @@ export default function Home() {
         <div className="design-bar absolute left-0 right-0 h-[80px]"></div>
       </div>
 
-      <section id="how-it-works" className="flex flex-col gap-8 w-full">
+      <section id="how-it-works" className="flex w-full flex-col gap-8">
         <div className="mt-16 flex flex-col items-center gap-[0.125rem]">
           <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
             How it works
@@ -82,18 +86,18 @@ export default function Home() {
             alt="black icon"
           />
         </div>
-        <div className="how-it-works-bg h-[900px] content-container flex items-center">
+        <div className="how-it-works-bg content-container flex h-[900px] items-center">
           <HowItWorks />
         </div>
       </section>
 
       <section id="the-competition" className="mt-20">
-        <div className="the-competition-bg h-[759px] content-container">
+        <div className="the-competition-bg content-container h-[759px]">
           <Competition />
         </div>
       </section>
 
-      <section id="the-cards" className="mt-20 content-container">
+      <section id="the-cards" className="content-container mt-20">
         <StaircaseCards />
       </section>
 
@@ -107,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="value-proposition" className="mt-8 page-container">
+      <section id="value-proposition" className="page-container mt-8">
         <ValueProposition />
       </section>
 
@@ -119,10 +123,9 @@ export default function Home() {
         />
       </section>
 
-      <section id="contact-us" className="w-full">
-        <div className="contact-us-bg h-[306px]">
-          {/* TODO: Contact Us Content */}
-        </div>
+      <section id="contact-us" className="w-full relative h-[500px]">
+        <div className="contact-us-bg page-container h-[306px]" />
+        <ContactUs />
       </section>
     </div>
   );

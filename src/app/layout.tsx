@@ -1,14 +1,13 @@
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import FloatingNavbar from "./(components)/FloatingNavbar";
-import InputFieldParent from './(components)/InputFields/InputFieldParent';
+import Header from './(components)/LandingPageHeader';
+import Footer from './(components)/Footer';
 
 import "~/styles/globals.css";
 import '@fontsource/plus-jakarta-sans/300.css';
 import '@fontsource/plus-jakarta-sans/400.css';
 import '@fontsource/plus-jakarta-sans/500.css';
 import '@fontsource/plus-jakarta-sans/700.css';
-import Header from './(components)/LandingPageHeader';
-import Footer from './(components)/Footer';
 
 export const metadata = {
   title: "Athletic Kids Cup",

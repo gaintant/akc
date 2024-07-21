@@ -16,7 +16,6 @@ const NumberInputField: React.FC<INumberInputField> = ({ labelName, isRequired }
       <input
         name={inputFieldName}
         type="number"
-        placeholder="-"
         className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4"
         required={isRequired}
       />
