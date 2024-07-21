@@ -48,7 +48,7 @@ const NavTab: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
   return (
     <Link
       href={href ?? "#"}
-      className="text-altTextColor hover:bg-primary rounded-full font-bold transition-colors hover:text-white px-4 py-2"
+      className="text-altTextColor hover:bg-primary rounded-full font-bold transition-colors hover:text-white px-4 py-2 w-max block"
       onClick={smoothScroll}
       {...props}
     >
