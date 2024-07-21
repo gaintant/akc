@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import Modal from "react-modal";
 
 import DiamondButton, { ButtonVariant } from "./DiamondButton";
@@ -74,16 +75,42 @@ const fields = [
   },
 ];
 
+type PreRegisterState = {
+  message: string;
+  success: boolean;
+  submitted: boolean;
+};
+
 const PreRegistrationButtonWithModal = () => {
   const [open, setOpen] = useState(false);
+  const { pending } = useFormStatus();
+  const initialState: PreRegisterState = {
+    success: false,
+    message: "",
+    submitted: false,
+  };
+  const [state, formAction] = useFormState(
+    createRegistrationData,
+    initialState,
+  );
+  const [showFormSubmissionStatus, setshowFormSubmissionStatus] = useState(true)
 
+  const [key, setKey] = useState(0);
   function closeModal() {
     setOpen(false);
+    setKey((key) => key + 1);
+    setshowFormSubmissionStatus(false);
   }
 
   return (
     <>
-      <DiamondButton variant={ButtonVariant.RED} onClick={() => {setOpen(true)}}>
+      <DiamondButton
+        variant={ButtonVariant.RED}
+        onClick={() => {
+          setOpen(true);
+          setshowFormSubmissionStatus(true);
+        }}
+      >
         <span>Pre-register your school</span>
         <Arrow className="w-5 -rotate-45" fill="white" />
       </DiamondButton>
@@ -104,6 +131,13 @@ const PreRegistrationButtonWithModal = () => {
           },
         }}
       >
+        {state.submitted && !pending && showFormSubmissionStatus && (
+          <p
+            className={`m-2 p-4 text-center ${state.success ? "text-green-400" : "text-red-400"} text-xl lg:text-3xl`}
+          >
+            {state.message}
+          </p>
+        )}
         <div className="rounded-lg bg-white p-5 shadow-xl">
           <header className="relative">
             <button
@@ -116,7 +150,7 @@ const PreRegistrationButtonWithModal = () => {
               Pre Registration
             </div>
           </header>
-          <form action={createRegistrationData}>
+          <form key={key} action={formAction}>
             {/* School Details Section */}
             <div className="border-b-2 pb-6">
               <div className="flex flex-wrap">
@@ -136,9 +170,9 @@ const PreRegistrationButtonWithModal = () => {
             <div className="flex items-center justify-center">
               <Button
                 variant={ButtonVariant.CYAN}
-                className="flex items-center gap-3"
+                className="flex items-center gap- disabled:bg-gray-400 disabled:pointer-events-none"
               >
-                <span>Submit</span>
+                <span>{pending ? "Submitting" : "Submit"}</span>
                 <Arrow className="w-5 -rotate-45" fill="#374151" />
               </Button>
             </div>
