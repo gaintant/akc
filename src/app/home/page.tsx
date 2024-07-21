@@ -114,7 +114,7 @@ export default function Home() {
       <section id="akc-video" className="my-12">
         <VideoPlayer
           thumbnailSrc="/images/Athletics_Kids_Cup_Mumbai.png"
-          videoSrc="/videos/sample_vid.webm"
+          videoSrc="/videos/AKC_video.mp4"
           playIconSrc="/images/svgs/vid-play-button.svg"
         />
       </section>

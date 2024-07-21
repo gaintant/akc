@@ -27,18 +27,32 @@ const Footer: React.FC = () => {
         <div className="mb-4 flex flex-col items-center">
           <span className="mb-2 text-sm font-bold">Follow us on Social</span>
           <div className="flex space-x-4">
-            <Image
-              src="/images/linkedin-icon.png"
-              alt="LinkedIn"
-              width={40}
-              height={40}
-            />
-            <Image
-              src="/images/instagram-icon.png"
-              alt="Instagram"
-              width={40}
-              height={40}
-            />
+            <a
+              href="https://www.linkedin.com/company/athletics-kids-cup/"
+              className="cursor-pointer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                src="/images/linkedin-icon.png"
+                alt="LinkedIn"
+                width={40}
+                height={40}
+              />
+            </a>
+            <a
+              className="cursor-pointer"
+              href="https://www.instagram.com/athleticskidscupindia/?igsh=MWx3ZGFhdGJrZjA2aw%3D%3D"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                src="/images/instagram-icon.png"
+                alt="Instagram"
+                width={40}
+                height={40}
+              />
+            </a>
           </div>
         </div>
 
