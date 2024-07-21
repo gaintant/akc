@@ -40,7 +40,7 @@ html {
 
 .contact-us-bg {
   position: absolute;
-  top: 50%;
+  top: 30%;
   background-image: url("/images/contact-us-bg.png");
   background-repeat: no-repeat;
   background-size: contain;

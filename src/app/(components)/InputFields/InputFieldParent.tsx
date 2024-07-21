@@ -15,6 +15,8 @@ const InputFieldParent: React.FC<IInputFieldParent> = (props) => {
         switch (props.inputType) {
             case 'text':
                 return <InputField labelName={props.labelName} isRequired={props.isRequired} />;
+            case 'textarea':
+                return <InputField labelName={props.labelName} isRequired={props.isRequired} textArea />;
             case 'tel':
                 return <TelInputField labelName={props.labelName} isRequired={props.isRequired} />;
             case 'email':
@@ -27,7 +29,7 @@ const InputFieldParent: React.FC<IInputFieldParent> = (props) => {
     };
 
     return (
-        <div>{renderContent()}</div>
+        <>{renderContent()}</>
     )
 
 }
