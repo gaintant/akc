@@ -29,8 +29,15 @@ const FormSchema = z.object({
 const connectionString = process.env.DATABASE_URL ?? "";
 const client = postgres(connectionString);
 const db = drizzle(client);
-
-export async function createRegistrationData(formData: FormData) {
+type PreRegisterState = {
+  message: string;
+  success: boolean;
+  submitted: boolean;
+};
+export async function createRegistrationData(
+  prevState: PreRegisterState,
+  formData: FormData,
+) {
   "use server";
   const CreateInvoice = FormSchema.omit({ id: true, date: true });
   try {
@@ -49,11 +56,25 @@ export async function createRegistrationData(formData: FormData) {
       schoolWebsite: data.SchoolWebsite,
       surname: data.SchoolWebsite,
     });
+
+    return {
+      message: "Registration Successful",
+      success: true,
+      submitted: true,
+    };
   } catch (e) {
     const error = e as ZodError;
     console.error(error);
     // eslint-disable-next-line @typescript-eslint/unbound-method
-    if (!error.isEmpty) return error.format;
+    if (!error.isEmpty)
+      return {
+        message:
+          "Pre-registration with this email address is already completed.\n Wait for further communication",
+        success: false,
+        submitted: true,
+      };
+
+    return { message: "Something went wrong", success: false, submitted: true };
   }
 }
 
@@ -84,17 +105,19 @@ export async function sendEmail(email: string, schoolName: string) {
   <div>Athletics Kids Cup Team</div><br />
   <img src="cid:akcLogo" width="180" height="35.58" />
 `;
-  console.log('here', process.cwd());
+  console.log("here", process.cwd());
   await transporter.sendMail({
     from: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: "Thank You for Pre-Registering for the Athletics Kids Cup!",
     html: emailBody,
-    attachments: [{
-      filename: '/images/AKCLogo_ALt.png',
-      path: join(process.cwd(), 'public', 'images', 'AKCLogo_ALt.png'),
-      cid: 'akcLogo'
-    }]
+    attachments: [
+      {
+        filename: "/images/AKCLogo_ALt.png",
+        path: join(process.cwd(), "public", "images", "AKCLogo_ALt.png"),
+        cid: "akcLogo",
+      },
+    ],
   });
 
   console.log("email sent to school", schoolName, email);
