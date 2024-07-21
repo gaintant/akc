@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       <section id="the-competition" className="mt-20">
-        <div className="the-competition-bg h-[759px]">
+        <div className="the-competition-bg h-[759px] content-container">
           <Competition />
         </div>
       </section>
