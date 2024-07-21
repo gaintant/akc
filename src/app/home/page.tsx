@@ -9,7 +9,7 @@ import Competition from "../(components)/competition";
 
 export default function Home() {
   return (
-    <div id="home-container" className="page-container flex flex-col items-center min-h-screen bg-white">
+    <div id="home-container" className="flex flex-col items-center min-h-screen bg-white">
       <main id="home" className="content-container">
         <div className="top-0 mb-2 flex flex-wrap gap-8 md:flex-nowrap">
           <div className="flex w-full flex-1 flex-col justify-center gap-12 md:w-1/2">
@@ -70,7 +70,7 @@ export default function Home() {
         <div className="design-bar absolute left-0 right-0 h-[80px]"></div>
       </div>
 
-      <section id="how-it-works" className="flex flex-col gap-8">
+      <section id="how-it-works" className="flex flex-col gap-8 w-full">
         <div className="mt-16 flex flex-col items-center gap-[0.125rem]">
           <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
             How it works
@@ -82,7 +82,7 @@ export default function Home() {
             alt="black icon"
           />
         </div>
-        <div className="how-it-works-bg h-[900px] content-container flex items-center justify-center">
+        <div className="how-it-works-bg h-[900px] content-container flex items-center">
           <HowItWorks />
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="the-cards" className="mt-20">
+      <section id="the-cards" className="mt-20 content-container">
         <StaircaseCards />
       </section>
 

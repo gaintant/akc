@@ -3,7 +3,7 @@ import React from "react";
 const StaircaseCards: React.FC = () => {
   return (
     <div className="flex justify-center h-[559px] gap-[24px]">
-      <div className="left-[5rem] top-[32px] mb-20 h-[368px] w-[328px] ">
+      <div className="left-[5rem] mb-20 w-[256px] lg:w-[300px] xl:w-[328px]">
         <div className="overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d]">
           <div className="font-frutiger bg-[#57D081] p-6 text-xl font-medium text-[#1F2937]">
             Date
@@ -18,7 +18,7 @@ const StaircaseCards: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="top-[32px]  left-[24.5em] w-[368px] h-[496px] mb-20 mt-[100px] style={{ padding: '120px 0' }}">
+      <div className="left-[24.5em] w-[256px] lg:w-[300px] xl:w-[328px] mb-20 mt-[148px]">
         <div className="overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d]">
           <div className="font-frutiger bg-[#36BBFC] p-6 text-xl font-medium text-[#1F2937]">
             Point system
@@ -31,7 +31,7 @@ const StaircaseCards: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="top-[32px] left-[49rem] w-[384px] h-[616px] mt-[250px] style={{ padding: '192px 0' }} ">
+      <div className="left-[49rem] w-[256px] lg:w-[300px] mt-[250px]">
         <div className="overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d]">
           <div className="font-frutiger bg-[#E82C2A] p-6 text-xl font-medium text-white">
             Disciplines

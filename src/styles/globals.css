@@ -10,6 +10,7 @@ html {
 .content-container {
   @apply w-full;
   @apply px-4;
+  @apply lg:px-8;
   @apply xl:px-36;
   @apply max-w-[1440px];
 }

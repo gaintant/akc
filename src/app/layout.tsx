@@ -37,7 +37,6 @@ export default function RootLayout({
           <div className="flex-1 flex flex-col items-center">
             <Header />
             {children}
-            <InputFieldParent inputType="phone" labelName="ph" isRequired={false} />
             <FloatingNavbar />
             <Footer/>
           </div>

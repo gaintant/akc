@@ -68,7 +68,7 @@ const HowItWorks = () => {
         <img
           src="/images/how-it-works.jpeg"
           alt="Right Image"
-          className="oval-image h-auto max-h-[600px] w-3/4 max-w-[400px] object-cover md:absolute md:left-[-50%] md:top-1/2 md:w-[500px] md:-translate-y-1/2 md:transform lg:w-[600px] xl:w-[700px]"
+          className="oval-image h-auto max-h-[600px] w-3/4 max-w-[400px] object-cover md:absolute sm:left-[160px] md:left-[174px] md:top-1/2 md:w-[500px] md:-translate-y-1/2 md:transform lg:w-[600px] xl:w-[700px]"
         />
       </div>
     </div>
