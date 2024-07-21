@@ -7,6 +7,7 @@ import Arrow from "./Icons/Arrow";
 import { createRegistrationData } from "../lib/actions";
 import InputFieldParent from "./InputFields/InputFieldParent";
 import Cross from "./Icons/Cross";
+import { useFormState, useFormStatus } from "react-dom";
 
 Modal.setAppElement("#home-container");
 
@@ -61,7 +62,7 @@ const fields = [
   },
   {
     id: 10,
-    name: "Daylight Telephone Number",
+    name: "Daytime Telephone Number",
     isRequired: true,
     inputType: "tel",
   },
@@ -73,11 +74,32 @@ const fields = [
   },
 ];
 
+type PreRegisterState = {
+  message: string;
+  success: boolean;
+  submitted: boolean;
+};
+
 const PreRegistrationButtonWithModal = () => {
   const [open, setOpen] = useState(false);
+  const { pending } = useFormStatus();
+  const initialState: PreRegisterState = {
+    success: false,
+    message: "",
+    submitted: false,
+  };
+  const [state, formAction] = useFormState(
+    createRegistrationData,
+    initialState,
+  );
+  const [showFormSubmissionStatus, setshowFormSubmissionStatus] =
+    useState(true);
 
+  const [key, setKey] = useState(0);
   function closeModal() {
     setOpen(false);
+    setKey((key) => key + 1);
+    setshowFormSubmissionStatus(false);
   }
 
   return (
@@ -85,7 +107,10 @@ const PreRegistrationButtonWithModal = () => {
       <Button
         variant={ButtonVariant.RED}
         className="flex items-center gap-3"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setOpen(true);
+          setshowFormSubmissionStatus(true);
+        }}
       >
         <span>Pre-register your school</span>
         <Arrow className="w-5 -rotate-45" fill="white" />
@@ -100,13 +125,21 @@ const PreRegistrationButtonWithModal = () => {
             borderRadius: "24px",
             height: "max-content",
             padding: 0,
-            animation: 'slideUp 0.5s ease-out'
+            animation: "slideUp 0.5s ease-out",
           },
           overlay: {
+            zIndex: 30,
             backgroundColor: "rgba(0, 0, 0, 0.75)", // Semi-transparent black
           },
         }}
       >
+        {state.submitted && !pending && showFormSubmissionStatus && (
+          <p
+            className={`m-2 p-4 text-center ${state.success ? "text-green-400" : "text-red-400"} text-xl lg:text-3xl`}
+          >
+            {state.message}
+          </p>
+        )}
         <div className="rounded-lg bg-white p-5 shadow-xl">
           <header className="relative">
             <button
@@ -119,7 +152,7 @@ const PreRegistrationButtonWithModal = () => {
               Pre Registration
             </div>
           </header>
-          <form action={createRegistrationData}>
+          <form key={key} action={formAction}>
             {/* School Details Section */}
             <div className="border-b-2 pb-6">
               <div className="flex flex-wrap">

@@ -33,7 +33,7 @@ const fields = [
 const ContactUs = () => {
   return (
     <div className="relative z-10">
-      <div className="content-container z-10 flex justify-center">
+      <div className="content-container flex justify-center">
          <div className="absolute top-0 left-11">
             <Image
                src='/images/black-squiggle.png'

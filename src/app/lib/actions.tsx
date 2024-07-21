@@ -17,7 +17,7 @@ const FormSchema = z.object({
   SchoolWebsite: z.string(),
   FirstName: z.string(),
   Surname: z.string(),
-  DaylightTelephoneNumber: z
+  DaytimeTelephoneNumber: z
     .string()
     .min(10)
     .max(10)
@@ -47,7 +47,7 @@ export async function createRegistrationData(
     await db.insert(pre_registration_data).values({
       contactEmail: data.email,
       schoolName: data.SchoolName,
-      coordinatorMobileNo: data.DaylightTelephoneNumber,
+      coordinatorMobileNo: data.DaytimeTelephoneNumber,
       firstName: data.FirstName,
       schoolAddress: data.StreetAddress,
       schoolCity: data.City,
@@ -105,7 +105,6 @@ export async function sendEmail(email: string, schoolName: string) {
   <div>Athletics Kids Cup Team</div><br />
   <img src="cid:akcLogo" width="180" height="35.58" />
 `;
-  console.log("here", process.cwd());
   await transporter.sendMail({
     from: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
     to: email,

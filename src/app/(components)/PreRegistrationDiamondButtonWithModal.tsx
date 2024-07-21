@@ -63,7 +63,7 @@ const fields = [
   },
   {
     id: 10,
-    name: "Daylight Telephone Number",
+    name: "Daytime Telephone Number",
     isRequired: true,
     inputType: "tel",
   },

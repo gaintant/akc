@@ -59,7 +59,7 @@ const NavTab: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
 
 const FloatingNavbar = () => {
   return (
-    <nav className="fixed z-20 bottom-4 left-1/2 flex -translate-x-1/2 transform rounded-full border-2 border-gray-700 bg-[#F4F6F8] px-2 py-[10px] shadow-[2.16px_4.32px_0_#12141d]">
+    <nav className="fixed z-30 bottom-4 left-1/2 flex -translate-x-1/2 transform rounded-full border-2 border-gray-700 bg-[#F4F6F8] px-2 py-[10px] shadow-[2.16px_4.32px_0_#12141d]">
         <ul className="flex w-full flex-1 items-center justify-between text-xs sm:text-sm md:text-base">
           {navItems.map(({ name, url }) => (
             <li className="" key={name}>
