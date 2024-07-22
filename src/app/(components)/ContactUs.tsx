@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button, { ButtonVariant } from "./Button";
 import Arrow from "./Icons/Arrow";
 import InputFieldParent from "./InputFields/InputFieldParent";
+import { handleContactUs } from "../lib/actions";
 
 const fields = [
   {
@@ -52,7 +53,7 @@ const ContactUs = () => {
          </div>
         <div className="mt-20 flex flex-1 flex-col items-center gap-4 rounded-3xl border-[1.5px] border-defaultFontColor bg-[#F4F6F8] px-9 py-6 shadow-[3px_6px_0_#12141d] max-w-[1030px] ">
           <h3 className="text-2xl font-bold">Contact Us</h3>
-          <form>
+          <form action={handleContactUs}>
             <div className="flex justify-center gap-6">
               <div className="grid grid-cols-2 grid-rows-2 gap-x-6">
                 {fields.map((item) => (

@@ -42,7 +42,6 @@ export async function createRegistrationData(
   const CreateInvoice = FormSchema.omit({ id: true, date: true });
   try {
     const data = CreateInvoice.parse(Object.fromEntries(formData.entries()));
-    await sendEmail(data.email, data.SchoolName);
 
     await db.insert(pre_registration_data).values({
       contactEmail: data.email,
@@ -56,6 +55,9 @@ export async function createRegistrationData(
       schoolWebsite: data.SchoolWebsite,
       surname: data.SchoolWebsite,
     });
+
+    await sendEmail(data.email, data.SchoolName);
+    await sendEmailToSelf(formData);
 
     return {
       message: "Registration Successful",
@@ -89,6 +91,31 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+export async function sendEmailToSelf(formData: FormData) {
+  const emailBody = `
+  <p>Hi,</p><br />
+  <p>Received pre-registration info from ${formData.get("SchoolName") as string}.</p><br/><br/>
+  <div>Sporty Greetings,</div>
+  <div>Athletics Kids Cup Team</div><br />
+  <img src="cid:akcLogo" width="180" height="35.58" />
+`;
+  await transporter.sendMail({
+    from: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
+    to: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
+    subject: "Pre-registration completed!",
+    html: emailBody,
+    attachments: [
+      {
+        filename: "/images/AKCLogo_ALt.png",
+        path: join(process.cwd(), "public", "images", "AKCLogo_ALt.png"),
+        cid: "akcLogo",
+      },
+    ],
+  });
+
+  console.log("email sent to self");
+}
+
 export async function sendEmail(email: string, schoolName: string) {
   const emailBody = `
   <div>Dear ${schoolName},</div><br />
@@ -120,4 +147,77 @@ export async function sendEmail(email: string, schoolName: string) {
   });
 
   console.log("email sent to school", schoolName, email);
+}
+
+export async function sendContactUsEmail(formData: FormData) {
+  const emailBody = `
+  <p>Received the following inquiry:</p><br />
+  <div>Fullname: ${formData.get("Fullname") as string}</div>
+  <div>Phone: ${formData.get("Phone") as string}</div>
+  <div>Email: ${formData.get("email") as string}</div>
+  <div>Message: ${formData.get("Message") as string}</div><br /><br />
+  <div>Sporty Greetings,</div>
+  <div>Athletics Kids Cup Team</div><br />
+  <img src="cid:akcLogo" width="180" height="35.58" />
+`;
+  await transporter.sendMail({
+    from: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
+    to: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
+    subject: formData.get("Subject") as string,
+    html: emailBody,
+    attachments: [
+      {
+        filename: "/images/AKCLogo_ALt.png",
+        path: join(process.cwd(), "public", "images", "AKCLogo_ALt.png"),
+        cid: "akcLogo",
+      },
+    ],
+  });
+
+  console.log("email sent to self");
+}
+
+export async function sendEmailForContactUs(fullName: string, email: string) {
+  const emailBody = `
+  <div>Dear ${fullName},</div><br />
+  <p>Thank you for reaching out to us and showing your interest in the Athletics Kids Cup (AKC).</p>
+  <p>We have received your query and will review it shortly to provide you with the desired information.</p>
+  <p>In the meantime, we encourage you to visit our website <a href="https://www.athleticskidscup.com">www.athleticskidscup.com</a> for additional information and updates about the event.</p></br>
+  <div>Sporty Greetings,</div>
+  <div>Athletics Kids Cup Team</div><br />
+  <img src="cid:akcLogo" width="180" height="35.58" />
+`;
+  await transporter.sendMail({
+    from: `"${process.env.EMAIL_DISPLAY_NAME}" <${process.env.EMAIL_USER}>`,
+    to: email,
+    subject: "Thank You for Contacting the Athletics Kids Cup!",
+    html: emailBody,
+    attachments: [
+      {
+        filename: "/images/AKCLogo_ALt.png",
+        path: join(process.cwd(), "public", "images", "AKCLogo_ALt.png"),
+        cid: "akcLogo",
+      },
+    ],
+  });
+
+  console.log("email sent to inquirer", email);
+}
+
+export async function handleContactUs(formData: FormData){
+  "use server";
+  try {
+    await sendEmailForContactUs(formData.get("Fullname") as string, formData.get("email") as string);
+    await sendContactUsEmail(formData);
+
+    return {
+      message: "Message has been sent",
+      success: true,
+      submitted: true,
+    };
+  } catch (e) {
+    const error = e as ZodError;
+    console.error(error);
+    return { message: "Something went wrong", success: false, submitted: true };
+  }
 }
