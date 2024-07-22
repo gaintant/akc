@@ -49,7 +49,7 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
           {heading}
         </h2>
       </div>
-      {isExpanded && heading == "Requirements of an Athelectics Kids Cup" ? (
+      {isExpanded && heading == "Requirements of an Athletics Kids Cup" ? (
         <div className=".how-it-works-content ml-12 mt-4 font-semibold">
           <ol className="list-inside list-decimal">
             <li>Registration of the school sports day on our website</li>
@@ -63,7 +63,7 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
           {content}
         </div>
       ) : isExpanded &&
-        heading == "Advantages of organising an Atheletics Kids Cup" ? (
+        heading == "Advantages of organising an Athletics Kids Cup" ? (
         <div className=".how-it-works-content ml-12 mt-4 font-semibold">
           {content}
           <br />
