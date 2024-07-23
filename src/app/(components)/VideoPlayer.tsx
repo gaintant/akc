@@ -55,6 +55,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           controls
           autoPlay
           className="w-full rounded-[36px]"
+          controlsList="nodownload"
         >
           Your browser does not support the video tag.
         </video>

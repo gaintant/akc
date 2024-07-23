@@ -81,9 +81,23 @@ type PreRegisterState = {
   submitted: boolean;
 };
 
+const PreRegistrationButtonWithModalSubmitButton = () => {
+  const { pending } = useFormStatus();
+  return (
+    <Button
+      variant={ButtonVariant.CYAN}
+      className="gap- flex items-center disabled:pointer-events-none disabled:bg-gray-400"
+      disabled={pending}
+    >
+      <span>{pending ? "Submitting" : "Submit"}</span>
+      <Arrow className="w-5 -rotate-45" fill="#374151" />
+    </Button>
+  );
+};
+
 const PreRegistrationButtonWithModal = () => {
   const [open, setOpen] = useState(false);
-  const { pending } = useFormStatus();
+
   const initialState: PreRegisterState = {
     success: false,
     message: "",
@@ -93,13 +107,14 @@ const PreRegistrationButtonWithModal = () => {
     createRegistrationData,
     initialState,
   );
-  const [showFormSubmissionStatus, setshowFormSubmissionStatus] = useState(true)
 
   const [key, setKey] = useState(0);
   function closeModal() {
     setOpen(false);
     setKey((key) => key + 1);
-    setshowFormSubmissionStatus(false);
+    state.message = "";
+    state.submitted = false;
+    state.success = false;
   }
 
   return (
@@ -108,7 +123,6 @@ const PreRegistrationButtonWithModal = () => {
         variant={ButtonVariant.RED}
         onClick={() => {
           setOpen(true);
-          setshowFormSubmissionStatus(true);
         }}
       >
         <span>Pre-register your school</span>
@@ -131,7 +145,7 @@ const PreRegistrationButtonWithModal = () => {
           },
         }}
       >
-        {state.submitted && !pending && showFormSubmissionStatus && (
+        {state.submitted && (
           <p
             className={`m-2 p-4 text-center ${state.success ? "text-green-400" : "text-red-400"} text-xl lg:text-3xl`}
           >
@@ -168,13 +182,7 @@ const PreRegistrationButtonWithModal = () => {
             {/* Submission Section */}
             <div className="text-sm text-red-600"> * mandatory field </div>
             <div className="flex items-center justify-center">
-              <Button
-                variant={ButtonVariant.CYAN}
-                className="flex items-center gap- disabled:bg-gray-400 disabled:pointer-events-none"
-              >
-                <span>{pending ? "Submitting" : "Submit"}</span>
-                <Arrow className="w-5 -rotate-45" fill="#374151" />
-              </Button>
+              <PreRegistrationButtonWithModalSubmitButton />
             </div>
           </form>
         </div>
