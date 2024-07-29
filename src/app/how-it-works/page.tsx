@@ -28,7 +28,7 @@ const HowItWorks = () => {
       id: 3,
       heading: "Advantages of organising an Athletics Kids Cup",
       content:
-        "We support you in orgainising an Athletics Kids Cup. Each school receives a ready-to-use toolkit " +
+        "We support you in organising an Athletics Kids Cup. Each school receives a ready-to-use toolkit " +
         "to orgainse its own competition. The toolkit includes",
     },
     {
