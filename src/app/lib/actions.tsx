@@ -56,11 +56,11 @@ export async function createRegistrationData(
       surname: data.SchoolWebsite,
     });
 
-    await sendEmail(data.email, data.SchoolName);
-    await sendEmailToSelf(formData);
+    sendEmail(data.email, data.SchoolName);
+    sendEmailToSelf(formData);
 
     return {
-      message: "Registration Successful",
+      message: `Registration Successful! You'll receive further information via email on ${data.email}.`,
       success: true,
       submitted: true,
     };
@@ -207,8 +207,8 @@ export async function sendEmailForContactUs(fullName: string, email: string) {
 export async function handleContactUs(formData: FormData){
   "use server";
   try {
-    await sendEmailForContactUs(formData.get("Fullname") as string, formData.get("email") as string);
-    await sendContactUsEmail(formData);
+    sendEmailForContactUs(formData.get("Fullname") as string, formData.get("email") as string);
+    sendContactUsEmail(formData);
 
     return {
       message: "Message has been sent",
