@@ -56,8 +56,12 @@ export async function createRegistrationData(
       surname: data.SchoolWebsite,
     });
 
-    sendEmail(data.email, data.SchoolName);
-    sendEmailToSelf(formData);
+    sendEmail(data.email, data.SchoolName).catch((err) => {
+      console.error('Error while sending email to school', err);
+    });
+    sendEmailToSelf(formData).catch((err) => {
+      console.error('Error while sending email to self', err);
+    });
 
     return {
       message: `Registration Successful! You'll receive further information via email on ${data.email}.`,
@@ -207,8 +211,12 @@ export async function sendEmailForContactUs(fullName: string, email: string) {
 export async function handleContactUs(formData: FormData){
   "use server";
   try {
-    sendEmailForContactUs(formData.get("Fullname") as string, formData.get("email") as string);
-    sendContactUsEmail(formData);
+    sendEmailForContactUs(formData.get("Fullname") as string, formData.get("email") as string).catch((err) => {
+      console.log('Error while sending email to recipient', formData.get("email"), err);
+    });
+    sendContactUsEmail(formData).catch((err) => {
+      console.log('Error while sending email to self', err);
+    });
 
     return {
       message: "Message has been sent",
