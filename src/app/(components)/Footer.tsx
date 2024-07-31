@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import LinkedIn from "./Icons/Linkedin";
+import LinkedIn from "./Icons/LinkedIn";
 import Instagram from "./Icons/Instagram";
-import Link from "next/link";
 
 // TODO: fix 2px horizontal overflow
 const Footer: React.FC = () => {
