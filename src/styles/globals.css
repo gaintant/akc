@@ -22,25 +22,25 @@ html {
 
 .design-bar {
   background-image: url("/images/design-bar.png");
-  background-size: 100% 120px;
+  background-size: auto 120px;
 }
 
 .how-it-works-bg {
-  background-image: url('/images/green-bg.png');
+  background-image: url("/images/green-bg.png");
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .the-competition-bg {
-  background-image: url("/images/the-competition-bg.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
+  @media screen and (min-width: 1024px) {
+    background-image: url("/images/the-competition-bg.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
 }
 
 .contact-us-bg {
   position: absolute;
-  top: 30%;
   background-image: url("/images/contact-us-bg.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -48,21 +48,21 @@ html {
 
 .ribbon-up {
   background-image: url("/images/ribbon-up.png");
+  background-position: 50% 0;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .ribbon-down {
   background-image: url("/images/ribbon-down.png");
+  background-position: 50% 0;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .how-it-works-heading {
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
   letter-spacing: -0.03em;
 }
 
@@ -92,8 +92,4 @@ html {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.shrink-btn {
- scale: 1 1;
 }

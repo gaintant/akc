@@ -85,7 +85,7 @@ const PreRegistrationButtonWithModalSubmitButton = () => {
   return (
     <Button
       variant={ButtonVariant.CYAN}
-      className="gap- flex items-center disabled:pointer-events-none disabled:bg-gray-400"
+      className="flex items-center disabled:pointer-events-none disabled:bg-gray-400"
       disabled={pending}
     >
       <span>{pending ? "Submitting" : "Submit"}</span>

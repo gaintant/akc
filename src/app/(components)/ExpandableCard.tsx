@@ -23,11 +23,11 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`transition-all w-[550px] cursor-pointer relative mb-4 rounded-2xl border-[1.5px] border-gray-700 p-4 ${isExpanded && 'bg-white shadow-[2px_4px_0_#12141d]'}`}
+      className={`transition-all w-full md:w-[550px] cursor-pointer mb-4 rounded-2xl border-[1.5px] border-gray-700 p-4 shadow-[2px_4px_0_#12141d] ${isExpanded && 'bg-white'}`}
     >
       <div className="flex items-center">
         <button
-          className="flex h-8 w-8 transform items-center justify-center rounded-full bg-blue-500 text-white transition-transform duration-200"
+          className="flex h-8 w-8 min-w-8 transform items-center justify-center rounded-full bg-blue-500 shadow-[2px_3px_0_#12141d] text-white transition-transform duration-200"
         >
           {isExpanded ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -45,7 +45,7 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
             </svg>
           )}
         </button>
-        <h2 className=".how-it-works-heading ml-4 text-xl font-bold">
+        <h2 className="how-it-works-heading ml-4 text-xl font-bold">
           {heading}
         </h2>
       </div>

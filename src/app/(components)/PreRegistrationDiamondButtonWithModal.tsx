@@ -86,7 +86,7 @@ const PreRegistrationButtonWithModalSubmitButton = () => {
   return (
     <Button
       variant={ButtonVariant.CYAN}
-      className="gap- flex items-center disabled:pointer-events-none disabled:bg-gray-400"
+      className="flex items-center disabled:pointer-events-none disabled:bg-gray-400"
       disabled={pending}
     >
       <span>{pending ? "Submitting" : "Submit"}</span>
@@ -95,7 +95,7 @@ const PreRegistrationButtonWithModalSubmitButton = () => {
   );
 };
 
-const PreRegistrationButtonWithModal = () => {
+const PreRegistrationDiamondButtonWithModal = () => {
   const [open, setOpen] = useState(false);
 
   const initialState: PreRegisterState = {
@@ -191,4 +191,4 @@ const PreRegistrationButtonWithModal = () => {
   );
 };
 
-export default PreRegistrationButtonWithModal;
+export default PreRegistrationDiamondButtonWithModal;
