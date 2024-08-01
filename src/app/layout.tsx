@@ -9,6 +9,7 @@ import "@fontsource/plus-jakarta-sans/300.css";
 import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
 import "@fontsource/plus-jakarta-sans/700.css";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Athletic Kids Cup",
@@ -43,6 +44,7 @@ export default function RootLayout({
             <BottomSheetNavBar />
             <FloatingNavbar />
             <Footer />
+            <Toaster position="top-right" />
           </div>
         </div>
       </body>

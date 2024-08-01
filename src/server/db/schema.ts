@@ -30,6 +30,15 @@ export const pre_registration_data = createTable("pre_registration", {
   contactEmail: varchar("contact_email", { length: 255 }).unique(),
 });
 
+export const contactUsData = createTable("contact_us", {
+  id: serial("query_id").primaryKey(),
+  fullName: varchar("full_name", { length: 255 }).notNull(),
+  phone: varchar("phone", { length: 10 }),
+  email: varchar("email", { length: 255 }),
+  subject: varchar("subject", { length: 255 }),
+  message: varchar("message", { length: 255 }),
+});
+
 // Schools table
 export const schools = createTable(
   "schools",
