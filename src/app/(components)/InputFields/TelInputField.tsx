@@ -18,7 +18,7 @@ const TelInputField: React.FC<ITelInputField> = ({ labelName, isRequired }) => {
         // minLength={10}
         // maxLength={10}
         type="tel"
-        className="border-black border h-10 rounded-3xl placeholder-gray-400 p-4"
+        className="border-black w-full border h-10 rounded-3xl placeholder-gray-400 p-4"
         required={isRequired}
       />
     </div>

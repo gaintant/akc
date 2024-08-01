@@ -22,47 +22,96 @@ html {
 
 .design-bar {
   background-image: url("/images/design-bar.png");
-  background-size: 100% 120px;
+  background-size: auto 120px;
 }
 
 .how-it-works-bg {
-  background-image: url('/images/green-bg.png');
+  background-image: url("/images/green-bg.png");
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .the-competition-bg {
-  background-image: url("/images/the-competition-bg.png");
-  background-repeat: no-repeat;
-  background-position: right;
+  @media screen and (min-width: 1024px) {
+    background-image: url("/images/the-competition-bg.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+}
+
+.diamond-btn-bg {
+  position: relative;
+}
+
+.diamond-btn-bg::before,
+.diamond-btn-bg::after,
+.diamond-btn-bg > *::before,
+.diamond-btn-bg > *::after {
+  content: '';
+  position: absolute;
   background-size: contain;
+  background-repeat: no-repeat;
+  rotate: -45deg;
+}
+
+.diamond-btn-bg::before {
+  width: 45.62px;
+  height: 50.09px;
+  background-image: url('/images/motion.png');
+  top: -48px;
+  left: -48px;
+  rotate: 0deg;
+}
+
+.diamond-btn-bg::after {
+  width: 36.78px;
+  height: 39.74px;
+  background-image: url('/images/star.png');
+  top: -64px;
+  right: -64px;
+  rotate: 0deg;
+}
+
+.diamond-btn-bg> *::before {
+  width: 30.33px;
+  height: 31.48px;
+  background-image: url('/images/star.png');
+  bottom: -128px;
+  left: 64px;
+}
+
+.diamond-btn-bg > *::after {
+  width: 45.62px;
+  height: 50.09px;
+  background-image: url('/images/motion.png');
+  bottom: 36px;
+  right: -84px;
+  rotate: 135deg;
 }
 
 .contact-us-bg {
-  position: absolute;
-  top: 30%;
   background-image: url("/images/contact-us-bg.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: bottom;
 }
 
 .ribbon-up {
   background-image: url("/images/ribbon-up.png");
+  background-position: 50% 0;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .ribbon-down {
   background-image: url("/images/ribbon-down.png");
+  background-position: 50% 0;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .how-it-works-heading {
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
   letter-spacing: -0.03em;
 }
 
@@ -92,8 +141,4 @@ html {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.shrink-btn {
- scale: 1 1;
 }

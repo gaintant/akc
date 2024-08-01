@@ -22,12 +22,12 @@ const InputField: React.FC<IInputField> = (props) => {
       {props.textArea ? (
         <textarea
           name={inputFieldName}
-          className="h-[7rem] rounded-3xl border border-black p-4 placeholder-gray-400"
+          className="h-[7rem] w-full rounded-3xl border border-black p-4 placeholder-gray-400"
         />
       ) : (
         <input
           name={inputFieldName}
-          className="h-10 rounded-3xl border border-black p-4 placeholder-gray-400"
+          className="h-10 w-full rounded-3xl border border-black p-4 placeholder-gray-400"
         ></input>
       )}
     </div>

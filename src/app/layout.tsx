@@ -1,25 +1,26 @@
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans } from "next/font/google";
 import FloatingNavbar from "./(components)/FloatingNavbar";
-import Header from './(components)/LandingPageHeader';
-import Footer from './(components)/Footer';
+import Header from "./(components)/LandingPageHeader";
+import Footer from "./(components)/Footer";
+import BottomSheetNavBar from "./(components)/BottomSheetNavBar";
 
 import "~/styles/globals.css";
-import '@fontsource/plus-jakarta-sans/300.css';
-import '@fontsource/plus-jakarta-sans/400.css';
-import '@fontsource/plus-jakarta-sans/500.css';
-import '@fontsource/plus-jakarta-sans/700.css';
+import "@fontsource/plus-jakarta-sans/300.css";
+import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/plus-jakarta-sans/500.css";
+import "@fontsource/plus-jakarta-sans/700.css";
 
 export const metadata = {
   title: "Athletic Kids Cup",
-  description: "Athletic Kids Cup",
+  description:
+    "The Athletics Kids Cup moves the kids! The three basic movement forms that are required in almost every sport are the basis of this unique sports initiative in India. Let's move the children together and encourage their personal development.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-
 const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-})
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -29,15 +30,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakartaSans.className}`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        />
       </head>
       <body className="overflow-x-hidden">
         <div className="flex w-screen justify-center">
-          <div className="flex-1 flex flex-col items-center">
+          <div className="flex flex-1 flex-col items-center">
             <Header />
             {children}
+            <BottomSheetNavBar />
             <FloatingNavbar />
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </body>

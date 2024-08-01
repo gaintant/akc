@@ -81,21 +81,27 @@ type PreRegisterState = {
   submitted: boolean;
 };
 
+type ButtonType = typeof Button | typeof DiamondButton;
+
 const PreRegistrationButtonWithModalSubmitButton = () => {
   const { pending } = useFormStatus();
   return (
     <Button
       variant={ButtonVariant.CYAN}
-      className="gap- flex items-center disabled:pointer-events-none disabled:bg-gray-400"
+      className="flex items-center disabled:pointer-events-none disabled:bg-gray-400"
       disabled={pending}
     >
-      <span>{pending ? "Submitting" : "Submit"}</span>
+      <span>{pending ? "Submitting" : "Submit details"}</span>
       <Arrow className="w-5 -rotate-45" fill="#374151" />
     </Button>
   );
 };
 
-const PreRegistrationButtonWithModal = () => {
+type IPreRegistrationForm = {
+  isDiamond?: boolean;
+};
+
+const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
   const [open, setOpen] = useState(false);
 
   const initialState: PreRegisterState = {
@@ -117,23 +123,31 @@ const PreRegistrationButtonWithModal = () => {
     state.success = false;
   }
 
+  const ButtonTag = isDiamond ? DiamondButton : Button;
+
   return (
     <>
-      <DiamondButton
+      <ButtonTag
         variant={ButtonVariant.RED}
         onClick={() => {
           setOpen(true);
         }}
+        {...(isDiamond
+          ? {}
+          : {
+              className: "flex items-center gap-3",
+            })}
       >
         <span>Pre-register your school</span>
         <Arrow className="w-5 -rotate-45" fill="white" />
-      </DiamondButton>
+      </ButtonTag>
       <Modal
         isOpen={open}
         onRequestClose={closeModal}
         style={{
           content: {
-            width: "720px",
+            maxWidth: "720px",
+            maxHeight: "80%",
             margin: "auto",
             borderRadius: "24px",
             height: "max-content",
@@ -141,7 +155,8 @@ const PreRegistrationButtonWithModal = () => {
             animation: "slideUp 0.5s ease-out",
           },
           overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.75)", // Semi-transparent black
+            backgroundColor: "rgba(0, 0, 0, 0.75)", 
+            zIndex: '40'
           },
         }}
       >
@@ -160,16 +175,15 @@ const PreRegistrationButtonWithModal = () => {
             >
               <Cross />
             </button>
-            <div className="mb-6 border-b-2 pb-2 text-center text-xl font-bold text-gray-800">
+            <div className="mb-6 border-b-2 pb-3 text-center text-xl font-bold text-gray-800">
               Pre Registration
             </div>
           </header>
           <form key={key} action={formAction}>
-            {/* School Details Section */}
             <div className="border-b-2 pb-6">
-              <div className="flex flex-wrap">
+              <div className="grid grid-cols-1 gap-y-1 gap-x-4 md:grid-cols-2">
                 {fields.map((item) => (
-                  <div className="h-20 w-full md:w-1/3" key={item.id}>
+                  <div className="h-20 w-full" key={item.id}>
                     <InputFieldParent
                       inputType={item.inputType}
                       labelName={item.name}
@@ -179,9 +193,8 @@ const PreRegistrationButtonWithModal = () => {
                 ))}
               </div>
             </div>
-            {/* Submission Section */}
-            <div className="text-sm text-red-600"> * mandatory field </div>
-            <div className="flex items-center justify-center">
+            <div className="text-sm">* mandatory field </div>
+            <div className="flex items-center justify-center py-4">
               <PreRegistrationButtonWithModalSubmitButton />
             </div>
           </form>
@@ -191,4 +204,4 @@ const PreRegistrationButtonWithModal = () => {
   );
 };
 
-export default PreRegistrationButtonWithModal;
+export default PreRegistrationForm;
