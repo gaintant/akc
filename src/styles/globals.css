@@ -7,19 +7,6 @@ html {
   @apply text-defaultFontColor;
 }
 
-.content-container {
-  @apply w-full;
-  @apply px-4;
-  @apply lg:px-8;
-  @apply xl:px-36;
-  @apply max-w-[1440px];
-}
-
-.page-container {
-  @apply w-full;
-  @apply max-w-[1440px];
-}
-
 .design-bar {
   background-image: url("/images/design-bar.png");
   background-size: auto 120px;
@@ -121,15 +108,6 @@ html {
   font-size: 16px;
   line-height: 23px;
   letter-spacing: -0.02em;
-}
-
-.oval-image {
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border: 4px solid black;
-  overflow: hidden;
 }
 
 @keyframes slideUp {

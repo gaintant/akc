@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { navItems } from "../constants";
 
 const NavTab: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({

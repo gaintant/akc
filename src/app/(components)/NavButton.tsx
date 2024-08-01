@@ -2,7 +2,6 @@ import React from "react";
 import NavIcon from "./Icons/NavIcon";
 
 const NavButton: React.FC<React.ComponentProps<"button">> = ({
-  children,
   className,
   ...props
 }) => {

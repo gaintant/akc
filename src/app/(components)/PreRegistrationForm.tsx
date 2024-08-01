@@ -6,9 +6,10 @@ import Modal from "react-modal";
 import DiamondButton, { ButtonVariant } from "./DiamondButton";
 import Button from "./Button";
 import Arrow from "./Icons/Arrow";
-import { createRegistrationData } from "../lib/actions";
+import { createRegistrationData } from "../../server/actions";
 import InputFieldParent from "./InputFields/InputFieldParent";
 import Cross from "./Icons/Cross";
+import { type PreRegisterState } from "~/types";
 
 Modal.setAppElement("#home-container");
 
@@ -74,14 +75,6 @@ const fields = [
     inputType: "email",
   },
 ];
-
-type PreRegisterState = {
-  message: string;
-  success: boolean;
-  submitted: boolean;
-};
-
-type ButtonType = typeof Button | typeof DiamondButton;
 
 const PreRegistrationButtonWithModalSubmitButton = () => {
   const { pending } = useFormStatus();

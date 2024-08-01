@@ -1,7 +1,4 @@
-export type NavItem = {
-  name: string;
-  url: string;
-};
+import { type NavItem } from "~/types";
 
 export const navItems: Array<NavItem> = [
   {
