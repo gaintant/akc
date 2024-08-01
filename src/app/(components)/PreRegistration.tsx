@@ -1,4 +1,4 @@
-import PreRegistrationDiamondButtonWithModal from "./PreRegistrationDiamondButtonWithModal";
+import PreRegistrationForm from "./PreRegistrationForm";
 
 const PreRegistration = () => {
   return (
@@ -7,7 +7,7 @@ const PreRegistration = () => {
         <div className="ribbon-down absolute top-0 h-full w-full"></div>
         <div className="ribbon-up absolute top-[100px] h-full w-full"></div>
         <div className="mt-[59.51px] flex flex-1 justify-center">
-          <PreRegistrationDiamondButtonWithModal />
+          <PreRegistrationForm isDiamond />
         </div>
       </div>
     </section>

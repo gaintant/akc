@@ -1,5 +1,6 @@
 import Image from "next/image";
-import PreRegistrationButtonWithModal from "./PreRegistrationButtonWithModal";
+
+import PreRegistrationForm from "./PreRegistrationForm";
 
 const HeroSection = () => {
   return (
@@ -57,7 +58,7 @@ const HeroSection = () => {
             together and encourage their personal development.
           </p>
           <div className="py-10 md:py-12">
-            <PreRegistrationButtonWithModal />
+            <PreRegistrationForm />
           </div>
         </div>
       </div>

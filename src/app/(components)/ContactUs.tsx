@@ -33,67 +33,65 @@ const fields = [
 
 const ContactUs = () => {
   return (
-    <div className="relative z-10">
-      <div className="flex justify-center">
-        <div className="flex items-center justify-center w-full max-w-[1440px]">
-          <div className="absolute left-11 top-0">
-            <Image
-              src="/images/black-squiggle.png"
-              alt="black squiggle line"
-              height={133.57}
-              width={80}
-            />
-          </div>
-          <div className="absolute right-16 top-6">
-            <Image
-              src="/images/black-vector.png"
-              alt="black squiggle line"
-              height={37.04}
-              width={39.14}
-            />
-          </div>
-          <div className="flex flex-1 box-content w-full justify-center px-4 max-w-6xl">
-            <div className="mt-20 flex w-full flex-1 flex-col items-center gap-4 rounded-3xl border-[1.5px] border-defaultFontColor bg-[#F4F6F8] px-9 py-6 shadow-[3px_6px_0_#12141d]">
-              <h3 className="text-2xl font-bold">Contact Us</h3>
-              <form action={handleContactUs} className="w-full">
-                <div className="flex flex-col justify-center gap-6 md:flex-row">
-                  <div className="grid grid-cols-1 grid-rows-1 gap-x-6 md:grid-cols-2 md:grid-rows-2">
-                    {fields.map((item) => (
-                      <div className="h-20" key={item.id}>
-                        <InputFieldParent
-                          inputType={item.inputType}
-                          labelName={item.name}
-                          isRequired={item.isRequired}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex-[1]">
-                    <InputFieldParent
-                      inputType="textarea"
-                      labelName="Message"
-                      isRequired
-                    />
-                  </div>
+    <section id="contact-us" className="flex w-full justify-center">
+      <div className="contact-us-bg relative flex w-full max-w-[1440px] items-center justify-center pb-16">
+        <div className="absolute left-11 top-0">
+          <Image
+            src="/images/black-squiggle.png"
+            alt="black squiggle line"
+            height={133.57}
+            width={80}
+          />
+        </div>
+        <div className="absolute right-16 top-6">
+          <Image
+            src="/images/black-vector.png"
+            alt="black squiggle line"
+            height={37.04}
+            width={39.14}
+          />
+        </div>
+        <div className="box-content flex w-full max-w-6xl flex-1 justify-center px-4">
+          <div className="z-10 mt-20 flex w-full flex-1 flex-col items-center gap-4 rounded-3xl border-[1.5px] border-defaultFontColor bg-[#F4F6F8] px-9 py-6 shadow-[3px_6px_0_#12141d]">
+            <h3 className="text-2xl font-bold">Contact Us</h3>
+            <form action={handleContactUs} className="w-full">
+              <div className="flex flex-col justify-center gap-6 md:flex-row">
+                <div className="flex-1 grid grid-cols-1 grid-rows-1 gap-x-6 md:grid-cols-2 md:grid-rows-2">
+                  {fields.map((item) => (
+                    <div className="h-20" key={item.id}>
+                      <InputFieldParent
+                        inputType={item.inputType}
+                        labelName={item.name}
+                        isRequired={item.isRequired}
+                      />
+                    </div>
+                  ))}
                 </div>
-                <div className="text-end text-sm text-altTextColor">
-                  * mandatory field{" "}
+                <div className="flex-1">
+                  <InputFieldParent
+                    inputType="textarea"
+                    labelName="Message"
+                    isRequired
+                  />
                 </div>
-                <div className="flex items-center justify-center">
-                  <Button
-                    variant={ButtonVariant.CYAN}
-                    className="flex items-center gap-3"
-                  >
-                    <span>Submit</span>
-                    <Arrow className="w-5 -rotate-45" fill="#374151" />
-                  </Button>
-                </div>
-              </form>
-            </div>
+              </div>
+              <div className="text-end text-sm text-altTextColor">
+                * mandatory field{" "}
+              </div>
+              <div className="flex items-center justify-center py-4">
+                <Button
+                  variant={ButtonVariant.CYAN}
+                  className="flex items-center gap-3"
+                >
+                  <span>Send message</span>
+                  <Arrow className="w-5 -rotate-45" fill="#374151" />
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

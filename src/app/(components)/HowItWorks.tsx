@@ -61,7 +61,7 @@ const HowItWorks = () => {
         />
       </div>
       <div className="flex w-full items-center justify-center">
-        <div className="how-it-works-bg flex min-h-[900px] w-full max-w-[1440px] items-center justify-center bg-cover bg-[left_224px] px-4 pb-10 lg:bg-[left_top]">
+        <div className="how-it-works-bg flex min-h-[900px] w-full max-w-[1440px] items-center justify-center bg-[left_224px] px-4 pb-10 bg-cover lg:bg-contain lg:bg-[left_top]">
           <div className="flex w-full max-w-6xl flex-col items-center justify-around gap-6 lg:flex-row-reverse">
             <div className="flex w-full max-w-[556px] justify-center">
               <Image

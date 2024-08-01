@@ -39,11 +39,60 @@ html {
   }
 }
 
-.contact-us-bg {
+.diamond-btn-bg {
+  position: relative;
+}
+
+.diamond-btn-bg::before,
+.diamond-btn-bg::after,
+.diamond-btn-bg > *::before,
+.diamond-btn-bg > *::after {
+  content: '';
   position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  rotate: -45deg;
+}
+
+.diamond-btn-bg::before {
+  width: 45.62px;
+  height: 50.09px;
+  background-image: url('/images/motion.png');
+  top: -48px;
+  left: -48px;
+  rotate: 0deg;
+}
+
+.diamond-btn-bg::after {
+  width: 36.78px;
+  height: 39.74px;
+  background-image: url('/images/star.png');
+  top: -64px;
+  right: -64px;
+  rotate: 0deg;
+}
+
+.diamond-btn-bg> *::before {
+  width: 30.33px;
+  height: 31.48px;
+  background-image: url('/images/star.png');
+  bottom: -128px;
+  left: 64px;
+}
+
+.diamond-btn-bg > *::after {
+  width: 45.62px;
+  height: 50.09px;
+  background-image: url('/images/motion.png');
+  bottom: 36px;
+  right: -84px;
+  rotate: 135deg;
+}
+
+.contact-us-bg {
   background-image: url("/images/contact-us-bg.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: bottom;
 }
 
 .ribbon-up {
