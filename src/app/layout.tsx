@@ -44,7 +44,7 @@ export default function RootLayout({
             <BottomSheetNavBar />
             <FloatingNavbar />
             <Footer />
-            <Toaster position="top-right" />
+            <Toaster position="top-center" />
           </div>
         </div>
       </body>
