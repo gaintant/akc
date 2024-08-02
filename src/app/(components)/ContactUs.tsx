@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { useFormStatus } from "react-dom";
 import toast from "react-hot-toast";
 import Image from "next/image";
 
@@ -37,12 +38,13 @@ const fields = [
   },
 ];
 
-const SubmitButton: React.FC<{ pending?: boolean }> = ({ pending }) => {
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
   return (
     <Button
       variant={ButtonVariant.CYAN}
-      className="flex items-center gap-3"
-      aria-disabled={pending}
+      className="flex items-center gap-3 disabled:cursor-not-allowed disabled:bg-gray-400"
+      disabled={pending}
     >
       <span>{pending ? "Sending message" : "Send message"}</span>
       <Arrow className="w-5 -rotate-45" fill="#374151" />
@@ -52,13 +54,9 @@ const SubmitButton: React.FC<{ pending?: boolean }> = ({ pending }) => {
 
 // TODO: fix pending state
 const ContactUs = () => {
-  const [pending, setPending] = useState(false);
-
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleAction = async (formData: FormData) => {
-    setPending(true);
-
     const contactUsData = ContactUsFormSchema.safeParse(
       Object.fromEntries(formData.entries()),
     );
@@ -71,8 +69,6 @@ const ContactUs = () => {
         .join(".");
 
       toast.error(error);
-
-      setPending(false);
       return;
     }
 
@@ -81,11 +77,8 @@ const ContactUs = () => {
 
       if (result?.error) {
         toast.error(result.error);
-        setPending(false);
         return;
       }
-
-      setPending(false);
 
       toast.success(
         "Thank you for contacting AKC! We will get back to you with your query shortly!",
@@ -94,7 +87,6 @@ const ContactUs = () => {
       formRef.current?.reset();
     } catch (err) {
       toast.error("Something went wrong!");
-      setPending(false);
     }
   };
 
@@ -145,7 +137,7 @@ const ContactUs = () => {
                 * mandatory field{" "}
               </div>
               <div className="flex items-center justify-center py-4">
-                <SubmitButton pending={pending} />
+                <SubmitButton />
               </div>
             </form>
           </div>
