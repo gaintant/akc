@@ -1,15 +1,16 @@
 "use client";
-import React, { useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import React, { useRef, useState } from "react";
+import { useFormStatus } from "react-dom";
 import Modal from "react-modal";
+import toast from "react-hot-toast";
 
 import DiamondButton, { ButtonVariant } from "./DiamondButton";
 import Button from "./Button";
 import Arrow from "./Icons/Arrow";
-import { createRegistrationData } from "../../server/actions";
 import InputFieldParent from "./InputFields/InputFieldParent";
 import Cross from "./Icons/Cross";
-import { type PreRegisterState } from "~/types";
+import { PreRegistrationFormSchema } from "~/lib/zod-schema";
+import { createRegistrationData } from "~/server/actions";
 
 Modal.setAppElement("#home-container");
 
@@ -81,7 +82,7 @@ const PreRegistrationButtonWithModalSubmitButton = () => {
   return (
     <Button
       variant={ButtonVariant.CYAN}
-      className="flex items-center disabled:pointer-events-none disabled:bg-gray-400"
+      className="flex items-center disabled:cursor-not-allowed disabled:bg-gray-400"
       disabled={pending}
     >
       <span>{pending ? "Submitting" : "Submit details"}</span>
@@ -97,26 +98,51 @@ type IPreRegistrationForm = {
 const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
   const [open, setOpen] = useState(false);
 
-  const initialState: PreRegisterState = {
-    success: false,
-    message: "",
-    submitted: false,
-  };
-  const [state, formAction] = useFormState(
-    createRegistrationData,
-    initialState,
-  );
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const [key, setKey] = useState(0);
   function closeModal() {
     setOpen(false);
-    setKey((key) => key + 1);
-    state.message = "";
-    state.submitted = false;
-    state.success = false;
   }
 
   const ButtonTag = isDiamond ? DiamondButton : Button;
+
+  const handleAction = async (formData: FormData) => {
+    const preRegistrationData = PreRegistrationFormSchema.safeParse(
+      Object.fromEntries(formData.entries()),
+    );
+
+    if (!preRegistrationData.success) {
+      const error = preRegistrationData.error.issues
+        .map((issue) => {
+          return `${issue.path[0]}: ${issue.message}`;
+        })
+        .join(".");
+
+      toast.error(error);
+      return;
+    }
+
+    try {
+      const result = await createRegistrationData(preRegistrationData.data);
+
+      if (result?.error) {
+        toast.error(result.error, { duration: 5000 });
+        return;
+      }
+
+      toast.success(
+        `Registration Successful! You'll receive further information via email on ${preRegistrationData.data.email}.`,
+        {
+          duration: 10000,
+        },
+      );
+
+      formRef.current?.reset();
+      closeModal();
+    } catch (err) {
+      toast.error("Something went wrong! Please try again!");
+    }
+  };
 
   return (
     <>
@@ -148,18 +174,11 @@ const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
             animation: "slideUp 0.5s ease-out",
           },
           overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.75)", 
-            zIndex: '40'
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
+            zIndex: "40",
           },
         }}
       >
-        {state.submitted && (
-          <p
-            className={`m-2 p-4 text-center ${state.success ? "text-green-400" : "text-red-400"} text-xl lg:text-3xl`}
-          >
-            {state.message}
-          </p>
-        )}
         <div className="rounded-lg bg-white p-5 shadow-xl">
           <header className="relative">
             <button
@@ -172,9 +191,9 @@ const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
               Pre Registration
             </div>
           </header>
-          <form key={key} action={formAction}>
+          <form ref={formRef} action={handleAction}>
             <div className="border-b-2 pb-6">
-              <div className="grid grid-cols-1 gap-y-1 gap-x-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-x-4 gap-y-1 md:grid-cols-2">
                 {fields.map((item) => (
                   <div className="h-20 w-full" key={item.id}>
                     <InputFieldParent

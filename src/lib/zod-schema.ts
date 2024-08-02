@@ -11,11 +11,14 @@ export const ContactUsFormSchema = z.object({
 export type ContactUsForm = z.infer<typeof ContactUsFormSchema>;
 
 export const PreRegistrationFormSchema = z.object({
-  SchoolName: z.string(),
-  StreetAddress: z.string(),
-  City: z.string(),
-  State: z.string(),
-  Pincode: z.string().length(6).regex(/^\d+$/).transform(Number),
+  SchoolName: z.string().min(1),
+  StreetAddress: z.string().min(1),
+  City: z.string().min(1),
+  State: z.string().min(1),
+  Pincode: z.union([
+    z.string().length(6).transform(Number),
+    z.number().int().gte(100000).lte(999999),
+  ]),
   SchoolWebsite: z.string(),
   FirstName: z.string().regex(/^[A-Za-z]+$/),
   Surname: z.string().regex(/^[A-Za-z]+$/),

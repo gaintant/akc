@@ -14,10 +14,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function sendPreRegistrationEmailToSelf(formData: FormData) {
+export async function sendPreRegistrationEmailToSelf(schoolName: string) {
   const emailBody = `
   <p>Hi,</p><br />
-  <p>Received pre-registration info from ${formData.get("SchoolName") as string}.</p><br/><br/>
+  <p>Received pre-registration info from ${schoolName}.</p><br/><br/>
   <div>Sporty Greetings,</div>
   <div>Athletics Kids Cup Team</div><br />
   <img src="cid:akcLogo" width="180" height="35.58" />

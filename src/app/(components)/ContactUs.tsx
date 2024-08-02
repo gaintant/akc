@@ -52,7 +52,6 @@ const SubmitButton = () => {
   );
 };
 
-// TODO: fix pending state
 const ContactUs = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -76,12 +75,15 @@ const ContactUs = () => {
       const result = await handleContactUs(contactUsData.data);
 
       if (result?.error) {
-        toast.error(result.error);
+        toast.error(result.error, { duration: 5000 });
         return;
       }
 
       toast.success(
         "Thank you for contacting AKC! We will get back to you with your query shortly!",
+        {
+          duration: 10000
+        }
       );
 
       formRef.current?.reset();
