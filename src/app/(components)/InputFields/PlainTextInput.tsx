@@ -4,7 +4,7 @@ interface IInputField {
   labelName: string;
   isRequired: boolean;
   textArea?: boolean;
-  validationError: string | undefined;
+  validationError?: string;
 }
 
 const InputField: React.FC<IInputField> = (props) => {

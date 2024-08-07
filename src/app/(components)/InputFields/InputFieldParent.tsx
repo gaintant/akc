@@ -8,7 +8,7 @@ interface IInputFieldParent {
     inputType: string;
     labelName: string;
     isRequired: boolean;
-    validationError: string | undefined;
+    validationError?: string;
 }
 
 const InputFieldParent: React.FC<IInputFieldParent> = (props) => {
