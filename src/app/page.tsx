@@ -8,6 +8,7 @@ import PreRegistration from "./(components)/PreRegistration";
 import ValueProposition from "./(components)/ValueProposition";
 import VideoPlayer from "./(components)/VideoPlayer";
 import ContactUs from "./(components)/ContactUs";
+import KnowMoreAboutUs from "./(components)/KnowMoreAboutUs";
 
 const Mobile = () => {
   return (
@@ -24,6 +25,7 @@ const Mobile = () => {
         videoSrc="/videos/AKC_video.mp4"
         playIconSrc="/images/svgs/vid-play-button.svg"
       />
+      <KnowMoreAboutUs />
       <ContactUs />
     </div>
   );
