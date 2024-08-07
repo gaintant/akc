@@ -94,31 +94,36 @@ const PreRegistrationButtonWithModalSubmitButton = () => {
 type IPreRegistrationForm = {
   isDiamond?: boolean;
 };
-
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+type IPreRegistrationFormErrors = {
+  [key: string]: string | undefined;
+};
 const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
   const [open, setOpen] = useState(false);
+  const [formErrors, setFormErrors] = useState<IPreRegistrationFormErrors>({});
 
   const formRef = useRef<HTMLFormElement>(null);
 
   function closeModal() {
     setOpen(false);
+    setFormErrors({});
   }
 
   const ButtonTag = isDiamond ? DiamondButton : Button;
 
   const handleAction = async (formData: FormData) => {
+    setFormErrors({});
     const preRegistrationData = PreRegistrationFormSchema.safeParse(
       Object.fromEntries(formData.entries()),
     );
 
     if (!preRegistrationData.success) {
-      const error = preRegistrationData.error.issues
-        .map((issue) => {
-          return `${issue.path[0]}: ${issue.message}`;
-        })
-        .join(".");
-
-      toast.error(error);
+      let errors = {};
+      preRegistrationData.error.issues.forEach((issue) => {
+        const pathName = issue.path[0] as string;
+        errors = { [pathName]: issue.message, ...errors };
+      });
+      setFormErrors(errors);
       return;
     }
 
@@ -143,6 +148,8 @@ const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
       toast.error("Something went wrong! Please try again!");
     }
   };
+
+  console.log("formerrors", formErrors);
 
   return (
     <>
@@ -200,6 +207,9 @@ const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
                       inputType={item.inputType}
                       labelName={item.name}
                       isRequired={item.isRequired}
+                      validationError={
+                        formErrors[item.name.replace(/\s+/g, "")]
+                      }
                     />
                   </div>
                 ))}
