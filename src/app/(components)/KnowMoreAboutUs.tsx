@@ -10,9 +10,10 @@ const KnowMoreAboutUs: React.FC = () => {
       id: 1,
       heading: "Competition",
       points: [
+        { text: "How it works", href: "/howItWorks" },
         { text: "Who can participate?", href: "/participation" },
         { text: "The three disciplines", href: "/disciplines" },
-        { text: "Rules and categories", href: "/rules-categories" },
+        { text: "Rules and categories", href: "/rulesAndCategories" },
         { text: "Finals", href: "/finals" },
       ],
     },
@@ -20,8 +21,8 @@ const KnowMoreAboutUs: React.FC = () => {
       id: 2,
       heading: "Organizers",
       points: [
-        { text: "Become an organizer", href: "/become-an-orgainzer" },
-        { text: "Documents and downloads", href: "/documents-downloads" },
+        { text: "Become an organizer", href: "/becomeAnOrganizer" },
+        { text: "Documents and downloads", href: "/documentsAndDownloads" },
       ],
     },
     {
