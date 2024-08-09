@@ -34,7 +34,7 @@ html {
 .diamond-btn-bg::after,
 .diamond-btn-bg > *::before,
 .diamond-btn-bg > *::after {
-  content: '';
+  content: "";
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ html {
 .diamond-btn-bg::before {
   width: 45.62px;
   height: 50.09px;
-  background-image: url('/images/motion.png');
+  background-image: url("/images/motion.png");
   top: -48px;
   left: -48px;
   rotate: 0deg;
@@ -53,16 +53,16 @@ html {
 .diamond-btn-bg::after {
   width: 36.78px;
   height: 39.74px;
-  background-image: url('/images/star.png');
+  background-image: url("/images/star.png");
   top: -64px;
   right: -64px;
   rotate: 0deg;
 }
 
-.diamond-btn-bg> *::before {
+.diamond-btn-bg > *::before {
   width: 30.33px;
   height: 31.48px;
-  background-image: url('/images/star.png');
+  background-image: url("/images/star.png");
   bottom: -128px;
   left: 64px;
 }
@@ -70,7 +70,7 @@ html {
 .diamond-btn-bg > *::after {
   width: 45.62px;
   height: 50.09px;
-  background-image: url('/images/motion.png');
+  background-image: url("/images/motion.png");
   bottom: 36px;
   right: -84px;
   rotate: 135deg;
@@ -108,6 +108,16 @@ html {
   font-size: 16px;
   line-height: 23px;
   letter-spacing: -0.02em;
+}
+
+.about-akc-oval-image {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+  border-bottom: 8px solid black;
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
 }
 
 @keyframes slideUp {

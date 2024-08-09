@@ -80,8 +80,8 @@ export default function page() {
       <div className="relative mt-24 w-full bg-slate-100">
         <div className="container mx-auto flex flex-col p-4 md:flex-row">
           <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-24 md:w-1/2 md:px-12">
-            <div className="max-w-[450px]">
-              <div className="ml-16 sm:ml-0 md:mt-12">
+            <div className="max-w-[450px] md:mt-8">
+              <div>
                 <h2 className="text-4xl font-bold">Our team</h2>
                 <div>
                   <Image
@@ -102,13 +102,13 @@ export default function page() {
               </p>
             </div>
           </div>
-          <div className="order-1 mb-4 w-full md:order-2 md:mb-0 md:w-1/2">
+          <div className="order-1 mb-4 w-full md:order-2 md:mb-0 md:ml-24">
             <Image
-              src="/images/kids.png"
+              src="/images/about-akc/teamPhoto.png"
               alt="Image"
-              width={400}
-              height={400}
-              className="object-contain"
+              width={700}
+              height={600}
+              className="about-akc-oval-image object-contain"
             />
           </div>
         </div>
