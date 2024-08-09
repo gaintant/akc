@@ -30,11 +30,12 @@ export default function page() {
       {/* Big Image Below the Paragraphs */}
       <div className="mt-2 flex w-full justify-center">
         <Image
-          src="/images/abc.png"
+          src="/images/about-akc/run-kids.png"
           alt="Big Image"
           width={300} // Smaller width for mobile
-          height={400} // Smaller height for mobile
-          className="w-full object-cover sm:w-auto sm:max-w-lg"
+          height={200} // Smaller height for mobile
+          layout="responsive"
+          className="object-contain"
         />
       </div>
 
@@ -76,15 +77,30 @@ export default function page() {
       </div>
 
       {/* Team Details Section*/}
-      <div className="relative mt-12 bg-slate-100 shadow-lg">
+      <div className="relative mt-24 w-full bg-slate-100">
         <div className="container mx-auto flex flex-col p-4 md:flex-row">
-          <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-16 md:w-1/2 md:px-12">
-            <h2 className="mb-4 text-3xl font-bold">Our team</h2>
-            <p className="text-lg">
-              Dspowerparts and its partners ensure that the Athletics Kids Cup
-              gets children in India moving. As many athletes as possible should
-              be able to have fun running, jumping and throwing.
-            </p>
+          <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-24 md:w-1/2 md:px-12">
+            <div className="max-w-[450px]">
+              <div className="ml-16 sm:ml-0 md:mt-12">
+                <h2 className="text-4xl font-bold">Our team</h2>
+                <div>
+                  <Image
+                    src="/images/svgs/our-team-underline.svg"
+                    width={150}
+                    height={16}
+                    alt="black icon"
+                  />
+                </div>
+              </div>
+              <p className="mt-6 text-lg">
+                Dspowerparts and its partners ensure that the Athletics Kids Cup
+                gets children in India moving.
+              </p>
+              <p className="mt-4 text-lg">
+                As many atheltes as possible should be able to have fun running,
+                jumping and throwing.
+              </p>
+            </div>
           </div>
           <div className="order-1 mb-4 w-full md:order-2 md:mb-0 md:w-1/2">
             <Image
@@ -92,6 +108,7 @@ export default function page() {
               alt="Image"
               width={400}
               height={400}
+              className="object-contain"
             />
           </div>
         </div>
