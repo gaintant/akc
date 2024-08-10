@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import DesignBar from "../(components)/DesignBar";
+import Button, { ButtonVariant } from "../(components)/Button";
+import Arrow from "../(components)/Icons/Arrow";
 
 export default function page() {
   return (
@@ -158,42 +160,17 @@ export default function page() {
             <h2 className="mb-2 text-2xl font-bold">
               Information for media representatives
             </h2>
-            <p className="text-lg">
+            <p className="mb-2 text-lg">
               We are available to media representatives at any time:  Please
               contact us via media@athleticskidscup.com
             </p>
           </div>
           <div className="md:mr-16">
-            <Link href="/contactUs">
-              <button className="relative mt-4 w-max cursor-pointer rounded-full border-2 border-gray-700 bg-red-500 px-6 py-3 text-base font-bold shadow-[4px_6px_0_#12141d] transition-all duration-100 ease-out hover:translate-x-0.5 hover:translate-y-[3px] hover:shadow-[2px_3px_0_#12141d] active:translate-x-1 active:translate-y-1.5 active:shadow-[1px_1px_0_#12141d] md:mt-0">
-                <div className="flex flex-row">
-                  <span className="text-xl font-bold">Contact Us</span>
-                  <svg
-                    width="32px"
-                    height="32px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      {" "}
-                      <path
-                        d="M7 17L17 7M17 7H8M17 7V16"
-                        stroke="#000000"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>{" "}
-                    </g>
-                  </svg>
-                </div>
-              </button>
+            <Link href="/contactUs" passHref className="mt-2">
+              <Button variant={ButtonVariant.RED} className="flex items-center">
+                <span>Contact Us</span>
+                <Arrow className="w-5 -rotate-45" fill="#374151" />
+              </Button>
             </Link>
           </div>
         </div>
