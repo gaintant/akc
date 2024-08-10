@@ -110,16 +110,6 @@ html {
   letter-spacing: -0.02em;
 }
 
-.about-akc-oval-image {
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-  border-bottom-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  border-bottom: 8px solid black;
-  overflow: hidden;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
-}
-
 @keyframes slideUp {
   from {
     transform: translateY(100%);

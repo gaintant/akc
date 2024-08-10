@@ -28,14 +28,14 @@ export default function page() {
       </div>
 
       {/* Big Image Below the Paragraphs */}
-      <div className="mt-2 flex w-full justify-center">
+      <div className="relative mx-auto mt-2 h-auto w-full sm:h-[auto]">
         <Image
           src="/images/about-akc/run-kids.png"
           alt="Big Image"
-          width={300} // Smaller width for mobile
-          height={200} // Smaller height for mobile
+          width={2873}
+          height={731}
           layout="responsive"
-          className="object-contain"
+          className="object-cover"
         />
       </div>
 
@@ -81,7 +81,7 @@ export default function page() {
         <div className="container mx-auto flex flex-col p-4 md:flex-row">
           <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-24 md:w-1/2 md:px-12">
             <div className="max-w-[450px] md:mt-8">
-              <div>
+              <div className="md:mt-12">
                 <h2 className="text-4xl font-bold">Our team</h2>
                 <div>
                   <Image
@@ -102,13 +102,13 @@ export default function page() {
               </p>
             </div>
           </div>
-          <div className="order-1 mb-4 w-full md:order-2 md:mb-0 md:ml-24">
+          <div className="relative order-1 mx-auto mb-4 h-auto w-full sm:h-[auto] md:order-2 md:mb-0 md:ml-24">
             <Image
-              src="/images/about-akc/teamPhoto.png"
+              src="/images/about-akc/team-photo.png"
               alt="Image"
-              width={700}
-              height={600}
-              className="about-akc-oval-image object-contain"
+              width={720}
+              height={451}
+              className="object-cover"
             />
           </div>
         </div>
