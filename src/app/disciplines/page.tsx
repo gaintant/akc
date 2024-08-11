@@ -7,7 +7,10 @@ import Arrow from "../(components)/Icons/Arrow";
 
 export default function page() {
   return (
-    <section>
+    <section
+      id="disciplines"
+      className="flex min-h-screen w-full flex-col items-center justify-between bg-white p-4"
+    >
       <div className="relative mb-2 flex md:text-center">
         <div className="mt-8 flex min-w-[300px] flex-col items-center md:w-full">
           <p className="font-gray-900 flex text-2xl">The three disciplines</p>
@@ -94,9 +97,9 @@ export default function page() {
                   <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
                     Sprint 60 m
                   </h2>
-                  <div className="mt-2 md:ml-44">
+                  <div className="mt-2">
                     <Image
-                      src="/images/participation/blue-underline.svg"
+                      src="/images/disciplines/sprint-underline.svg"
                       width={200}
                       height={16}
                       alt="black icon"
@@ -145,9 +148,9 @@ export default function page() {
                   <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
                     Long jump with zone jump
                   </h2>
-                  <div className="mt-2 md:ml-44">
+                  <div className="mt-2">
                     <Image
-                      src="/images/participation/blue-underline.svg"
+                      src="/images/disciplines/long-jump-underline.svg"
                       width={200}
                       height={16}
                       alt="black icon"
@@ -196,9 +199,9 @@ export default function page() {
                   <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
                     Ball throw 200g
                   </h2>
-                  <div className="mt-2 md:ml-44">
+                  <div className="mt-2">
                     <Image
-                      src="/images/participation/blue-underline.svg"
+                      src="/images/disciplines/ball-throw-underline.svg"
                       width={200}
                       height={16}
                       alt="black icon"
