@@ -50,7 +50,7 @@ export default function page() {
       </div>
 
       {/* Big Image Below the discipline Paragraphs */}
-      <div className="relative mx-auto mt-2 h-auto w-full px-32 py-4 sm:h-[auto]">
+      <div className="relative mx-auto mb-16 mt-2 h-auto w-full px-32 py-4 sm:h-[auto]">
         <Image
           src="/images/disciplines/discipline-1.png"
           alt="Big Image"
@@ -61,12 +61,10 @@ export default function page() {
         />
       </div>
 
-      <div className="my-16">
-        <DesignBar />
-      </div>
+      <DesignBar />
 
       {/*para and button*/}
-      <div className="relative mb-8 md:text-center">
+      <div className="relative mb-8 mt-16 md:text-center">
         <div className="flex min-w-[300px] flex-col items-center">
           <div className="mb-4 flex max-w-[900px] text-xl font-bold md:text-2xl ">
             The Athletics Kids Cup is a triathlon consisting of the following
