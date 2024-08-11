@@ -190,7 +190,7 @@ export default function page() {
                   <Link href="/rulesAndCategories" passHref>
                     <Button
                       variant={ButtonVariant.GREEN}
-                      className="flex items-center"
+                      className="flex items-center gap-3"
                     >
                       <span>More Info</span>
                       <Arrow className="w-5 -rotate-45" fill="#374151" />
@@ -228,7 +228,7 @@ export default function page() {
                   <Link href="/disciplines" passHref>
                     <Button
                       variant={ButtonVariant.CYAN}
-                      className="flex items-center"
+                      className="flex items-center gap-3"
                     >
                       <span>More Info</span>
                       <Arrow className="w-5 -rotate-45" fill="#374151" />
