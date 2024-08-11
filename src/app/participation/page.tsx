@@ -13,7 +13,7 @@ export default function page() {
       id="participation"
       className="flex min-h-screen w-full flex-col items-center justify-between bg-white p-4"
     >
-      <div className="relative mt-24 w-full">
+      <div className="relative mt-8 w-full">
         <div className="container mx-auto flex flex-col p-4 md:flex-row">
           <div className="order-2 mb-4 w-full min-w-[300px] md:mb-0 md:mr-8 md:w-3/4 md:px-12">
             <div className="md:mt-8">
@@ -21,10 +21,10 @@ export default function page() {
                 <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
                   Who can participate?
                 </h2>
-                <div>
+                <div className="mt-2 md:ml-44">
                   <Image
-                    src="/images/svgs/green-squiggle.svg"
-                    width={114.86}
+                    src="/images/participation/blue-underline.svg"
+                    width={200}
                     height={16}
                     alt="black icon"
                   />
@@ -82,14 +82,14 @@ export default function page() {
               alt="Image"
               width={621}
               height={612}
-              className="absolute object-cover"
+              className="object-cover"
             />
           </div>
         </div>
       </div>
 
       {/* Competition Section */}
-      <div className="mt-32">
+      <div className="mb-8 mt-32">
         <div className="flex items-center justify-center">
           <div className="the-competition-bg flex min-h-[759px] w-full max-w-[1440px] items-center justify-center">
             <div className="mx-auto box-content max-w-6xl rounded-lg p-4 pt-16">
