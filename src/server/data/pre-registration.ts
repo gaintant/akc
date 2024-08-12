@@ -22,7 +22,7 @@ const PreRegistrationService = {
         schoolPincode: data.Pincode.toString(),
         schoolState: data.State,
         schoolWebsite: data.SchoolWebsite,
-        surname: data.SchoolWebsite,
+        surname: data.Surname,
       });
     },
   },
