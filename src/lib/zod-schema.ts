@@ -32,7 +32,7 @@ export const PreRegistrationFormSchema = z.object({
     .refine((val) => val >= 100000 && val <= 999999, {
       message: "Pincode must be a 6-digit number between 100000 and 999999",
     }),
-  SchoolWebsite: z.string().url("School website should be a valid URL"),
+  SchoolWebsite: z.string(),
   FirstName: z
     .string()
     .regex(/^[A-Za-z]+$/, "Firstname should not contain digits and spaces"),
