@@ -149,8 +149,6 @@ const PreRegistrationForm: React.FC<IPreRegistrationForm> = ({ isDiamond }) => {
     }
   };
 
-  console.log("formerrors", formErrors);
-
   return (
     <>
       <ButtonTag
