@@ -38,7 +38,7 @@ const cards = [
   },
 ];
 
-export default function page() {
+export default function NewHowItWorks() {
   const [expandedCard, setExpandedCard] = useState<number | null>(1);
   return (
     <section

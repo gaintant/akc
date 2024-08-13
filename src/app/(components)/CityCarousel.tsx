@@ -38,9 +38,11 @@ const CityCarousel = () => {
         className="scrollbar-hide flex overflow-x-scroll"
       >
         {cityImagesPaths.map((cityPath, index) => (
-          <div className="flex w-full flex-shrink-0 justify-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+          <div
+            key={index}
+            className="flex w-full flex-shrink-0 justify-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+          >
             <Image
-              key={index}
               src={cityPath}
               alt="Image 1"
               width={151}

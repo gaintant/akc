@@ -20,7 +20,7 @@ export default function page() {
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
             The UBS Kids Cup is the largest youth project in Swiss sport and is
-            organised by Weltklasse Zürich, the world's most renowned athletics
+            organised by Weltklasse Zürich, the world&apos;s most renowned athletics
             meeting of the Diamond League, and the national association Swiss
             Athletics. The Swiss athletics scene is at an all-time high. At the
             last European Championships in Rome, Switzerland won nine medals - a

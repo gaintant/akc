@@ -105,12 +105,12 @@ export default function page() {
                   </div>
                 </div>
                 <p className="mt-6 text-lg">
-                  Whether you use the low start, as the pros do, or the "easier"
-                  high start. The objective is clear: sprint to the finish line
-                  as fast as possible! Attention: Don't start too early! Anyone
-                  can make a false start. But if anyone starts a second time
-                  before the starting signal, unfortunately they will be
-                  disqualified.
+                  Whether you use the low start, as the pros do, or the
+                  &quot;easier&quot; high start. The objective is clear: sprint
+                  to the finish line as fast as possible! Attention: Don&apos;t
+                  start too early! Anyone can make a false start. But if anyone
+                  starts a second time before the starting signal, unfortunately
+                  they will be disqualified.
                 </p>
                 <div className="mt-8">
                   <Link href="/disciplines" passHref>
@@ -158,10 +158,11 @@ export default function page() {
                 <p className="mt-6 text-lg">
                   The children take a running start, jump within an
                   80-centimetre-wide zone and fly as far as they can through the
-                  air! The long jump is all about jumping power. Don't worry:
-                  nobody has to hit the take-off bar exactly like the pros. The
-                  jump is measured from where the athlete took off - as long as
-                  this is done within the 80 centimetre wide, marked zone.
+                  air! The long jump is all about jumping power. Don&apos;t
+                  worry: nobody has to hit the take-off bar exactly like the
+                  pros. The jump is measured from where the athlete took off -
+                  as long as this is done within the 80 centimetre wide, marked
+                  zone.
                 </p>
                 <div className="mt-8">
                   <Link href="/disciplines" passHref>

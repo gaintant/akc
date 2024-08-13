@@ -29,9 +29,9 @@ export default function page() {
           <p className="mb-8 flex text-lg md:max-w-[900px]">
             As an absolute highlight, five regional finals will be held in
             January/February 2025 with the best girls and boys from the
-            respective region.  Participants are selected based on the region's
+            respective region. Participants are selected based on the region&apos;s
             top lists by a predefined deadline (10 December 2024) and also by
-            direct invitation from the organiser.  The regional finals are
+            direct invitation from the organiser. The regional finals are
             organised in a professional setup in a modern athletics facility
             with trained judges and equipment.
           </p>
@@ -113,7 +113,7 @@ export default function page() {
                 The best athletes from the five regional finals qualify for the
                 Grand Mumbai Final. The 30 best athletes in each age category
                 compete against each other. The winners of each category will be
-                invited to a training camp at the Jio Institute's Athletic
+                invited to a training camp at the Jio Institute&apos;s Athletic
                 Centre and will receive tips and tricks from professional
                 coaches.
               </p>

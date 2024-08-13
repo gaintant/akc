@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Link from "next/link";
 
 interface InfoCardProps {
@@ -26,7 +25,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
           {points && points.length > 0 ? (
             heading
           ) : (
-            <Link href={href || "#"}>
+            <Link href={href ?? "#"}>
               <span className="cursor-pointer text-blue-400">{heading}</span>
             </Link>
           )}
@@ -55,7 +54,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
       {isExpanded && points && points.length > 0 && (
         <div className="mt-4 space-y-2">
           {points.map((point, index) => (
-            <div>
+            <div key={index}>
               <div className="flex items-center">
                 <svg
                   className="mr-2 h-4 w-4 text-blue-500"

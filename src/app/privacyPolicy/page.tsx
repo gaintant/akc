@@ -57,10 +57,10 @@ export default function page() {
             Privacy Policy
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
-            Dspowerparts GmbH ("DSPP") recognizes that its visitors, users, and
-            others who use www.athleticskidscup.com value their privacy. This
-            Privacy Policy details important information regarding the use and
-            disclosure of user information collected via the
+            Dspowerparts GmbH (&quot;DSPP&quot;) recognizes that its visitors,
+            users, and others who use www.athleticskidscup.com value their
+            privacy. This Privacy Policy details important information regarding
+            the use and disclosure of user information collected via the
             www.athleticskidscup.com website. This Privacy Policy helps you make
             an informed decision about whether to use or continue using
             www.athleticskidscup.com. Your use of www.athleticskidscup.com and
@@ -69,15 +69,16 @@ export default function page() {
             Privacy Policy and our Terms & Conditions elsewhere on this site.
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
-            DSPP is the owner of www.athleticskidscup.com ("Website"). DSPP can
-            be contacted by mail at "dspowerparts GmbH, Feldhof 11, 66300 Zug,
-            Switzerland" or by e-mail at info@dspowerparts.ch. This online
-            privacy policy discloses DSPP's information practices for this
-            Website and Services (as defined below) including the type of
-            information being collected, method of such information collection,
-            use of such information and with sharing of such information with
-            third parties. "Services" herein shall refer to services provided by
-            DSPP or indirectly on behalf of DSPP's licensee's / marketing
+            DSPP is the owner of www.athleticskidscup.com (&quot;Website&quot;).
+            DSPP can be contacted by mail at &quot;dspowerparts GmbH, Feldhof
+            11, 66300 Zug, Switzerland&quot; or by e-mail at
+            info@dspowerparts.ch. This online privacy policy discloses
+            DSPP&apos;s information practices for this Website and Services (as
+            defined below) including the type of information being collected,
+            method of such information collection, use of such information and
+            with sharing of such information with third parties.
+            &quot;Services&quot; herein shall refer to services provided by DSPP
+            or indirectly on behalf of DSPP&apos;s licensee&apos;s / marketing
             affiliates which encompasses the games and networking services of
             www.athleticskidscup.com being made available over the Website,
             cellular phones or any other similar electronic devices and IPTV
@@ -94,8 +95,11 @@ export default function page() {
       </div>
 
       <div className="mt-6 flex w-full max-w-[900px] flex-col items-center gap-2 px-4">
-        {cards.map((card) => (
-          <div className="mb-4 w-full min-w-[300px] cursor-pointer rounded-2xl border-[1.5px] border-gray-700 bg-white p-4 shadow-[2px_4px_0_#12141d] transition-all md:w-[700px] lg:w-[900px]">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="mb-4 w-full min-w-[300px] cursor-pointer rounded-2xl border-[1.5px] border-gray-700 bg-white p-4 shadow-[2px_4px_0_#12141d] transition-all md:w-[700px] lg:w-[900px]"
+          >
             <h3 className="text-xl font-semibold">{card.heading}</h3>
             <p className="mt-2 text-gray-700">{card.content}</p>
           </div>
