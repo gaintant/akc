@@ -1,18 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const LandingPageHeader = () => {
   return (
     <header className="flex w-full items-center justify-center">
       <div className="top-0 box-content flex w-full max-w-6xl items-center justify-between bg-white px-4 py-3 md:p-4">
-        <div className="flex items-center">
-          <Image
-            src="/images/AKCLogo_ALt.png"
-            alt="Athletics Kids Cup Logo"
-            height={71.16}
-            width={360}
-            className="h-auto w-[212px] md:w-[360px]"
-          />
-        </div>
+        <Link href="/">
+          <div className="flex items-center">
+            <Image
+              src="/images/AKCLogo_ALt.png"
+              alt="Athletics Kids Cup Logo"
+              height={71.16}
+              width={360}
+              className="h-auto w-[212px] md:w-[360px]"
+            />
+          </div>
+        </Link>
         <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-4">
           <span className="text-[8px] font-medium md:text-sm">Enabled by</span>
           <Image
