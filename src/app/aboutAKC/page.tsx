@@ -20,11 +20,11 @@ export default function page() {
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
             The UBS Kids Cup is the largest youth project in Swiss sport and is
-            organised by Weltklasse Zürich, the world&apos;s most renowned athletics
-            meeting of the Diamond League, and the national association Swiss
-            Athletics. The Swiss athletics scene is at an all-time high. At the
-            last European Championships in Rome, Switzerland won nine medals - a
-            record!
+            organised by Weltklasse Zürich, the world&apos;s most renowned
+            athletics meeting of the Diamond League, and the national
+            association Swiss Athletics. The Swiss athletics scene is at an
+            all-time high. At the last European Championships in Rome,
+            Switzerland won nine medals - a record!
           </p>
         </div>
       </div>
@@ -127,7 +127,16 @@ export default function page() {
                 <div className="bg-[#57D081] p-6 text-xl font-bold text-[#1F2937]">
                   Main sponsor and enabler
                 </div>
-                <div className="min-h-[200px] bg-[#E3F7EA] p-6 font-medium text-[#1F2937] ">
+                <div className="min-h-[242px] bg-[#E3F7EA] p-6 font-medium text-[#1F2937] ">
+                  <div className="mb-4 flex justify-center">
+                    <Image
+                      src="/images/about-akc/ubs-logo.png"
+                      alt="Image"
+                      width={249}
+                      height={90}
+                      className="object-cover"
+                    />
+                  </div>
                   UBS has been passionately committed to Swiss athletics for
                   over 40 years. Now the children in India are benefiting from
                   this great commitment.
@@ -141,6 +150,15 @@ export default function page() {
                   Execution partner
                 </div>
                 <div className="min-h-[200px] bg-[#DDF3FE] p-6 font-medium text-[#1F2937] ">
+                  <div className="mb-2 flex justify-center">
+                    <Image
+                      src="/images/about-akc/striders-logo.png"
+                      alt="Image"
+                      width={338}
+                      height={90}
+                      className="object-cover"
+                    />
+                  </div>
                   Striders Miles is a central partner in the realisation of the
                   Athletics Kids Cup. The Striders team has supported the
                   Athletics Kids Cup from the very beginning and is the local
@@ -156,7 +174,7 @@ export default function page() {
       {/* Contact Us Info */}
       <div className="relative my-24 px-4">
         <div className="container flex flex-col md:flex-row">
-          <div className="w-full md:w-3/4">
+          <div className="mb-2 w-full md:w-3/4">
             <h2 className="mb-2 text-2xl font-bold">
               Information for media representatives
             </h2>
@@ -167,9 +185,12 @@ export default function page() {
           </div>
           <div className="md:mr-16">
             <Link href="/contactUs" passHref className="mt-2">
-              <Button variant={ButtonVariant.RED} className="flex items-center">
+              <Button
+                variant={ButtonVariant.RED}
+                className="flex items-center gap-3"
+              >
                 <span>Contact Us</span>
-                <Arrow className="w-5 -rotate-45" fill="#374151" />
+                <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
               </Button>
             </Link>
           </div>
