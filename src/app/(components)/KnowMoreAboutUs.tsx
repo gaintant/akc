@@ -28,7 +28,15 @@ const KnowMoreAboutUs: React.FC = () => {
     {
       id: 3,
       heading: "FAQ",
-      points: [{ text: "FAQ", href: "/faq" }],
+      points: [
+        { text: "FAQ", href: "/faq" },
+        {
+          text: "Conditions Of Participation",
+          href: "/conditionsOfParticipation",
+        },
+        { text: "Privacy policy", href: "/privacyPolicy" },
+        { text: "Imprint", href: "/imprint" },
+      ],
     },
     {
       id: 4,
