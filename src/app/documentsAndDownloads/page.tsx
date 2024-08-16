@@ -1,5 +1,5 @@
 import React from "react";
-
+import DocumentsAndDownload from "./DocumentsAndDownload";
 export default function page() {
-  return <div className="min-h-[600px]">DocumentsAndDownloads</div>;
+  return <DocumentsAndDownload/>
 }
