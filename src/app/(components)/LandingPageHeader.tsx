@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "./navbar";
 
 const LandingPageHeader = () => {
   return (
@@ -16,6 +17,7 @@ const LandingPageHeader = () => {
             />
           </div>
         </Link>
+        <div className="flex gap-10">
         <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-4">
           <span className="text-[8px] font-medium md:text-sm">Enabled by</span>
           <Image
@@ -25,6 +27,8 @@ const LandingPageHeader = () => {
             width={146.12}
             className="h-auto w-[74px] md:w-[146px]"
           />
+        </div>
+        <Navbar />
         </div>
       </div>
     </header>
