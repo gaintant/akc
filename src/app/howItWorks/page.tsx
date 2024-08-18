@@ -48,7 +48,7 @@ export default function NewHowItWorks() {
       {/* First component*/}
       <div className="relative mt-24 w-full">
         <div className="container mx-auto flex flex-col p-4 md:flex-row">
-          <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-24 md:w-3/4 md:px-12">
+          <div className="order-1 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-24 md:w-3/4 md:px-12">
             <div className="md:mt-8">
               <div className="md:mt-12">
                 <h2 className="text-[2.5rem] font-semibold leading-[48px] tracking-[-0.04em]">
@@ -106,7 +106,7 @@ export default function NewHowItWorks() {
               </p>
             </div>
           </div>
-          <div className="relative order-1 mx-auto mb-4 h-auto w-full sm:h-[auto] md:order-2 md:mb-0">
+          <div className="relative order-2 mx-auto mb-4 h-auto w-full sm:h-[auto] md:order-2 md:mb-0">
             <Image
               src="/images/how-it-works/kids-first.png"
               alt="Image"
