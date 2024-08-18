@@ -4,34 +4,34 @@ import clsx from 'clsx';
 import { LinkDetails, LinkSectionDetails } from "./types";
 
 
-const ArrowButton = ({value} :{value : LinkDetails}) => {
+const ArrowButton = ({ value }: { value: LinkDetails }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isClient, setIsClient] = useState(false);
-    
+
     useEffect(() => {
         // This effect runs only on the client and prevent server side render
         setIsClient(true);
     }, []);
 
-    const handleClick = (linkDetails : LinkDetails) => {
+    const handleClick = (linkDetails: LinkDetails) => {
         console.log(linkDetails)
         console.log(linkDetails.Name)
-        if(isClient){
+        if (isClient) {
 
             const link = document.createElement('a');
-            link.href = linkDetails.URL; 
-            link.download = linkDetails.Name; 
+            link.href = linkDetails.URL;
+            link.download = linkDetails.Name;
             console.log(link)
             document.body.appendChild(link);
-        
+
             link.click();
             document.body.removeChild(link);
         }
-            
+
     };
     return (
         <div className="flex flex flex-row items-center space-x-2"
-            onClick={() => handleClick({...value})}
+            onClick={() => handleClick({ ...value })}
             onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}
         >
             {!isHovered ? (
@@ -66,21 +66,20 @@ const ArrowButton = ({value} :{value : LinkDetails}) => {
                 {value.Name}
             </div>
         </div>
-        
+
     );
 };
-const LinkDescription = ({ linkSectionDetails } : {linkSectionDetails : LinkSectionDetails}) => {
+const LinkDescription = ({ linkSectionDetails }: { linkSectionDetails: LinkSectionDetails }) => {
     return (
-        <div className="flex w-full mt-4 border-b-2 border-dashed pb-6  border-gray-400">
-            <div className="w-1/3">
+        <div className="flex flex-col lg:flex-row w-full mt-4 border-b-2 border-dashed pb-6 border-gray-400 pl-4 pr-4 lg:pl-0">
+            <div className="w-full lg:w-1/3 mb-4 lg:mb-0">
                 <h2 className="text-2xl font-bold">{linkSectionDetails.desc}</h2>
             </div>
-            <div className="w-2/3">
-                <div className="grid grid-cols-2 gap-4">
-                    {linkSectionDetails.links.map((link : LinkDetails, index : number) => (
-                        <ArrowButton key={index} value={link}/>
+            <div className="w-full lg:w-2/3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {linkSectionDetails.links.map((link: LinkDetails, index: number) => (
+                        <ArrowButton key={index} value={link} />
                     ))}
-
                 </div>
             </div>
         </div>
