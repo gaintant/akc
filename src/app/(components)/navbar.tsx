@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { SlMenu, SlArrowDown, SlArrowUp, SlArrowRight } from 'react-icons/sl';
 import clsx from 'clsx';
+import { RxCrossCircled, RxCross2 } from "react-icons/rx";
 
 const navItems = [
   {
@@ -109,16 +110,25 @@ const Navbar = () => {
         } transition-transform duration-300`}
       >
         {/* Close Button */}
+       {/* <div className='border-solid border-2 border-black rounded-full'>
         <button
           onClick={toggleMenu}
-          className="absolute top-4 right-4 p-2 text-gray-600 focus:outline-none"
+          className="absolute top-4 right-4 p-2  text-gray-600 focus:outline-none"
         >
+        
           <div className="relative w-8 h-8">
             <div className="absolute inset-0 w-8 h-0.5 bg-gray-600 rotate-45"></div>
             <div className="absolute inset-0 w-8 h-0.5 bg-gray-600 -rotate-45"></div>
           </div>
         </button>
-
+        </div> */}
+       <button
+            onClick={toggleMenu}
+          
+          >
+            <RxCross2 fontSize={40} style={{boxShadow:"2px 4px black",
+              borderRadius:"50%",margin:0,width:"100%", borderBlockColor:"black", border: "solid", borderWidth: "2px", padding: "0.4rem"} } />
+          </button>
         {/* Links */}
         <nav className="mt-8">
           <ul className="space-y-6">
