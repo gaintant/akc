@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { SlMenu, SlArrowDown, SlArrowUp, SlArrowRight } from 'react-icons/sl';
 import clsx from 'clsx';
-import { RxCrossCircled, RxCross2 } from "react-icons/rx";
+import { RxCross2 } from "react-icons/rx";
+import Image from "next/image";
 
 const navItems = [
   {
@@ -97,7 +98,7 @@ const Navbar = () => {
       {/* Navbar Toggle Button */}
       <button
         onClick={toggleMenu}
-        className="p-2 text-gray-600 focus:outline-none"
+        className="p-2 text-gray-600 focus:outline-none fixed bottom-4 right-4 md:static md:bottom-auto md:right-auto z-20"
       >
         <SlMenu fontSize={40} />
       </button>
@@ -105,30 +106,39 @@ const Navbar = () => {
       {/* Sidebar Menu */}
       <div
         ref={menuRef}
-        className={`fixed top-0 right-0 w-1/4 h-full bg-white shadow-lg z-10 transform ${
+        className={`fixed top-0 right-0 w-3/4 md:w-1/4 h-full bg-white shadow-lg z-10 transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300`}
       >
-        {/* Close Button */}
-       {/* <div className='border-solid border-2 border-black rounded-full'>
-        <button
-          onClick={toggleMenu}
-          className="absolute top-4 right-4 p-2  text-gray-600 focus:outline-none"
-        >
-        
-          <div className="relative w-8 h-8">
-            <div className="absolute inset-0 w-8 h-0.5 bg-gray-600 rotate-45"></div>
-            <div className="absolute inset-0 w-8 h-0.5 bg-gray-600 -rotate-45"></div>
-          </div>
-        </button>
-        </div> */}
-       <button
-            onClick={toggleMenu}
-          
-          >
-            <RxCross2 fontSize={40} style={{boxShadow:"2px 4px black",
-              borderRadius:"50%",margin:0,width:"100%", borderBlockColor:"black", border: "solid", borderWidth: "2px", padding: "0.4rem"} } />
+        <div className="flex p-2 justify-between">
+          <Link href="/">
+            <div className="flex items-center w-2/3 ">
+              <Image
+                src="/images/AKCLogo_ALt.png"
+                alt="Athletics Kids Cup Logo"
+                height={71.16}
+                width={360}
+                className="h-auto w-[212px] md:w-[360px]"
+              />
+            </div>
+          </Link>
+          <button onClick={toggleMenu}>
+            <RxCross2
+              fontSize={35}
+              style={{
+                boxShadow: "2px 4px black",
+                borderRadius: "50%",
+                margin: 0,
+                width: "100%",
+                borderBlockColor: "black",
+                border: "solid",
+                borderWidth: "2px",
+                padding: "0.4rem",
+              }}
+            />
           </button>
+        </div>
+
         {/* Links */}
         <nav className="mt-8">
           <ul className="space-y-6">
