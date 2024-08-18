@@ -112,7 +112,7 @@ const ContactUs = () => {
           />
         </div>
         <div className="box-content flex w-full max-w-6xl flex-1 justify-center px-4">
-          <div className="z-10 mt-20 flex w-full flex-1 flex-col items-center gap-4 rounded-3xl border-[1.5px] border-defaultFontColor bg-[#F4F6F8] px-9 py-6 shadow-[3px_6px_0_#12141d]">
+          <div className="mt-20 flex w-full flex-1 flex-col items-center gap-4 rounded-3xl border-[1.5px] border-defaultFontColor bg-[#F4F6F8] px-9 py-6 shadow-[3px_6px_0_#12141d]">
             <h3 className="text-2xl font-bold">Contact Us</h3>
             <form ref={formRef} action={handleAction} className="w-full">
               <div className="flex flex-col justify-center gap-6 md:flex-row">
