@@ -30,7 +30,7 @@ const navItems = [
     ],
   },
   { href: '/faq', label: 'FAQ' },
-  { href: '#contact-us', label: 'Contact Us' },
+  { href: '/#contact-us', label: 'Contact Us' },
 ];
 
 const Navbar = () => {
@@ -41,8 +41,10 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
-  const toggleSubMenu = (label: string) =>
+  const toggleSubMenu = (label: string) => {
     setOpenSubMenu((prev) => (prev === label ? null : label));
+    
+  };
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -89,7 +91,7 @@ const Navbar = () => {
         } transition-transform duration-300`}
       >
         <div className="flex p-2 justify-between">
-          <Link href="/">
+          <Link href="/" onClick={closeMenu}>
             <div className="flex items-center w-2/3">
               <Image
                 src="/images/AKCLogo_ALt.png"
@@ -122,7 +124,7 @@ const Navbar = () => {
             {navItems.map(({ href, label, subItems }) => (
               <li key={href} className="px-6">
                 {!subItems ? (
-                  <Link href={href}>
+                  <Link href={href} onClick={closeMenu}>
                     <div
                       className="flex flex-row items-center space-x-2 text-gray-700 text-xl hover:text-red-600 cursor-pointer"
                       onMouseEnter={() => setHoveredItem(label)}
@@ -200,7 +202,7 @@ const Navbar = () => {
                       <ul className="pl-10 mt-2 space-y-2 transition-all duration-300">
                         {subItems.map((subItem) => (
                           <li key={subItem.href}>
-                            <Link href={subItem.href} className="text-gray-600 text-lg hover:text-red-500 flex items-center">
+                            <Link href={subItem.href}  onClick={closeMenu} className="text-gray-600 text-lg hover:text-red-500 flex items-center">
                               <SlArrowRight className="mr-2" />
                               {subItem.label}
                             </Link>
