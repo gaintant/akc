@@ -23,27 +23,22 @@ const Carousel = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNextClick();
-    }, 3000); // Slide every 3 seconds
+    }, 1000); // Slide every 3 seconds
     return () => clearInterval(intervalId); // Clean up on component unmount
   }, [currentIndex]);
 
   useEffect(() => {
     const scrollInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    }, 1000); // Move entire carousel every 1 seconds
+    }, 5000); // Move entire carousel every 1 seconds
 
     return () => clearInterval(scrollInterval);
   }, []);
 
   return (
-    <>
-    {/* <div>
-        You benefit - Our services for you.
-        We support you in organising an Athletics Kids Cup. 
-        Each school/organiser receives a ready-to-use toolkit to organise its own competition. 
-        The toolkit includes
-    </div> */}
-    <div className="relative w-full flex flex-col items-center">
+    
+    
+    <div className="relative w-full flex flex-col items-center my-10">
       <div className="flex overflow-hidden w-full justify-center space-x-4">
         {images.map((image, index) => (
           <div
@@ -74,7 +69,7 @@ const Carousel = () => {
         </button>
       </div>
     </div>
-    </>
+
   );
 };
 

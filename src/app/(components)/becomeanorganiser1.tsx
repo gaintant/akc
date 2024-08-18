@@ -7,8 +7,6 @@ import ExpandableCard from "../(components)/ExpandableCard";
 import Button, { ButtonVariant } from "../(components)/Button";
 import Arrow from "../(components)/Icons/Arrow";
 import PreRegistrationForm from "../(components)/PreRegistrationForm";
-import OrganisationalMaterial from "../(components)/becomeanorganiser3";
-import Carousel from "./carousel";
 export default function NewHowItWorks() {
   const [expandedCard, setExpandedCard] = useState<number | null>(1);
   return (
@@ -58,8 +56,7 @@ export default function NewHowItWorks() {
 </div>
 
       <DesignBar />
-      <Carousel />
-      <OrganisationalMaterial/>
+
       {/* Third component*/}
       <div>
         <div className="mt-12">
@@ -149,8 +146,6 @@ export default function NewHowItWorks() {
           </div>
         </div>
       </div>
-
     </section>
-   
   );
 }
