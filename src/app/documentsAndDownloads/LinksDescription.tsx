@@ -30,8 +30,8 @@ const ArrowButton = ({ value }: { value: LinkDetails }) => {
 
     };
     return (
-        <div className="flex flex flex-row items-center space-x-2"
-            onClick={() => handleClick({ ...value })}
+        <div className="flex  flex-row items-center space-x-2"
+            onClick={() => handleClick({...value})}
             onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}
         >
             {!isHovered ? (
