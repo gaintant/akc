@@ -14,7 +14,7 @@ export default function page() {
     >
       <div className="relative mb-2 flex md:text-center">
         <div className="mt-8 flex min-w-[300px] flex-col items-center md:w-full">
-          <p className="mb-4 flex flex flex-row text-2xl font-bold md:max-w-[750px] md:text-4xl ">
+          <p className="mb-4 flex  flex-row text-2xl font-bold md:max-w-[750px] md:text-4xl ">
             Mumbai Regional
             <span className="text-red-500">&nbsp; Finals</span>
           </p>
