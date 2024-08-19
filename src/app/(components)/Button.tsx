@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 export enum ButtonVariant {
   RED,
   CYAN,
+  GREEN,
 }
 
 interface IButton extends React.ComponentProps<"button"> {
@@ -10,6 +11,9 @@ interface IButton extends React.ComponentProps<"button"> {
 }
 
 const getBGColor = (variant: ButtonVariant) => {
+  if (variant === ButtonVariant.GREEN) {
+    return "bg-green-600 text-white";
+  }
   return variant === ButtonVariant.RED
     ? "bg-primary text-white"
     : "bg-cyanAKC text-altTextColor";

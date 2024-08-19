@@ -12,7 +12,7 @@ import Cross from "./Icons/Cross";
 import { PreRegistrationFormSchema } from "~/lib/zod-schema";
 import { createRegistrationData } from "~/server/actions";
 
-Modal.setAppElement("#home-container");
+// Modal.setAppElement("#home-container");
 
 const fields = [
   {

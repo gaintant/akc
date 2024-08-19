@@ -47,8 +47,8 @@ export default function RootLayout({
           <div className="flex flex-1 flex-col items-center">
             <Header />
             {children}
-            <BottomSheetNavBar />
-            <FloatingNavbar />
+            {/* <BottomSheetNavBar /> */}
+            {/* <FloatingNavbar /> */}
             <Footer />
             <Toaster position="top-center" />
           </div>
