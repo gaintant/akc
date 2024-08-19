@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(3); // Default to 3 items
+
   const items = [
     {
       image: '/images/organizer/image1.png',
@@ -26,6 +28,19 @@ const Carousel = () => {
     },
   ];
 
+  useEffect(() => {
+    const updateItemsToShow = () => {
+      if (typeof window !== 'undefined') {
+        setItemsToShow(window.innerWidth < 640 ? 1 : 3);
+      }
+    };
+
+    updateItemsToShow(); // Set initial value
+    window.addEventListener('resize', updateItemsToShow);
+
+    return () => window.removeEventListener('resize', updateItemsToShow);
+  }, []);
+
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
   };
@@ -44,8 +59,6 @@ const Carousel = () => {
 
   const getVisibleItems = () => {
     const visibleItems = [];
-    const itemsToShow = window.innerWidth < 640 ? 1 : 3; // Show 1 item on mobile, 3 on larger screens
-
     for (let i = 0; i < itemsToShow; i++) {
       visibleItems.push(items[(currentIndex + i) % items.length]);
     }
@@ -64,7 +77,7 @@ const Carousel = () => {
             <div
               key={index}
               className="flex-shrink-0 flex flex-col items-center mx-1"
-              style={{ width: window.innerWidth < 640 ? '80%' : '200px', textAlign: 'center' }} // Adjust size for mobile
+              style={{ width: itemsToShow === 1 ? '80%' : '200px', textAlign: 'center' }} // Adjust size for mobile
             >
               <div
                 className="h-48 w-48 rounded-full bg-center bg-cover shadow-lg border-4 border-black transition-transform duration-500 ease-in-out"
