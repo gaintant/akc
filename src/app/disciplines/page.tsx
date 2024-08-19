@@ -113,14 +113,16 @@ export default function page() {
                   they will be disqualified.
                 </p>
                 <div className="mt-8">
-                  <Link href="/disciplines" passHref>
-                    <Button
-                      variant={ButtonVariant.RED}
-                      className="flex items-center gap-3"
-                    >
-                      <span>How to Sprint</span>
-                      <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
-                    </Button>
+                  <Link href="pdfs/Events/AKC How to organise - 60 m sprint.pdf" passHref legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant={ButtonVariant.RED}
+                        className="flex items-center gap-3"
+                      >
+                        <span>How to Sprint</span>
+                        <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
+                      </Button>
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -165,14 +167,17 @@ export default function page() {
                   zone.
                 </p>
                 <div className="mt-8">
-                  <Link href="/disciplines" passHref>
-                    <Button
-                      variant={ButtonVariant.CYAN}
-                      className="flex items-center gap-3"
-                    >
-                      <span>How to Jump</span>
-                      <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
-                    </Button>
+                  <Link href="pdfs/Events/AKC How to organise - long jump.pdf" passHref legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+
+                      <Button
+                        variant={ButtonVariant.CYAN}
+                        className="flex items-center gap-3"
+                      >
+                        <span>How to Jump</span>
+                        <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
+                      </Button>
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -214,14 +219,17 @@ export default function page() {
                   momentum.
                 </p>
                 <div className="mt-8">
-                  <Link href="/disciplines" passHref>
-                    <Button
-                      variant={ButtonVariant.GREEN}
-                      className="flex items-center gap-3"
-                    >
-                      <span>How to Throw</span>
-                      <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
-                    </Button>
+                  <Link href="pdfs/Events/AKC How to organise - ball throw.pdf" passHref legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+
+                      <Button
+                        variant={ButtonVariant.GREEN}
+                        className="flex items-center gap-3"
+                      >
+                        <span>How to Throw</span>
+                        <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
+                      </Button>
+                    </a>
                   </Link>
                 </div>
               </div>
