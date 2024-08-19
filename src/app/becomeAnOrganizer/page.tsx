@@ -62,7 +62,7 @@ export default function NewHowItWorks() {
       </div>
 
       <DesignBar />
-      {/* <Carousel /> */}
+      <Carousel />
       <OrganisationalMaterial />
 
       {/* Third component */}
