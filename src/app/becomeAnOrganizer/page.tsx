@@ -8,8 +8,7 @@ import Button, { ButtonVariant } from "../(components)/Button";
 import Arrow from "../(components)/Icons/Arrow";
 import PreRegistrationForm from "../(components)/PreRegistrationForm";
 import OrganisationalMaterial from "../(components)/becomeanorganiser3";
-import Carousel from "./carousel";
-
+import Carousel from "../(components)/carousel";
 export default function NewHowItWorks() {
   const [expandedCard, setExpandedCard] = useState<number | null>(1);
 
