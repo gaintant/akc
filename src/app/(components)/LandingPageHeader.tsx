@@ -18,13 +18,20 @@ const LandingPageHeader = () => {
         </Link>
         <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-4">
           <span className="text-[8px] font-medium md:text-sm">Enabled by</span>
-          <Image
-            src="/images/ubs-logo.png"
-            alt="UBS Logo"
-            height={54}
-            width={146.12}
-            className="h-auto w-[74px] md:w-[146px]"
-          />
+          <a
+            href="https://www.ubs.com/"
+            className="cursor-pointer"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image
+              src="/images/ubs-logo.png"
+              alt="UBS Logo"
+              height={54}
+              width={146.12}
+              className="h-auto w-[74px] md:w-[146px]"
+            />
+          </a>
         </div>
       </div>
     </header>

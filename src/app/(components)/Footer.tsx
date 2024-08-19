@@ -87,10 +87,10 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex items-center justify-center bg-altTextColor">
           <div className="flex w-full max-w-6xl flex-col gap-2 p-4 text-sm font-medium text-white md:flex-row md:justify-between">
-            <div>© 2024 Dspowerparts</div>
-            <div>All rights reserved by Dspowerparts</div>
+            <div className="w-full text-center">© 2024 Dspowerparts. All rights reserved</div>
           </div>
         </div>
+        
       </div>
     </footer>
   );

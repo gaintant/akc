@@ -54,7 +54,8 @@ export default function page() {
       {/*Handbook And Regulations button */}
       <div className="flex">
         <div className="mt-8 flex w-full items-center justify-between text-center">
-          <Link href="/rulesAndCategories" passHref>
+          <Link href="pdfs/Competition/Athletics Kids Cup organisers handbook.pdf" passHref legacyBehavior>
+          <a target="_blank" rel="noopener noreferrer">
             <Button
               variant={ButtonVariant.RED}
               className="flex items-center gap-3"
@@ -62,6 +63,7 @@ export default function page() {
               <span>Handbook And Regulations</span>
               <Arrow className="w-5 -rotate-45" fill="#FFFFFF" />
             </Button>
+            </a>
           </Link>
         </div>
       </div>

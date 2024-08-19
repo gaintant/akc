@@ -129,13 +129,20 @@ export default function page() {
                 </div>
                 <div className="min-h-[242px] bg-[#E3F7EA] p-6 font-medium text-[#1F2937] ">
                   <div className="mb-4 flex justify-center">
-                    <Image
-                      src="/images/about-akc/ubs-logo.png"
-                      alt="Image"
-                      width={249}
-                      height={90}
-                      className="object-cover"
-                    />
+                    <a
+                      href="https://www.ubs.com/"
+                      className="cursor-pointer"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/images/about-akc/ubs-logo.png"
+                        alt="Image"
+                        width={249}
+                        height={90}
+                        className="object-cover"
+                      />
+                    </a>
                   </div>
                   UBS has been passionately committed to Swiss athletics for
                   over 40 years. Now the children in India are benefiting from
@@ -151,13 +158,21 @@ export default function page() {
                 </div>
                 <div className="min-h-[200px] bg-[#DDF3FE] p-6 font-medium text-[#1F2937] ">
                   <div className="mb-2 flex justify-center">
-                    <Image
-                      src="/images/about-akc/striders-logo.png"
-                      alt="Image"
-                      width={338}
-                      height={90}
-                      className="object-cover"
-                    />
+                    <a
+                      href="https://stridersevents.in/"
+                      className="cursor-pointer"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+
+                      <Image
+                        src="/images/about-akc/striders-logo.png"
+                        alt="Image"
+                        width={249}
+                        height={90}
+                        className="object-cover"
+                      />
+                    </a>
                   </div>
                   Striders Miles is a central partner in the realisation of the
                   Athletics Kids Cup. The Striders team has supported the
