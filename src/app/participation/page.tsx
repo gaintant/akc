@@ -40,32 +40,53 @@ export default function page() {
               <div className="p-4">
                 <ul>
                   <li className="mb-2 flex flex-row">
-                    <Image
-                      src="/images/how-it-works/red-bullet.svg"
-                      width={16}
-                      height={16}
-                      alt="red bullet"
-                    />
-                    <p className="pl-4">60m Sprint</p>
+                  <a
+                      href="pdfs/Events/AKC How to organise - 60 m sprint.pdf"
+                      className="cursor-pointer flex flex-row"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/images/how-it-works/red-bullet.svg"
+                        width={16}
+                        height={16}
+                        alt="red bullet"
+                      />
+                      <p className="pl-4">60m Sprint</p>
+                    </a>
                   </li>
                   <li className="mb-2 flex flex-row">
-                    <Image
-                      src="/images/how-it-works/blue-bullet.svg"
-                      width={16}
-                      height={16}
-                      alt="red bullet"
-                    />
-                    <p className="pl-4">Long Jump</p>
+                    <a
+                      href="pdfs/Events/AKC How to organise - long jump.pdf"
+                      className="cursor-pointer flex flex-row"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/images/how-it-works/blue-bullet.svg"
+                        width={16}
+                        height={16}
+                        alt="red bullet"
+                      />
+                      <p className="pl-4">Long Jump</p>
+                    </a>
                   </li>
                   <li className="mb-2 flex flex-row">
-                    <Image
-                      src="/images/how-it-works/green-bullet.svg"
-                      width={16}
-                      height={16}
-                      alt="red bullet"
-                    />
-                    <p className="pl-4">Ball Throw</p>
-                  </li>
+                    <a
+                      href="pdfs/Events/AKC How to organise - ball throw.pdf"
+                      className="cursor-pointer  flex flex-row"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/images/how-it-works/green-bullet.svg"
+                        width={16}
+                        height={16}
+                        alt="red bullet"
+                      />
+                      <p className="pl-4">Ball Throw</p>
+                    </a>
+                    </li>
                 </ul>
               </div>
               <p className="text-lg">
