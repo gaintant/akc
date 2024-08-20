@@ -38,12 +38,12 @@ const KnowMoreAboutUs: React.FC = () => {
         { text: "Imprint", href: "/imprint" },
       ],
     },
-    {
-      id: 4,
-      heading: "About AKC",
-      points: [],
-      href: "/aboutAKC",
-    },
+    // {
+    //   id: 4,
+    //   heading: "About AKC",
+    //   points: [],
+    //   href: "/aboutAKC",
+    // },
   ];
 
   return (
@@ -59,7 +59,7 @@ const KnowMoreAboutUs: React.FC = () => {
             key={card.id}
             heading={card.heading}
             points={card.points}
-            href={card.href}
+            // href={card.href}
             isExpanded={expandedCard === card.id}
             onClick={() =>
               setExpandedCard(expandedCard === card.id ? null : card.id)
