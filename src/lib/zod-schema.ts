@@ -17,7 +17,7 @@ export const PreRegistrationFormSchema = z.object({
   State: z.string().min(1, "State can not be empty"),
   Pincode: z
     .string()
-    .length(6, "Pincode must be a 6-digit")
+    .length(6, "Pincode must be a 6-digit number")
     .transform(Number)
     .or(
       z
@@ -35,16 +35,15 @@ export const PreRegistrationFormSchema = z.object({
   SchoolWebsite: z.string(),
   FirstName: z
     .string()
-    .regex(/^[A-Za-z]+$/, "Firstname should not contain digits and spaces"),
+    .regex(/^[A-Za-z ]+$/, "Firstname should contain alphabets or spaces only."),
   Surname: z
     .string()
-    .regex(/^[A-Za-z]+$/, "Surname should not contain digits and spaces"),
+    .regex(/^[A-Za-z ]+$/, "Surname should contain alphabets or spaces only."),
   DaytimeTelephoneNumber: z
     .string()
     .regex(/^\d+$/)
-    .min(8, "Number should not have less than 8 digits")
-    .max(10, "Number should not have more than 10 digits"),
-  email: z.string(),
+    .length(10, "Number should have 10 digits"),
+  email: z.string().regex(/^[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/),
 });
 
 export type PreRegistrationForm = z.infer<typeof PreRegistrationFormSchema>;
