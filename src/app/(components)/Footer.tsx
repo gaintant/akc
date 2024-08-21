@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import LinkedIn from "./Icons/LinkedIn";
 import Instagram from "./Icons/Instagram";
-
+import Link from "next/link";
 // TODO: fix 2px horizontal overflow
 const Footer: React.FC = () => {
   return (
@@ -12,12 +12,14 @@ const Footer: React.FC = () => {
           <div className="flex w-full max-w-6xl flex-col flex-wrap items-center justify-between gap-5 px-4 py-9 md:flex-row">
             <div className="flex flex-1 flex-col items-center justify-around gap-5 md:flex-row-reverse">
               <div className="flex flex-col items-center">
-                <Image
-                  src="/images/AKCLogo_ALt.png"
-                  alt="Athletics Kids Cup"
-                  width={303.53}
-                  height={60}
-                />
+                <Link href="/" passHref>
+                  <Image
+                    src="/images/AKCLogo_ALt.png"
+                    alt="Athletics Kids Cup"
+                    width={303.53}
+                    height={60}
+                  />
+                </Link>
               </div>
 
               <div className="flex flex-col items-start gap-1">
@@ -51,13 +53,13 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                <Image
-                  src="/images/ubs-logo.png"
-                  priority
-                  alt="UBS"
-                  width={127.32}
-                  height={46.06}
-                />
+                  <Image
+                    src="/images/ubs-logo.png"
+                    priority
+                    alt="UBS"
+                    width={127.32}
+                    height={46.06}
+                  />
                 </a>
               </div>
 
@@ -87,10 +89,10 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex items-center justify-center bg-altTextColor">
           <div className="flex w-full max-w-6xl flex-col gap-2 p-4 text-sm font-medium text-white md:flex-row md:justify-between">
-            <div className="w-full text-center">© 2024 Dspowerparts. All rights reserved</div>
+            <div className="w-full text-center">© 2024 Dspowerparts. All rights reserved.</div>
           </div>
         </div>
-        
+
       </div>
     </footer>
   );
