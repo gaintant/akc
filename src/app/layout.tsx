@@ -41,6 +41,7 @@ export default function RootLayout({
         <meta name="keywords" content="AKC, Athletics Kids Cup" />
         <meta name="google-site-verification" content="Lhy44OuGx6B8ak9oizLVQ_YDxSQiYOBEJgPAXhOZc-c" />
         <link rel="icon" href="path/to/favicon.ico" />
+        <title>Athletics Kids Cup</title>
       </head>
       <body className="overflow-x-hidden">
         <div className="flex w-screen justify-center">
