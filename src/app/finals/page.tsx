@@ -110,12 +110,7 @@ export default function page() {
                 </div>
               </div>
               <p className="mt-6 text-lg">
-                The best athletes from the five regional finals qualify for the
-                Grand Mumbai Final. The 30 best athletes in each age category
-                compete against each other. The winners of each category will be
-                invited to a training camp at the Jio Institute&apos;s Athletic
-                Centre and will receive tips and tricks from professional
-                coaches.
+ The best athletes from the five regional finals qualify for the Grand Mumbai Final. The 30 best athletes in each age category compete against each other.
               </p>
               <div className="p-4">
                 <ul>
