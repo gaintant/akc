@@ -140,7 +140,7 @@ export default function page() {
           </div>
           <div className="relative order-1 mx-auto mb-4 flex h-auto w-full flex-row sm:h-[auto] md:mb-0 md:ml-24">
             <Image
-              src="/images/finals/jio_athletic_center.png"
+              src="/images/finals/jio_center.png"
               alt="Image"
               width={598}
               height={474}
