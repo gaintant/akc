@@ -123,7 +123,7 @@ export default function page() {
                     />
                     <p className="pl-4">Date: 15 February 2025</p>
                   </li>
-                  <li className="mb-2 flex flex-row">
+                  {/* <li className="mb-2 flex flex-row">
                     <Image
                       src="/images/how-it-works/green-bullet.svg"
                       width={16}
@@ -133,7 +133,7 @@ export default function page() {
                     <p className="pl-4">
                       Location: Jio Institute’s Athletic Center, Navi Mumbai
                     </p>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
