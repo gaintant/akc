@@ -110,12 +110,7 @@ export default function page() {
                 </div>
               </div>
               <p className="mt-6 text-lg">
-                The best athletes from the five regional finals qualify for the
-                Grand Mumbai Final. The 30 best athletes in each age category
-                compete against each other. The winners of each category will be
-                invited to a training camp at the Jio Institute&apos;s Athletic
-                Centre and will receive tips and tricks from professional
-                coaches.
+ The best athletes from the five regional finals qualify for the Grand Mumbai Final. The 30 best athletes in each age category compete against each other.
               </p>
               <div className="p-4">
                 <ul>
@@ -128,7 +123,7 @@ export default function page() {
                     />
                     <p className="pl-4">Date: 15 February 2025</p>
                   </li>
-                  <li className="mb-2 flex flex-row">
+                  {/* <li className="mb-2 flex flex-row">
                     <Image
                       src="/images/how-it-works/green-bullet.svg"
                       width={16}
@@ -138,14 +133,14 @@ export default function page() {
                     <p className="pl-4">
                       Location: Jio Institute’s Athletic Center, Navi Mumbai
                     </p>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
           </div>
           <div className="relative order-1 mx-auto mb-4 flex h-auto w-full flex-row sm:h-[auto] md:mb-0 md:ml-24">
             <Image
-              src="/images/finals/jio_athletic_center.png"
+              src="/images/finals/jio_center.png"
               alt="Image"
               width={598}
               height={474}

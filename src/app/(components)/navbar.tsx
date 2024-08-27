@@ -29,7 +29,17 @@ const navItems = [
       { href: '/documentsAndDownloads', label: 'Documents and downloads' },
     ],
   },
-  { href: '/faq', label: 'FAQ' },
+ 
+  {
+    href: '/faq',
+    label: 'FAQ',
+    subItems: [
+      { href: '/conditionsOfParticipation', label: 'Conditions of Participation' },
+      { href: '/privacyPolicy', label: 'Privacy Policy' },
+      { href: '/imprint', label: 'Imprint' },
+      { href: '/faq', label: 'FAQs' },
+    ],
+  },
   { href: '/#contact-us', label: 'Contact Us' },
 ];
 

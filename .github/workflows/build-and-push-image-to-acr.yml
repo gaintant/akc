@@ -2,7 +2,7 @@ name: Build and Push to ACR
 on:
   push:
     branches:
-      - 'dev'
+      - 'main'
 jobs:
   build:
     name: 'Build and Push to ACR'
@@ -32,9 +32,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DEV_IMAGE_TAG }}
+          tags: ${{ secrets.IMAGE_TAG }}
           file: Dockerfile
 
       - name: Restart App Service
         run: |
-          az webapp restart --name ${{ secrets.DEV_APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
+          az webapp restart --name ${{ secrets.APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}

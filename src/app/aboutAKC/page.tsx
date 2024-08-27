@@ -4,6 +4,7 @@ import Link from "next/link";
 import DesignBar from "../(components)/DesignBar";
 import Button, { ButtonVariant } from "../(components)/Button";
 import Arrow from "../(components)/Icons/Arrow";
+import ImageMapComponent from "./TeamImage";
 
 export default function page() {
   return (
@@ -104,14 +105,9 @@ export default function page() {
               </p>
             </div>
           </div>
-          <div className="relative order-1 mx-auto mb-4 h-auto w-full sm:h-[auto] md:order-2 md:mb-0 md:ml-24">
-            <Image
-              src="/images/about-akc/team-photo.png"
-              alt="Image"
-              width={720}
-              height={451}
-              className="object-cover"
-            />
+          <div className="relative order-1 mx-auto mb-4 h-auto w-full sm:h-[auto] md:order-2 md:mb-0 lg:ml-24
+          min-w-[300px]">
+            <ImageMapComponent/>
           </div>
         </div>
       </div>
