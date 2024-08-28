@@ -4,6 +4,7 @@ import Link from "next/link";
 import DesignBar from "../(components)/DesignBar";
 import Button, { ButtonVariant } from "../(components)/Button";
 import Arrow from "../(components)/Icons/Arrow";
+import ImageMapComponent from "./TeamImage";
 
 export default function page() {
   return (
@@ -81,7 +82,7 @@ export default function page() {
       {/* Team Details Section*/}
       <div className="relative mt-24 w-full bg-slate-100">
         <div className="container mx-auto flex flex-col p-4 md:flex-row">
-          <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 md:ml-24 md:w-1/2 md:px-12">
+          <div className="order-2 mb-4 w-full min-w-[300px] md:order-1 md:mb-0 lg:ml-24 md:w-1/2 md:px-12 ">
             <div className="max-w-[450px] md:mt-8">
               <div className="md:mt-12">
                 <h2 className="text-4xl font-bold">Our team</h2>
@@ -104,15 +105,28 @@ export default function page() {
               </p>
             </div>
           </div>
-          <div className="relative order-1 mx-auto mb-4 h-auto w-full sm:h-[auto] md:order-2 md:mb-0 md:ml-24">
-            <Image
-              src="/images/about-akc/team-photo.png"
-              alt="Image"
-              width={720}
-              height={451}
-              className="object-cover"
-            />
+          <div className="relative order-1 mb-4 h-auto w-full sm:h-auto md:order-2 
+          md:mb-0 lg:ml-48 md:ml-24 mx-auto flex items-center min-w-[300px] justify-center flex-col">
+            <ImageMapComponent />
+            {/* <figcaption className="text-center text-sm text-gray-700">
+              <b>Our Team</b>
+            </figcaption> */}
+            <figcaption className="text-center text-sm text-gray-700 flex flex-row">
+              <a href="https://www.linkedin.com/in/zahir-khan1" className="flex items-center space-x-1">
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Zahir Khan</b>&nbsp;&nbsp;
+              </a>  
+              <a href="https://www.linkedin.com/in/danielschenker" className="flex items-center space-x-1">
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Daniel Schenker</b>&nbsp;&nbsp;
+              </a>
+              <a href="https://www.linkedin.com/in/runschelbi" className="flex items-center space-x-1">
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Andreas Cueni</b>&nbsp;&nbsp;
+              </a>
+              <a href="https://www.linkedin.com/in/dr-anup-nastik-7b8ba6155" className="flex items-center space-x-1">
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Dr. Anup Nastik</b>&nbsp;&nbsp;
+              </a>
+            </figcaption>
           </div>
+
         </div>
       </div>
 
