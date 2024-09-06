@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const items = [
-  { src: "/images/becomeanorganizer/startflag.svg", label: "1 start flag" },
+  { src: "/images/becomeanorganizer/flap.svg", label: "1 start flag" },
   { src: "/images/becomeanorganizer/plugnail.svg", label: "6 plug nails" },
   { src: "/images/becomeanorganizer/balls.svg", label: "6 balls 200g" },
   { src: "/images/becomeanorganizer/whistles.svg", label: "2 whistles" },
