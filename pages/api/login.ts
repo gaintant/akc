@@ -4,13 +4,11 @@ import axios from 'axios';
 
 
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res : any) {
   if (req.method === 'POST') {
     const { email, password } = req.body;
 
-    // Find user in DB
       const response = await axios(`http://localhost:3000/api/user/${email}`);
-      // const response = await axios.;
       const user = response.data;
 
     if (!user) {
@@ -26,11 +24,14 @@ export default async function handler(req, res) {
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
-    console.log("passed")
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      throw new Error("JWT_SECRET is not defined. Please check your environment variables.");
+    }
     // Create JWT token
     const token = jwt.sign(
       { userId: user.id, email: user.email, role: user.role },
-      process.env.JWT_SECRET,
+      secret,
       { expiresIn: '1h' }
     );
 

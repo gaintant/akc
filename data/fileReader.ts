@@ -11,6 +11,6 @@ export const readList = async () => {
 };
 
 // Write the updated list back to the JSON file
-export const writeList = async (list) => {
+export const writeList = async (list: any) => {
     await fs.writeFile(filePath, JSON.stringify(list, null, 2), 'utf-8');
 };
