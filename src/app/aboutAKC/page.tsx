@@ -20,12 +20,9 @@ export default function page() {
             Switzerland.
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
-            The UBS Kids Cup is the largest youth project in Swiss sport and is
-            organised by Weltklasse Zürich, the world&apos;s most renowned
-            athletics meeting of the Diamond League, and the national
-            association Swiss Athletics. The Swiss athletics scene is at an
-            all-time high. At the last European Championships in Rome,
-            Switzerland won nine medals - a record!
+          The UBS Kids Cup is the largest youth project in Swiss sport. 
+          The Dspowerparts team, athletics enthusiasts from Switzerland, in co-operation with UBS India, are now bringing the initiative to India. 
+          The Athletics Kids Cup is an individual brand.
           </p>
         </div>
       </div>

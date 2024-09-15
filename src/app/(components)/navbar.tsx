@@ -33,11 +33,21 @@ const navItems = [
   {
     href: '/faq',
     label: 'FAQ',
+    // subItems: [
+    //   { href: '/conditionsOfParticipation', label: 'Conditions of Participation' },
+    //   { href: '/privacyPolicy', label: 'Privacy Policy' },
+    //   { href: '/imprint', label: 'Imprint' },
+    //   { href: '/faq', label: 'FAQs' },
+    // ],
+  },
+  {
+    href: '/misc-info',
+    label: 'Miscellaneous Info',
     subItems: [
+      { href: '/data-protection-regulations', label: 'Data Protection Regulations' },
       { href: '/conditionsOfParticipation', label: 'Conditions of Participation' },
       { href: '/privacyPolicy', label: 'Privacy Policy' },
       { href: '/imprint', label: 'Imprint' },
-      { href: '/faq', label: 'FAQs' },
     ],
   },
   { href: '/#contact-us', label: 'Contact Us' },
