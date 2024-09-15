@@ -20,9 +20,8 @@ export default function page() {
             Switzerland.
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
-          The UBS Kids Cup is the largest youth project in Swiss sport. 
-          The Dspowerparts team, athletics enthusiasts from Switzerland, in co-operation with UBS India, are now bringing the initiative to India. 
-          The Athletics Kids Cup is an individual brand.
+          The Dspowerparts team, athletics enthusiasts from Switzerland, in co-operation with UBS India, are now bringing a similar initiative to India. 
+          The Athletics Kids Cup is a standalone initiative tailored to the country's unique situation.
           </p>
         </div>
       </div>
@@ -60,7 +59,7 @@ export default function page() {
       <div className="flex justify-center">
         <div className="mb-4 w-full min-w-[300px] cursor-pointer rounded-2xl border-[1.5px] border-gray-700 p-4 shadow-[2px_4px_0_#12141d] transition-all md:w-[300px] ">
           <a
-            href="https://dspowerparts.ch/"
+            href="https://dspowerparts.ch/dspowerparts-sports/"
             className="cursor-pointer"
             rel="noopener noreferrer"
             target="_blank"
@@ -155,9 +154,7 @@ export default function page() {
                       />
                     </a>
                   </div>
-                  UBS has been passionately committed to Swiss athletics for
-                  over 40 years. Now the children in India are benefiting from
-                  this great commitment.
+                  UBS is committed to drive sustainable social impact among its communities with a focus on enabling children and young adults to achieve their potential through catalytic interventions around education, wellbeing and the environment.
                 </div>
               </div>
             </div>
