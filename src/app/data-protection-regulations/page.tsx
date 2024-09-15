@@ -29,7 +29,7 @@ const cards = [
     id: 5,
     heading: "Contact Us",
     content:
-      "For any concerns or inquiries regarding your data privacy, please contact contact@athleticskidscup.com .",
+      "For any concerns or inquiries regarding your data privacy, please contact <a href='mailto:contact@athleticskidscup.com'>contact@athleticskidscup.com</a>.",
   },
 ];
 
@@ -42,12 +42,12 @@ export default function page() {
       <div className="relative mb-2 flex md:text-center">
         <div className="mt-8 flex min-w-[300px] flex-col items-center md:w-full">
           <p className="mb-4 flex text-xl font-bold md:max-w-[750px] md:text-3xl ">
-          Data Privacy Disclaimer 
+            Data Privacy Disclaimer
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
-          By registering for and participating in the Athletics Kids Cup (AKC), you agree to the collection, use, and processing of your personal information as described below: 
+            By registering for and participating in the Athletics Kids Cup (AKC), you agree to the collection, use, and processing of your personal information as described below:
           </p>
-         
+
         </div>
       </div>
 
@@ -58,10 +58,12 @@ export default function page() {
             className="mb-4 w-full min-w-[300px] cursor-pointer rounded-2xl border-[1.5px] border-gray-700 bg-white p-4 shadow-[2px_4px_0_#12141d] transition-all md:w-[700px] lg:w-[900px]"
           >
             <h3 className="text-xl font-semibold">{card.heading}</h3>
-            <p className="mt-2 text-gray-700">{card.content}</p>
+            {/* Ensure that dangerouslySetInnerHTML is used correctly with no children */}
+            <p className="mt-2 text-gray-700" dangerouslySetInnerHTML={{ __html: card.content }} />
           </div>
         ))}
       </div>
+
     </section>
   );
 }
