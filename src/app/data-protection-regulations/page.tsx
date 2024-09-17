@@ -29,7 +29,7 @@ const cards = [
     id: 5,
     heading: "Contact Us",
     content:
-      "For any concerns or inquiries regarding your data privacy, please contact <a style='text-decoration: underline; href='mailto:contact@athleticskidscup.com'>contact@athleticskidscup.com</a>.",
+      "For any concerns or inquiries regarding your data privacy, please contact <a href='mailto:contact@athleticskidscup.com' style='text-decoration:underline' >contact@athleticskidscup.com</a>.",
   },
 ];
 
