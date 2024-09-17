@@ -21,7 +21,7 @@ export default function page() {
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
           The Dspowerparts team, athletics enthusiasts from Switzerland, in co-operation with UBS India, are now bringing a similar initiative to India. 
-          The Athletics Kids Cup is a standalone initiative tailored to the country's unique situation.
+          The Athletics Kids Cup is a standalone initiative tailored to the country&apos;s unique situation.
           </p>
         </div>
       </div>
