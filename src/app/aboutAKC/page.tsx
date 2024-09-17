@@ -203,7 +203,7 @@ export default function page() {
             </h2>
             <p className="mb-2 text-lg">
               We are available to media representatives at any time:  Please
-              contact us via media@athleticskidscup.com
+              contact us via <a href="mailto:media@athleticskidscup.com" style={{ textDecoration: 'underline' }}>media@athleticskidscup.com</a>
             </p>
           </div>
           <div className="md:mr-16">
