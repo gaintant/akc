@@ -16,8 +16,8 @@ const UsersPage = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch('/api/user/userList');
-        const data = await response.json();
-        setUsers(data.users);
+        // const data : = await response.json();
+        // setUsers(data.users);
       } catch (error) {
         console.error('Error fetching users:', error);
       } finally {
@@ -25,7 +25,9 @@ const UsersPage = () => {
       }
     };
 
-    fetchUsers();
+    fetchUsers().catch(error => {
+      console.error('Error in fetchUsers:', error);
+    });
   }, []);
 
   const handleVerify = async (email: string) => {

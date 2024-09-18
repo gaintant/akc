@@ -18,12 +18,12 @@ const ChangePassword: React.FC = () => {
         body: JSON.stringify({ oldPassword, newPassword }),
       });
 
-      const data = await response.json();
+      // const data = await response.json();
 
       if (response.ok) {
         setMessage('Password changed successfully!');
       } else {
-        setMessage(`Error: ${data.error}`);
+        setMessage(`Error: `);
       }
     } catch (error) {
       setMessage('An error occurred.');

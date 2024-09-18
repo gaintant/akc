@@ -30,13 +30,13 @@ export default function LoginPage() {
         body: JSON.stringify({ item }), // Send item in the request body
       });
 
-      const data = await response.json();
-
+      
+      // const data = await response.json();
       if (response.ok) {
-        console.log('Item added:', data.message);
+        console.log('Item added:');
         setSuccess('email registered')
       } else {
-        console.error('Error adding item:', data.error);
+        console.error('Error adding item:');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -57,9 +57,9 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
-        const { token } = await response.json();
+        // const { token } = await response.json();
         // Save the token in localStorage
-        localStorage.setItem('token', token);
+        // localStorage.setItem('token', token);
         setSuccess('Login successful! Redirecting...');
         // Redirect after a delay (for demonstration purposes)
         setTimeout(() => {
