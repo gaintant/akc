@@ -23,7 +23,7 @@ class UserList {
         return list.find((user : User) => user.email === email);
     }
 
-    async addToList(item : User) {
+    async addToList(item : User) : Promise<string>{
         
         let list = await readList();
         if (list.find((user: User) => user.email === item.email) === null){
@@ -36,14 +36,14 @@ class UserList {
         }
     }
 
-    async removeFromList(email : string) {
+    async removeFromList(email : string){
         let list = await readList();
        
         list = list.filter((user : User)=> user.email !== email);
         await writeList(list)
     }
 
-    async unverfiedUser() {
+    async unverfiedUser(){
         let list = await readList();
        
         return list.filter((user : User) => user.verified === false);
