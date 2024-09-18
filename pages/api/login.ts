@@ -1,10 +1,11 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 
 
-export default async function handler(req: any, res : any) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { email, password } = req.body;
 
