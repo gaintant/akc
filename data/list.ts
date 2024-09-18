@@ -4,6 +4,13 @@ import { readList, writeList } from './fileReader';
 const saltRounds = 12;
 const hashedPassword = await bcrypt.hash("password", saltRounds);
 
+interface User {
+    email: string;
+    password: string;
+    verified: boolean;
+    role: string;
+}
+
 class UserList {
     
     async getList() {
@@ -11,15 +18,15 @@ class UserList {
         return list;
     }
 
-    async findUser(email) {
+    async findUser(email : String) {
         let list = await readList();
-        return list.find((user) => user.email === email);
+        return list.find((user : User) => user.email === email);
     }
 
-    async addToList(item) {
+    async addToList(item : User) {
         
         let list = await readList();
-        if (list.find((user) => user.email === item.email) === null){
+        if (list.find((user: User) => user.email === item.email) === null){
             list.push(item);
             await writeList(list)
             return "email registered"
@@ -29,23 +36,23 @@ class UserList {
         }
     }
 
-    async removeFromList(email) {
+    async removeFromList(email : string) {
         let list = await readList();
        
-        list = list.filter(user => user.email !== email);
+        list = list.filter((user : User)=> user.email !== email);
         await writeList(list)
     }
 
     async unverfiedUser() {
         let list = await readList();
        
-        return list.filter(user => user.verified === false);
+        return list.filter((user : User) => user.verified === false);
     }
 
-    async verifyUserByEmail(email) {
+    async verifyUserByEmail(email : string) {
         let list = await readList();
        
-        const userIndex = list.findIndex(user => user.email === email);
+        const userIndex = list.findIndex((user : User)=> user.email === email);
         if (userIndex !== -1) {
             list[userIndex].verified = true;
         }
