@@ -18,7 +18,7 @@ class UserList {
         return list;
     }
 
-    async findUser(email : String) {
+    async findUser(email : String) : Promise<User>{
         let list = await readList();
         return list.find((user : User) => user.email === email);
     }

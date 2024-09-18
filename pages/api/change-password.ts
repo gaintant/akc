@@ -4,6 +4,14 @@ import { jwtVerify } from 'jose'; // Edge-compatible JWT library
 import bcrypt from 'bcryptjs';
 import instance from '../../data/list'; // Adjust path as necessary
 
+interface User {
+  email: string;
+  password: string;
+  verified: boolean;
+  role: string;
+}
+
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { oldPassword, newPassword } = req.body;
@@ -19,14 +27,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Verify JWT token
       const { payload } = await jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET as string));
       // Find the user in the list
-      const user = instance.findUser( payload.email);
+      const user = await instance.findUser( payload.email as string);
 
       if (!user) {
         return res.status(401).json({ error: 'User not found' });
       }
 
       // Validate old password
-      const isOldPasswordValid = await bcrypt.compare(oldPassword, user.password);
+      const isOldPasswordValid = await bcrypt.compare(oldPassword, user.password );
 
       if (!isOldPasswordValid) {
         return res.status(401).json({ error: 'Old password is incorrect' });
