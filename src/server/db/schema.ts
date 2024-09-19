@@ -1,3 +1,4 @@
+import { InferInsertModel } from "drizzle-orm";
 import {
   pgTableCreator,
   serial,
@@ -11,6 +12,8 @@ import {
   unique,
   uuid,
   primaryKey,
+  pgEnum,
+  pgTable,
 } from "drizzle-orm/pg-core";
 
 // Prefixing table names with 'akc_'
@@ -195,3 +198,16 @@ export const todos = createTable("todo", {
   user_id: varchar("user_id"),
   title: varchar("title", { length: 256 }),
 });
+
+export const verifiedEnum = pgEnum("verified_status", ["pending", "verified", "rejected"]);
+
+// Define the Users table
+export const Users = pgTable("users", {
+  id: serial("id").primaryKey(), // Unique identifier
+  email: varchar("email", { length: 256 }).notNull(),
+  role: varchar("role", { length: 256 }).notNull(), 
+  verified: verifiedEnum("pending").notNull(), // Proper usage of enum
+  password: varchar("password", { length: 256 }).notNull(),
+});
+
+export type NewUser = InferInsertModel<typeof Users>;

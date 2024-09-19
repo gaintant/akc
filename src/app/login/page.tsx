@@ -57,17 +57,17 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
-        // const { token } = await response.json();
+        const { token } = await response.json();
         // Save the token in localStorage
-        // localStorage.setItem('token', token);
+        localStorage.setItem('token', token);
         setSuccess('Login successful! Redirecting...');
         // Redirect after a delay (for demonstration purposes)
         setTimeout(() => {
           window.location.href = '/aboutAKC';
         }, 1000);
       } else {
-        // const { message } = await response.json();
-        // setError(message || 'An error occurred');
+        const { error } = await response.json();
+        setError(error || 'An error occurred');
       }
     } catch (error) {
       setError('An error occurred');
