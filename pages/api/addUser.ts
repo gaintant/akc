@@ -3,7 +3,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '../../src/server/db'; // Import your database connection
 import { Users } from '../../src/server/db/schema'; // Import your Users table schema
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+interface RequestBody {
+  email: string;
+  role: string;
+  verified: boolean;
+  password: string;
+}
+
+export default async function handler(req: NextApiRequest & { body: RequestBody }, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { email, role, verified, password } = req.body;
 
