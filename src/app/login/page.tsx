@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { userDetails } from 'types/loginDetails';
+import { ApiResponse } from 'pages/api/login';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -22,15 +23,15 @@ export default function LoginPage() {
         },
         body: JSON.stringify({ email, password } as userDetails),
       });
-
+      // console.log("response:" + await response.json())
       if (response.ok) {
-        const { token } = await response.json() ;
+        const {token } = await response.json() as ApiResponse;
         // Save the token in localStorage
         localStorage.setItem('token', token);
         setSuccess('Login successful! Redirecting...');
         // Redirect after a delay (for demonstration purposes)
         setTimeout(() => {
-          window.location.href = '/aboutAKC';
+          // window.location.href = '/aboutAKC';
         }, 1000);
       } else {
         const { error } = await response.json();

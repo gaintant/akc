@@ -10,26 +10,19 @@ const JWT_SECRET = process.env.JWT_SECRET as string; // Use a strong secret and 
 
 // Common response utilities
 export type ApiResponse = {
-  success: boolean;
-  message: string;
-  data?: string;
-  error?: string;
+  token :string;
 };
 
-function successResponse(res: NextApiResponse, data: string, message = "Request successful") {
+function successResponse(res: NextApiResponse, data: string) {
   const response: ApiResponse = {
-    success: true,
-    message,
-    data,
+    token : data,
   };
   return res.status(200).json(response);
 }
 
 function errorResponse(res: NextApiResponse, error: string, statusCode = 400) {
   const response: ApiResponse = {
-    success: false,
-    message: "Request failed",
-    error,
+    token : error,
   };
   return res.status(statusCode).json(response);
 }
@@ -62,7 +55,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       );
 
       // Send the token with a fixed response structure
-      return successResponse(res, token , 'Login successful');
+      return successResponse(res, token);
     } catch (error) {
       console.error('Error during login:', error);
       return errorResponse(res, 'Internal server error', 500);
