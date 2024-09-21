@@ -6,18 +6,18 @@ import { db } from '../../src/server/db'; // Import your database connection
 import { Users } from '../../src/server/db/schema'; // Import your Users table schema
 import {loginDetails} from "../../types/loginDetails"
 // JWT Secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'; // Use a strong secret and keep it in .env
+const JWT_SECRET = process.env.JWT_SECRET as string; // Use a strong secret and keep it in .env
 
 // Common response utilities
-type ApiResponse<T> = {
+export type ApiResponse = {
   success: boolean;
   message: string;
-  data?: T;
+  data?: string;
   error?: string;
 };
 
-function successResponse<T>(res: NextApiResponse, data: T, message: string = "Request successful") {
-  const response: ApiResponse<T> = {
+function successResponse(res: NextApiResponse, data: string, message = "Request successful") {
+  const response: ApiResponse = {
     success: true,
     message,
     data,
@@ -25,8 +25,8 @@ function successResponse<T>(res: NextApiResponse, data: T, message: string = "Re
   return res.status(200).json(response);
 }
 
-function errorResponse(res: NextApiResponse, error: string, statusCode: number = 400) {
-  const response: ApiResponse<null> = {
+function errorResponse(res: NextApiResponse, error: string, statusCode = 400) {
+  const response: ApiResponse = {
     success: false,
     message: "Request failed",
     error,
@@ -62,7 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       );
 
       // Send the token with a fixed response structure
-      return successResponse(res, { token }, 'Login successful');
+      return successResponse(res, token , 'Login successful');
     } catch (error) {
       console.error('Error during login:', error);
       return errorResponse(res, 'Internal server error', 500);

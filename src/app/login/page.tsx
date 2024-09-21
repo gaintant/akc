@@ -24,7 +24,7 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
-        const { token } = await response.json();
+        const { token } = await response.json() ;
         // Save the token in localStorage
         localStorage.setItem('token', token);
         setSuccess('Login successful! Redirecting...');

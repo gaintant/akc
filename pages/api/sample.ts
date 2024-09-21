@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const hashedPassword = await bcrypt.hash("password123", 10); // Hash the password
 
     const newUser: NewUser = {
-      email: "test@example.com",
+      email: "test1@example.com",
       role: "admin",
       verified: "pending", // Enum-like value
       password: hashedPassword,
