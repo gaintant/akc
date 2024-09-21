@@ -6,7 +6,7 @@ import { db } from '../../src/server/db'; // Import your database connection
 import { Users } from '../../src/server/db/schema'; // Import your Users table schema
 import {loginDetails} from "../../types/loginDetails"
 // JWT Secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET as string; // Use a strong secret and keep it in .env
+const JWT_SECRET = process.env.JWT_SECRET as string || "your sercet" as string; // Use a strong secret and keep it in .env
 
 // Common response utilities
 export type ApiResponse = {

@@ -34,7 +34,7 @@ export default function LoginPage() {
           // window.location.href = '/aboutAKC';
         }, 1000);
       } else {
-        const { error } = await response.json();
+        const { token : error } = await response.json() as ApiResponse;
         setError(error || 'An error occurred');
       }
     } catch (error) {
