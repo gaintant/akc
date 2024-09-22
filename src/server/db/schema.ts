@@ -79,27 +79,24 @@ export const students = createTable(
   "students",
   {
     studentId: serial("student_id").primaryKey(),
+    firstName: varchar("first_Name", { length: 255 }).notNull(),
+    middleName: varchar("middle_Name", { length: 255 }),
+    surName: varchar("sur_Name", { length: 255 }),
+    dateOfBirth: date("date_of_birth").notNull(),
+    gender: varchar("gender", { length: 10 }).notNull(),
+    guardianName: varchar("guardian_name", { length: 255 }).notNull(),
+    guardianEmail: varchar("guardian_email", { length: 255 }),
+    guardianPhoneNumber: varchar("guardian_phone_number", { length: 10 }),
     schoolId: integer("school_id")
       .notNull()
       .references(() => schools.schoolId, {
         onDelete: "cascade",
       }),
-    studentName: varchar("student_name", { length: 255 }).notNull(),
-    dateOfBirth: date("date_of_birth"),
-    gradeLevel: integer("grade_level"),
-    gender: varchar("gender", { length: 10 }),
-    height: decimal("height", { precision: 5, scale: 2 }),
-    weight: decimal("weight", { precision: 5, scale: 2 }),
-    guardianName: varchar("guardian_name", { length: 255 }),
-    guardianContact: varchar("guardian_contact", { length: 20 }),
-    guardianAlternateContact: varchar("guardian_alternate_contact", {
-      length: 20,
-    }),
   },
   (table) => ({
     studentUnique: unique("student_school_unique").on(
       table.schoolId,
-      table.studentName,
+      table.firstName,
     ),
   }),
 );
