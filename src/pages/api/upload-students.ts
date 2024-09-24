@@ -6,24 +6,7 @@ import { db } from "../../server/db"; // Your Drizzle ORM DB connection
 import { students } from "../../server/db/schema"; // Your students table schema
 import { parse } from "csv-parse";
 import * as XLSX from "sheetjs-style";
-
-// Zod schema for validating each student entry
-const studentSchema = z.object({
-  firstName: z.string().min(1).max(255),
-  middleName: z.string().optional(),
-  surName: z.string().optional(),
-  dateOfBirth: z.string().refine((val) => !isNaN(Date.parse(val)), {
-    message: "Invalid date format",
-  }),
-  gender: z.string().max(10),
-  guardianName: z.string().min(1).max(255),
-  guardianEmail: z.string().email().optional(),
-  guardianPhoneNumber: z
-    .string()
-    .length(10, "Phone number must be 10 digits")
-    .optional(),
-  schoolId: z.number(),
-});
+import { studentSchema } from "~/lib/zod-schema";
 
 // Mapping of CSV/Excel column names to database column names
 const columnMapping: { [key: string]: string } = {
