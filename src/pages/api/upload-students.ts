@@ -18,7 +18,10 @@ const studentSchema = z.object({
   gender: z.string().max(10),
   guardianName: z.string().min(1).max(255),
   guardianEmail: z.string().email().optional(),
-  guardianPhoneNumber: z.string().length(10, "Phone number must be 10 digits"),
+  guardianPhoneNumber: z
+    .string()
+    .length(10, "Phone number must be 10 digits")
+    .optional(),
   schoolId: z.number(),
 });
 
@@ -27,11 +30,11 @@ const columnMapping: { [key: string]: string } = {
   "First Name": "firstName",
   "Middle Name": "middleName",
   Surname: "surName",
-  "Date of Birth": "dateOfBirth",
+  "Date Of Birth": "dateOfBirth",
   Gender: "gender",
   "Guardian Name": "guardianName",
   "Guardian Email": "guardianEmail",
-  "Guardian Phone": "guardianPhoneNumber",
+  "Guardian Phone Number": "guardianPhoneNumber",
 };
 
 // Helper function to rename columns
@@ -58,7 +61,10 @@ const parseFile = async (filePath: string, fileType: string) => {
     });
 
     for await (const record of parser) {
-      const renamedRecord = renameColumns(record, columnMapping); // Apply renaming
+      const filteredRecord = Object.fromEntries(
+        Object.entries(record).filter(([_, value]) => value !== ""),
+      );
+      const renamedRecord = renameColumns(filteredRecord, columnMapping); // Apply renaming
       results.push(renamedRecord);
     }
   } else if (fileType === "xlsx") {
@@ -121,12 +127,19 @@ const handleUpload = async (req: NextApiRequest, res: NextApiResponse) => {
 
           try {
             const validatedStudent = studentSchema.parse(renamedRecord); // Validate each row
+            console.log(validatedStudent);
             await db.insert(students).values(validatedStudent); // Insert into DB
           } catch (e) {
             if (e instanceof z.ZodError) {
               errors.push(
                 `Error in row: ${JSON.stringify(renamedRecord)} - ${e.errors.map((err) => err.message).join(", ")}`,
               );
+            } else {
+              const postgresError = e as any;
+              errors.push(
+                `Error in row: ${JSON.stringify(renamedRecord)} - ${postgresError.detail}`,
+              );
+              console.log(e);
             }
           }
         }

@@ -48,7 +48,7 @@ const BulkUploadPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="mb-6 text-2xl font-bold">Bulk Upload Students</h1>
+      <h1 className="mb-6 text-2xl font-bold">Bulk Upload Students Details</h1>
 
       <p className="mb-4">
         Please follow the constraints below to ensure a successful upload:
@@ -64,11 +64,11 @@ const BulkUploadPage = () => {
 
       <div className="mb-4">
         <a
-          href="/template/student_template.csv"
+          href="/template/student_template.xlsx"
           download
           className="text-blue-500 underline"
         >
-          Download CSV Template
+          Download Template
         </a>
       </div>
 
