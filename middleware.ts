@@ -13,7 +13,7 @@ export async function middleware(req: NextRequest) {
   }
 
   // Check if the token exists and is valid
-  if (pathname.startsWith('/changePassword') || pathname.startsWith('/verifyUser')) {
+  if (pathname.startsWith('/admin') || pathname.startsWith('/user')) {
     if (!token) {
       console.log("Token is missing");
       return NextResponse.redirect(new URL('/login', req.url));
@@ -21,9 +21,8 @@ export async function middleware(req: NextRequest) {
 
     try {
       const { payload } = await jwtVerify(token.value, new TextEncoder().encode(process.env.JWT_SECRET as string));
-
       // Check if the user has an admin role for /verifyuser route
-      if (pathname.startsWith('/verifyUser') && payload.role !== 'admin') {
+      if ((pathname.startsWith('/admin') || pathname.startsWith('/api/admin'))&& payload.role !== 'admin') {
         return NextResponse.redirect(new URL('/forbidden', req.url));
       }
 
@@ -41,5 +40,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/changePassword', '/verifyUser'],
+  matcher: ['/admin/:path*', '/user/:path*', '/api/admin/:path*', '/api/user/:path*'],
 };
