@@ -51,7 +51,7 @@ const navItems = [
     ],
   },
   { href: '/#contact-us', label: 'Contact Us' },
-  { href: '/aboutUs', label: 'About Us' },
+  // { href: '/aboutUs', label: 'About Us' },
 ];
 
 const Navbar = () => {

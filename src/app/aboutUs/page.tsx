@@ -41,7 +41,7 @@ export default function page() {
       {/*Design Bar */}
       <DesignBar />
 
-      {/*DSPowerParts Para */}
+      {/* DSPowerParts Para
       <div className="relative mb-8 mt-8 md:text-center">
         <div className="flex min-w-[300px] flex-col items-center">
 
@@ -49,7 +49,7 @@ export default function page() {
             The Athletics Kids Cup is supported by numerous partners.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/*DSPowerParts Logo */}
       <div className="flex justify-center">

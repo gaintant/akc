@@ -41,12 +41,12 @@ const KnowMoreAboutUs: React.FC = () => {
         { text: 'Imprint', href: '/imprint' },
       ],
     },
-    {
-      id: 4,
-      heading: "About Us",
-      points: [],
-      href: "/aboutUs",
-    },
+    // {
+    //   id: 4,
+    //   heading: "About Us",
+    //   points: [],
+    //   href: "/aboutUs",
+    // },
   ];
 
   return (
