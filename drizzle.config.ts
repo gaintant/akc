@@ -5,7 +5,7 @@ export default {
   out: "./src/server/db/migrations",
   dialect: "postgresql",
   dbCredentials: {
-    url: "postgres://postgres:Lifestain@123@localhost:5433/postgres",
+    url: process.env.DATABASE_URL!,
   },
   verbose: true,
   strict: true,
