@@ -40,13 +40,13 @@ const KnowMoreAboutUs: React.FC = () => {
         { text: 'Privacy Policy', href: '/privacyPolicy' },
         { text: 'Imprint', href: '/imprint' },
       ],
-    }
-    // {
-    //   id: 4,
-    //   heading: "About AKC",
-    //   points: [],
-    //   href: "/aboutAKC",
-    // },
+    },
+    {
+      id: 4,
+      heading: "About Us",
+      points: [],
+      href: "/aboutUs",
+    },
   ];
 
   return (
