@@ -20,9 +20,8 @@ export default function page() {
             Switzerland.
           </p>
           <p className="mb-8 flex text-lg md:max-w-[900px]">
-          The UBS Kids Cup is the largest youth project in Swiss sport. 
-          The Dspowerparts team, athletics enthusiasts from Switzerland, in co-operation with UBS India, are now bringing the initiative to India. 
-          The Athletics Kids Cup is an individual brand.
+            The Dspowerparts team, athletics enthusiasts from Switzerland, in co-operation with UBS India, are now bringing a similar initiative to India.
+            The Athletics Kids Cup is a standalone initiative tailored to the country&apos;s unique situation.
           </p>
         </div>
       </div>
@@ -42,25 +41,21 @@ export default function page() {
       {/*Design Bar */}
       <DesignBar />
 
-      {/*DSPowerParts Para */}
+      {/* DSPowerParts Para
       <div className="relative mb-8 mt-8 md:text-center">
         <div className="flex min-w-[300px] flex-col items-center">
-          <p className="mb-4 max-w-[750px] text-xl font-bold md:text-2xl ">
-            The Dspowerparts team, athletics enthusiasts from Switzerland, are
-            now bringing this successful initiative to India in co-operation
-            with UBS.
-          </p>
+
           <p className="mb-8 max-w-[900px] text-lg">
             The Athletics Kids Cup is supported by numerous partners.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/*DSPowerParts Logo */}
       <div className="flex justify-center">
         <div className="mb-4 w-full min-w-[300px] cursor-pointer rounded-2xl border-[1.5px] border-gray-700 p-4 shadow-[2px_4px_0_#12141d] transition-all md:w-[300px] ">
           <a
-            href="https://dspowerparts.ch/"
+            href="https://dspowerparts.ch/dspowerparts-sports/"
             className="cursor-pointer"
             rel="noopener noreferrer"
             target="_blank"
@@ -110,16 +105,16 @@ export default function page() {
             </figcaption> */}
             <figcaption className="text-center text-sm text-gray-700 flex flex-row">
               <a href="https://www.linkedin.com/in/zahir-khan1" className="flex items-center space-x-1">
-                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Zahir Khan</b>&nbsp;&nbsp;
-              </a>  
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20} /><b>Zahir Khan</b>&nbsp;&nbsp;
+              </a>
               <a href="https://www.linkedin.com/in/danielschenker" className="flex items-center space-x-1">
-                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Daniel Schenker</b>&nbsp;&nbsp;
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20} /><b>Daniel Schenker</b>&nbsp;&nbsp;
               </a>
               <a href="https://www.linkedin.com/in/runschelbi" className="flex items-center space-x-1">
-                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Andreas Cueni</b>&nbsp;&nbsp;
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20} /><b>Andreas Cueni</b>&nbsp;&nbsp;
               </a>
               <a href="https://www.linkedin.com/in/dr-anup-nastik-7b8ba6155" className="flex items-center space-x-1">
-                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20}/><b>Dr. Anup Nastik</b>&nbsp;&nbsp;
+                <img src="images/about-akc/linkedin-svgrepo-com (1).svg" width={20} height={20} /><b>Dr. Anup Nastik</b>&nbsp;&nbsp;
               </a>
             </figcaption>
           </div>
@@ -132,13 +127,13 @@ export default function page() {
           <h2 className="mb-4 text-center text-3xl font-bold">
             Sponsors And Partners
           </h2>
-          <div className="flex flex-col justify-center gap-4 md:flex-row">
-            <div className="w-full min-w-[300px] md:ml-32 md:w-1/2">
-              <div className="overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d]">
+          <div className="flex justify-center gap-6 md:flex-row">
+            <div className="flex-1 w-full min-w-[300px] md:ml-32 md:w-1/2">
+              <div className="h-full overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d] flex flex-col">
                 <div className="bg-[#57D081] p-6 text-xl font-bold text-[#1F2937]">
                   Main sponsor and enabler
                 </div>
-                <div className="min-h-[242px] bg-[#E3F7EA] p-6 font-medium text-[#1F2937] ">
+                <div className="min-h-[242px] bg-[#E3F7EA] p-6 font-medium text-[#1F2937] flex-grow flex flex-col">
                   <div className="mb-4 flex justify-center">
                     <a
                       href="https://www.ubs.com/"
@@ -155,19 +150,17 @@ export default function page() {
                       />
                     </a>
                   </div>
-                  UBS has been passionately committed to Swiss athletics for
-                  over 40 years. Now the children in India are benefiting from
-                  this great commitment.
+                  UBS is committed to drive sustainable social impact among its communities with a focus on enabling children and young adults to achieve their potential through catalytic interventions around education, wellbeing and the environment.
                 </div>
               </div>
             </div>
 
-            <div className="w-full min-w-[300px] md:mr-32 md:w-1/2">
-              <div className="overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d]">
+            <div className="flex-1 w-full min-w-[300px] md:mr-32 md:w-1/2">
+              <div className="h-full overflow-hidden rounded-3xl border-2 border-gray-800 shadow-[4px_6px_0_#12141d] flex flex-col">
                 <div className="bg-[#36BBFC] p-6 text-xl font-bold text-[#1F2937]">
                   Execution partner
                 </div>
-                <div className="min-h-[200px] bg-[#DDF3FE] p-6 font-medium text-[#1F2937] ">
+                <div className="min-h-[200px] bg-[#DDF3FE] p-6 font-medium text-[#1F2937] flex-grow flex flex-col">
                   <div className="mb-2 flex justify-center">
                     <a
                       href="https://stridersevents.in/"
@@ -175,7 +168,6 @@ export default function page() {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-
                       <Image
                         src="/images/about-akc/striders-logo.png"
                         alt="Image"
@@ -185,15 +177,12 @@ export default function page() {
                       />
                     </a>
                   </div>
-                  Striders Miles is a central partner in the realisation of the
-                  Athletics Kids Cup. The Striders team has supported the
-                  Athletics Kids Cup from the very beginning and is the local
-                  contact for all schools and ensures the smooth organisation of
-                  the initiative.
+                  Striders Miles is a central partner in the realisation of the Athletics Kids Cup. The Striders team has supported the Athletics Kids Cup from the very beginning and is the local contact for all schools and ensures the smooth organisation of the initiative.
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -206,7 +195,7 @@ export default function page() {
             </h2>
             <p className="mb-2 text-lg">
               We are available to media representatives at any time:  Please
-              contact us via media@athleticskidscup.com
+              contact us via <a href="mailto:media@athleticskidscup.com" style={{ textDecoration: 'underline' }}>media@athleticskidscup.com</a>
             </p>
           </div>
           <div className="md:mr-16">
