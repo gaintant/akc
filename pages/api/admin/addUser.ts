@@ -1,8 +1,8 @@
 // File: /pages/api/users.ts (or /app/api/users/route.ts)
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '../../../src/server/db'; // Import your database connection
 import { Users, } from '../../../src/server/db/schema'; // Import your Users table schema
-import { addUser } from 'types/loginDetails';
+import type { addUser } from 'types/loginDetails';
 import bcrypt from 'bcryptjs'
 import nodemailer from 'nodemailer';
 
@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         password : hashedPassword, 
       });
       if(verified === "verified")
-        sendEmail(email, password)
+        await sendEmail(email, password)
       return res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
       console.error('Error inserting user:', error);

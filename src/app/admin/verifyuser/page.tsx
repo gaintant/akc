@@ -20,8 +20,9 @@ const UsersPage = () => {
         setLoading(false);
       }
     };
-
-    fetchUsers();
+    (async () => {
+      await fetchUsers()
+    });
   }, []);
 
   const handleVerify = async (email: string) => {
@@ -31,7 +32,7 @@ const UsersPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: email, verified : "verified" } as addUser),
+        body: JSON.stringify({ email: email, verified: "verified" } as addUser),
       });
       setUsers(users.filter(user => user.contactEmail !== email));
     } catch (error) {
@@ -46,7 +47,7 @@ const UsersPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: email, verified : "rejected" } as addUser),
+        body: JSON.stringify({ email: email, verified: "rejected" } as addUser),
       });
       setUsers(users.filter(user => user.contactEmail !== email));
     } catch (error) {
@@ -61,15 +62,15 @@ const UsersPage = () => {
         {users.map(user => (
           <div key={user.contactEmail} className="border p-4 rounded shadow-lg">
             <h2 className="text-lg font-bold">{user.contactEmail}</h2>
-            <p className="mt-2"><strong>First Name:</strong> {user.firstName || 'N/A'}</p>
-            <p className="mt-2"><strong>Surname:</strong> {user.surname || 'N/A'}</p>
-            <p className="mt-2"><strong>School Name:</strong> {user.schoolName || 'N/A'}</p>
-            <p className="mt-2"><strong>School Address:</strong> {user.schoolAddress || 'N/A'}</p>
-            <p className="mt-2"><strong>School City:</strong> {user.schoolCity || 'N/A'}</p>
-            <p className="mt-2"><strong>School State:</strong> {user.schoolState || 'N/A'}</p>
-            <p className="mt-2"><strong>School Pincode:</strong> {user.schoolPincode || 'N/A'}</p>
-            <p className="mt-2"><strong>School Website:</strong> {user.schoolWebsite || 'N/A'}</p>
-            <p className="mt-2"><strong>Coordinator Mobile No:</strong> {user.coordinatorMobileNo || 'N/A'}</p>
+            <p className="mt-2"><strong>First Name:</strong> {user.firstName ?? 'N/A'}</p>
+            <p className="mt-2"><strong>Surname:</strong> {user.surname ?? 'N/A'}</p>
+            <p className="mt-2"><strong>School Name:</strong> {user.schoolName ?? 'N/A'}</p>
+            <p className="mt-2"><strong>School Address:</strong> {user.schoolAddress ?? 'N/A'}</p>
+            <p className="mt-2"><strong>School City:</strong> {user.schoolCity ?? 'N/A'}</p>
+            <p className="mt-2"><strong>School State:</strong> {user.schoolState ?? 'N/A'}</p>
+            <p className="mt-2"><strong>School Pincode:</strong> {user.schoolPincode ?? 'N/A'}</p>
+            <p className="mt-2"><strong>School Website:</strong> {user.schoolWebsite ?? 'N/A'}</p>
+            <p className="mt-2"><strong>Coordinator Mobile No:</strong> {user.coordinatorMobileNo ?? 'N/A'}</p>
 
             <div className="mt-4 flex space-x-2">
               <button onClick={() => handleVerify(user.contactEmail)} className="bg-blue-500 text-white px-4 py-2 rounded">Verify</button>
