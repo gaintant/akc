@@ -28,27 +28,24 @@ const KnowMoreAboutUs: React.FC = () => {
     {
       id: 3,
       heading: "FAQ",
-      points: [
-        { text: "FAQ", href: "/faq" },
-        {
-          text: "Conditions Of Participation",
-          href: "/conditionsOfParticipation",
-        },
-        { text: "Privacy policy", href: "/privacyPolicy" },
-        { text: "Imprint", href: "/imprint" },
-      ],
+      href:'/faq',
+      points: [],
     },
     {
       id: 4,
       heading: "Miscellaneous Info",
-      points: [],
-      href: "/misc-info"
-    }
+      points: [
+        { text: 'Data Protection Regulations', href: '/data-protection-regulations' },
+        { text: 'Conditions of Participation', href: '/conditionsOfParticipation' },
+        { text: 'Privacy Policy', href: '/privacyPolicy' },
+        { text: 'Imprint', href: '/imprint' },
+      ],
+    },
     // {
     //   id: 4,
-    //   heading: "About AKC",
+    //   heading: "About Us",
     //   points: [],
-    //   href: "/aboutAKC",
+    //   href: "/aboutUs",
     // },
   ];
 
@@ -65,7 +62,7 @@ const KnowMoreAboutUs: React.FC = () => {
             key={card.id}
             heading={card.heading}
             points={card.points}
-            href={card.href}
+            href={card.href} //uncomment when some navitem with blank subitems are added
             isExpanded={expandedCard === card.id}
             onClick={() =>
               setExpandedCard(expandedCard === card.id ? null : card.id)

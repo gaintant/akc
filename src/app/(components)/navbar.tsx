@@ -44,12 +44,14 @@ const navItems = [
     href: '/misc-info',
     label: 'Miscellaneous Info',
     subItems: [
+      { href: '/data-protection-regulations', label: 'Data Protection Regulations' },
       { href: '/conditionsOfParticipation', label: 'Conditions of Participation' },
       { href: '/privacyPolicy', label: 'Privacy Policy' },
       { href: '/imprint', label: 'Imprint' },
     ],
   },
   { href: '/#contact-us', label: 'Contact Us' },
+  // { href: '/aboutUs', label: 'About Us' },
 ];
 
 const Navbar = () => {

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const items = [
-  { src: "/images/becomeanorganizer/flap.svg", label: "1 start flag" },
+  { src: "/images/becomeanorganizer/flapNew.svg", label: "1 start flap" },
   { src: "/images/becomeanorganizer/plugnail.svg", label: "6 plug nails" },
   { src: "/images/becomeanorganizer/balls.svg", label: "6 balls 200g" },
   { src: "/images/becomeanorganizer/whistles.svg", label: "2 whistles" },
@@ -11,7 +11,7 @@ const items = [
   { src: "/images/becomeanorganizer/stopwatches.svg", label: "2 stopwatches" },
   { src: "/images/becomeanorganizer/tape.svg", label: "1 roll of white tape" },
   { src: "/images/becomeanorganizer/redwhiteflags.svg", label: "2 red-white flags" },
-  { src: "/images/becomeanorganizer/measuringtape50m.svg", label: "1 measuring tape 50m" },
+  { src: "/images/becomeanorganizer/measuringtape50m.svg", label: "1 measuring tape 100m" },
   { src: "/images/becomeanorganizer/measuringtape30m.svg", label: "2 measuring tapes 30m" },
 ];
 
