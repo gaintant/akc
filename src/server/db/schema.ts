@@ -89,7 +89,9 @@ export const students = createTable(
     gender: varchar("gender", { length: 10 }).notNull(),
     guardianName: varchar("guardian_name", { length: 255 }).notNull(),
     guardianEmail: varchar("guardian_email", { length: 255 }),
-    guardianPhoneNumber: varchar("guardian_phone_number", { length: 10 }),
+    guardianPhoneNumber: varchar("guardian_phone_number", {
+      length: 10,
+    }).notNull(),
     schoolId: integer("school_id")
       .notNull()
       .references(() => pre_registration_data.schoolId, {

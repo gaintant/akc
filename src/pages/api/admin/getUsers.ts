@@ -10,7 +10,6 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   try {
-    console.log(req);
     if (req.method === "GET") {
       const emailsNotInUsers = await db
         .select({

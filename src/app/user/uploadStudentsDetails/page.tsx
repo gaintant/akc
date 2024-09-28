@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import UploadStudentsErrorModal from "../(components)/studentComponents/UploadStudentsErrorModal";
+import UploadStudentsErrorModal from "../../(components)/studentComponents/UploadStudentsErrorModal";
 // import { useRouter } from "next/router";
 
 const BulkUploadPage = () => {

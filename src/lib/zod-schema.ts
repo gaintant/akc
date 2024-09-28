@@ -54,18 +54,29 @@ export type PreRegistrationForm = z.infer<typeof PreRegistrationFormSchema>;
 export const studentSchema = z.object({
   studentId: z.number().optional(),
   firstName: z.string().min(1, "First name is required"),
-  middleName: z.string().optional(),
-  surName: z.string().optional(),
+  middleName: z
+    .string()
+    .nullable()
+    .optional()
+    .transform((value) => value ?? ""),
+  surName: z
+    .string()
+    .nullable()
+    .optional()
+    .transform((value) => value ?? ""),
   dateOfBirth: z.string().refine((val) => !isNaN(Date.parse(val)), {
     message: "Invalid date format",
   }),
   gender: z.enum(["Male", "Female"], { required_error: "Gender is required" }),
   guardianName: z.string().min(1, "Guardian name is required"),
-  guardianEmail: z.string().email("Invalid email format").optional(),
+  guardianEmail: z
+    .union([z.string().email(), z.literal("")])
+    .nullable()
+    .optional()
+    .transform((value) => value ?? ""),
   guardianPhoneNumber: z
     .string()
-    .length(10, "Phone number must be exactly 10 digits")
-    .optional(),
+    .length(10, "Phone number must be exactly 10 digits"),
   schoolId: z.number(),
 });
 

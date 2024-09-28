@@ -19,9 +19,7 @@ const UsersPage = () => {
         setLoading(false);
       }
     };
-    async () => {
-      await fetchUsers();
-    };
+    void fetchUsers();
   }, []);
 
   const handleVerify = async (email: string) => {

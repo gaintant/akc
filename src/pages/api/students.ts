@@ -72,6 +72,7 @@ const updateStudent = async (req: NextApiRequest, res: NextApiResponse) => {
 const deleteStudent = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { id } = req.query;
+    console.log("Delete id", id);
     if (typeof id !== "string") {
       return res.status(400).json({ message: "Invalid ID" });
     }

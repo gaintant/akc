@@ -25,7 +25,7 @@ export default function LoginPage() {
       if (response.ok) {
         setSuccess("Login successful! Redirecting...");
         setTimeout(() => {
-          window.location.href = "/aboutAKC";
+          window.location.href = "/";
         }, 1000);
       } else {
         const { message: error } = (await response.json()) as {
