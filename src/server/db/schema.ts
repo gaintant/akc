@@ -17,7 +17,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 // Prefixing table names with 'akc_'
-const createTable = pgTableCreator((name) => `akc_${name}`);
+const createTable = pgTableCreator((name) => `akc_dev_${name}`);
 
 export const pre_registration_data = createTable("pre_registration", {
   schoolId: serial("school_id").primaryKey(),
@@ -92,13 +92,13 @@ export const students = createTable(
     guardianPhoneNumber: varchar("guardian_phone_number", { length: 10 }),
     schoolId: integer("school_id")
       .notNull()
-      .references(() => schools.schoolId, {
+      .references(() => pre_registration_data.schoolId, {
         onDelete: "cascade",
       }),
   },
   (table) => ({
     studentUnique: unique("student_school_unique").on(
-      table.schoolId,
+      table.dateOfBirth,
       table.firstName,
     ),
   }),
@@ -169,42 +169,20 @@ export const results = createTable("results", {
   bestJumpingScore: decimal("best_jumping_score", { precision: 10, scale: 2 }),
   akcScore: decimal("akc_score", { precision: 10, scale: 2 }),
 });
-export const refreshTokens = createTable("refresh_token", {
-  uuid: uuid("uuid").primaryKey(),
-});
 
-export const users = createTable("user", {
-  id: serial("id").primaryKey(),
-  name: varchar("name", { length: 256 }),
-  email: varchar("email", { length: 256 }).notNull().unique(),
-  role: varchar("role", { length: 256 })
-    .notNull()
-    .$type<"admin" | "user">()
-    .default("user"),
-  password: varchar("password", { length: 256 }),
-  resetToken: varchar("reset_token", { length: 256 }),
-  resetTokenExpiry: timestamp("reset_token_expiry"),
-  emailVerified: boolean("email_verified").default(false),
-  verificationToken: varchar("verification_token", { length: 256 }),
-  createdAt: timestamp("created_at").defaultNow(),
-  updatedAt: timestamp("updated_at").defaultNow(),
-});
+export const verifiedEnum = pgEnum("verified_status", [
+  "pending",
+  "verified",
+  "rejected",
+]);
 
-export const todos = createTable("todo", {
-  id: serial("id").primaryKey(),
-  user_id: varchar("user_id"),
-  title: varchar("title", { length: 256 }),
-});
-
-export const verifiedEnum = pgEnum("verified_status", ["pending", "verified", "rejected"]);
-
-// Define the Users table
-export const Users = pgTable("users", {
+// Define the users table
+export const users = createTable("users", {
   id: serial("id").primaryKey(), // Unique identifier
-  email: varchar("email", { length: 256 }).notNull(),
-  role: varchar("role", { length: 256 }).notNull(), 
+  email: varchar("email", { length: 256 }).notNull().unique(),
+  role: varchar("role", { length: 256 }).notNull(),
   verified: verifiedEnum("pending").notNull(), // Proper usage of enum
   password: varchar("password", { length: 256 }).notNull(),
 });
 
-export type NewUser = InferInsertModel<typeof Users>;
+export type NewUser = InferInsertModel<typeof users>;

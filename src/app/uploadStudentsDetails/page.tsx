@@ -4,7 +4,7 @@ import UploadStudentsErrorModal from "../(components)/studentComponents/UploadSt
 // import { useRouter } from "next/router";
 
 const BulkUploadPage = () => {
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState<File | undefined>(undefined);
   const [uploading, setUploading] = useState(false);
   const [uploadErrors, setUploadErrors] = useState<string[]>([]);
   // const router = useRouter();
@@ -12,9 +12,7 @@ const BulkUploadPage = () => {
   // Handle file selection
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
-    if (fileList && fileList[0]) {
-      setFile(fileList[0]);
-    }
+    setFile(fileList?.[0]);
   };
 
   // Upload file function
@@ -32,12 +30,13 @@ const BulkUploadPage = () => {
         body: formData,
       });
 
-      const result = await response.json();
-
-      if (result.errors) {
-        setUploadErrors(result.errors); // Display errors in modal
-      } else {
+      if (response.ok) {
         // router.push("/students"); // Redirect on success
+      } else {
+        const { errors } = (await response.json()) as {
+          errors: string[];
+        };
+        setUploadErrors(errors); // Display errors in modal
       }
     } catch (error) {
       console.error("Error uploading file:", error);

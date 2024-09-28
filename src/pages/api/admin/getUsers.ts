@@ -1,13 +1,17 @@
 // pages/api/emailsNotInUsers.js
 
-import { NextApiRequest, NextApiResponse } from 'next';
-import { db } from '../../../src/server/db'; 
-import { pre_registration_data, Users } from '../../../src/server/db/schema'; 
-import { eq, isNull } from 'drizzle-orm';
+import { NextApiRequest, NextApiResponse } from "next";
+import { db } from "../../../server/db";
+import { pre_registration_data, users } from "../../../server/db/schema";
+import { eq, isNull } from "drizzle-orm";
 
-export default async function handler(req : NextApiRequest, res : NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   try {
-    if (req.method === 'GET') {
+    console.log(req);
+    if (req.method === "GET") {
       const emailsNotInUsers = await db
         .select({
           schoolId: pre_registration_data.schoolId,
@@ -20,23 +24,23 @@ export default async function handler(req : NextApiRequest, res : NextApiRespons
           firstName: pre_registration_data.firstName,
           surname: pre_registration_data.surname,
           coordinatorMobileNo: pre_registration_data.coordinatorMobileNo,
-          contactEmail: pre_registration_data.contactEmail
+          contactEmail: pre_registration_data.contactEmail,
         })
         .from(pre_registration_data)
-        .leftJoin(
-          Users,
-          eq(pre_registration_data.contactEmail, Users.email)
-        )
-        .where(isNull(Users.email));
+        .leftJoin(users, eq(pre_registration_data.contactEmail, users.email))
+        .where(isNull(users.email));
 
       // Respond with the result
       return res.status(200).json(emailsNotInUsers);
     }
 
     // Handle any other HTTP method
-    return res.setHeader('Allow', ['GET']).status(405).end(`Method ${req.method} Not Allowed`);
+    return res
+      .setHeader("Allow", ["GET"])
+      .status(405)
+      .end(`Method ${req.method} Not Allowed`);
   } catch (error) {
-    console.error('Error fetching emails:', error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    console.error("Error fetching emails:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 }

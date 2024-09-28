@@ -14,30 +14,46 @@ const StudentPage = () => {
   // Fetch students on component mount
   useEffect(() => {
     const fetchStudents = async () => {
-      const response = await axios.get("/api/students");
-      setStudents(response.data);
+      try {
+        const response = await axios.get<Student[]>("/api/students");
+        setStudents(response.data);
+      } catch (error) {
+        console.log("Error fetching students", error);
+      }
     };
-    fetchStudents();
+    async () => {
+      await fetchStudents();
+    };
   }, []);
 
   const handleDelete = async (studentId: number) => {
-    await axios.delete(`/api/students/${studentId}`);
-    setStudents(students.filter((student) => student.studentId !== studentId));
+    try {
+      await axios.delete<Student>(`/api/students/${studentId}`);
+      setStudents(
+        students.filter((student) => student.studentId !== studentId),
+      );
+    } catch (error) {
+      console.log("Error deleting student", error);
+    }
   };
 
-  const handleAddEdit = async (studentData: any) => {
-    if (selectedStudent) {
-      await axios.put(
-        `/api/students/${selectedStudent.studentId}`,
-        studentData,
-      );
-    } else {
-      await axios.post("/api/students", studentData);
+  const handleAddEdit = async (studentData: Student) => {
+    try {
+      if (selectedStudent) {
+        await axios.put(
+          `/api/students/${selectedStudent.studentId}`,
+          studentData,
+        );
+      } else {
+        await axios.post("/api/students", studentData);
+      }
+      setIsModalOpen(false);
+      // Refetch students after adding/editing
+      const response = await axios.get<Student[]>("/api/students");
+      setStudents(response.data);
+    } catch (error) {
+      console.log("Error while editing student detail", error);
     }
-    setIsModalOpen(false);
-    // Refetch students after adding/editing
-    const response = await axios.get("/api/students");
-    setStudents(response.data);
   };
 
   const filteredStudents = students.filter((student) =>
@@ -104,7 +120,7 @@ const StudentPage = () => {
                 </button>
                 <button
                   className="rounded bg-red-500 p-1 text-white"
-                  onClick={() => handleDelete(student.studentId as number)}
+                  onClick={() => handleDelete(student.studentId!)}
                 >
                   Delete
                 </button>
@@ -117,7 +133,7 @@ const StudentPage = () => {
       {isModalOpen && (
         <StudentModal onClose={() => setIsModalOpen(false)}>
           <StudentForm
-            initialValues={selectedStudent as Student}
+            initialValues={selectedStudent!}
             onSubmit={handleAddEdit}
           />
         </StudentModal>
