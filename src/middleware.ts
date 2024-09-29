@@ -11,10 +11,8 @@ export async function middleware(req: NextRequest) {
   if (pathname === "/login" || pathname === "/error") {
     return NextResponse.next();
   }
-  console.log(token);
   // Check if the token exists and is valid
   if (pathname.startsWith("/admin") || pathname.startsWith("/user")) {
-    console.log(token);
     if (!token) {
       console.log("Token is missing");
       return NextResponse.redirect(new URL("/login", req.url));

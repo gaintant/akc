@@ -5,8 +5,32 @@ const ChangePassword: React.FC = () => {
   const [newPassword, setNewPassword] = useState('');
   const [message, setMessage] = useState('');
 
-    return (
-    <form onSubmit={() => console.log("in progress")} className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const apiResponse = await fetch("/api/user/changePassword", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ newPassword }), // Using shorthand syntax
+      });
+
+      
+      if (apiResponse.ok) {
+        setMessage('Password updated successfully!'); // Success message
+      } else {
+        setMessage('Failed to update password'); // Error message from API
+      }
+    } catch (error) {
+      console.error('API call failed:', error);
+      setMessage('An error occurred while changing the password.'); // Generic error message
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold mb-4 text-gray-800">Change Password</h2>
 
       <div className="mb-6">

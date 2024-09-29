@@ -15,8 +15,7 @@ export default async function handler(
     const password = generatePassword();
     const hashedPassword = await bcrypt.hash(password, 10);
     try {
-      // Insert a new user into the users table
-
+      
       await db.insert(users).values({
         email,
         role: "User",

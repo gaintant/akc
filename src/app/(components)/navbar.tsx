@@ -8,7 +8,7 @@ import { SlMenu, SlArrowDown, SlArrowUp, SlArrowRight } from 'react-icons/sl';
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 
-const navItems = [
+let navItemList = [
   { href: '/', label: 'Home' },
   {
     href: '/competition',
@@ -54,13 +54,70 @@ const navItems = [
   // { href: '/aboutUs', label: 'About Us' },
 ];
 
+let userNavItems = {
+  href: '/user',
+  label: 'user',
+  subItems: [
+    { href: '/user/changepassword', label: 'Change Password' },
+    { href: '/user/students', label: 'students' },
+    { href: '/user/uploadStudentsDetails', label: 'Upload Students Details' },
+  ],
+}
+
+let noLoginNavItems = {
+  href: '/login',
+  label: 'user',
+  subItems: [
+    { href: 'login', label: 'login' },
+  ],
+}
+
+
+let adminNavItems = [
+  {
+    href: '/user',
+    label: 'user',
+    subItems: [
+      { href: '/user/changepassword', label: 'Change Password' },
+    ],
+  },
+  {
+  href: '/admin',
+  label: 'admin',
+  subItems: [
+    { href: '/admin/verifyuser', label: 'verify User' },
+  ],
+}]
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-
+  const [navItems, setNavItems] = useState(navItemList)
   const toggleMenu = () => setIsOpen((prev) => !prev);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("/api/getRole");
+        const {role} = (await response.json()) as {role : string};
+        if (role == "none")
+          setNavItems([noLoginNavItems, ...navItemList])
+        else if ( role == "user")
+          setNavItems([userNavItems, ...navItemList] )
+        else if ( role == "admin")
+          setNavItems([...adminNavItems, ...navItemList ] )
+
+      } catch (error) {
+        console.error("Error fetching role:", error);
+      } finally {
+  
+      }
+    };
+    void fetchUsers();
+  }, []);
+  
 
   const toggleSubMenu = (label: string) => {
     setOpenSubMenu((prev) => (prev === label ? null : label));

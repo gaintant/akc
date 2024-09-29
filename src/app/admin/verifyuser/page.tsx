@@ -39,7 +39,7 @@ const UsersPage = () => {
 
   const handleRemove = async (email: string) => {
     try {
-      await fetch("/api/addUser", {
+      await fetch("/api/admin/addUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
