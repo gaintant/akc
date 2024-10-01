@@ -21,7 +21,7 @@ export async function middleware(req: NextRequest) {
     try {
       const { payload } = await jwtVerify(
         token.value,
-        new TextEncoder().encode(process.env.JWT_SECRET!),
+        new TextEncoder().encode(process.env.JWT_SECRET),
       );
       // Check if the user has an admin role for /verifyuser route
       if (

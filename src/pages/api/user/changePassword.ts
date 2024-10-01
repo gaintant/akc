@@ -13,11 +13,11 @@ export default async function handler(req: NextApiRequest,
       const { newPassword } = req.body as {newPassword : string}; 
   
       // Reading cookies from the request
-      const token = req.cookies.token as string ;
+      const token = req.cookies.token! ;
   
       const { payload } = await jwtVerify(
         token,
-        new TextEncoder().encode(process.env.JWT_SECRET!),
+        new TextEncoder().encode(process.env.JWT_SECRET),
       );
       const hashedPassword = await bcrypt.hash(newPassword, 10);
 
