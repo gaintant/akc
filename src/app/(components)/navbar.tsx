@@ -8,7 +8,7 @@ import { SlMenu, SlArrowDown, SlArrowUp, SlArrowRight } from 'react-icons/sl';
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 
-let navItemList = [
+const  navItemList = [
   { href: '/', label: 'Home' },
   {
     href: '/competition',
@@ -54,7 +54,7 @@ let navItemList = [
   // { href: '/aboutUs', label: 'About Us' },
 ];
 
-let userNavItems = {
+const userNavItems = {
   href: '/user',
   label: 'user',
   subItems: [
@@ -64,7 +64,7 @@ let userNavItems = {
   ],
 }
 
-let noLoginNavItems = {
+const  noLoginNavItems = {
   href: '/login',
   label: 'user',
   subItems: [
@@ -73,7 +73,7 @@ let noLoginNavItems = {
 }
 
 
-let adminNavItems = [
+const  adminNavItems = [
   {
     href: '/user',
     label: 'user',

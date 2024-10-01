@@ -7,7 +7,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 
 export default async function GET(req : NextApiRequest, res : NextApiResponse) {
-  const cookies = cookie.parse(req.headers.cookie || '');
+  const cookies = cookie.parse(req.headers.cookie ?? '');
 
   if (!cookies.token) {
     return res.status(200).json({ role: 'none' });
@@ -16,7 +16,7 @@ export default async function GET(req : NextApiRequest, res : NextApiResponse) {
   try {
 
     const { payload } = await jwtVerify(cookies.token, 
-        new TextEncoder().encode(process.env.JWT_SECRET as string));
+        new TextEncoder().encode(process.env.JWT_SECRET!));
 
     return res.status(200).json({ role: payload.role });
   } catch (error) {
