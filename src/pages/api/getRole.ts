@@ -15,9 +15,9 @@ export default async function GET(req : NextApiRequest, res : NextApiResponse) {
 
   try {
 
+    console.log(process.env.JWT_SECRET)
     const { payload } = await jwtVerify(cookies.token, 
         new TextEncoder().encode(process.env.JWT_SECRET));
-
     return res.status(200).json({ role: payload.role });
   } catch (error) {
     console.error('JWT Verification Error:', error);
